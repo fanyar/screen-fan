@@ -14,10 +14,10 @@
           <span class="text-[18px] font-semibold text-sx-title">{{ platformName }}</span>
         </button>
         <div class="platform-actions flex shrink-0 items-center gap-[8px]">
-          <PlatformSearch/>
+          <PlatformSearch class="mobile-hide"/>
           <button
               type="button"
-              class="header-favorite"
+              class="header-favorite mobile-hide"
               aria-label="我的收藏"
               @click="$router.push('/platform/favorites')"
           >
@@ -150,6 +150,10 @@ const isMenuActive = (path) => route.path === path || route.path.startsWith(`${p
 }
 
 @media (max-width: 720px) {
+  header :deep(.mobile-hide) {
+    display: none !important;
+  }
+
   .platform-actions {
     gap: 5px;
   }
