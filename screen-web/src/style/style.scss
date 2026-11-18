@@ -168,6 +168,12 @@ a:hover {
   padding: 36px 24px 48px;
 }
 
+.platform-content-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
 @media (max-width: 720px) {
   .platform-page {
     padding: 22px 14px 34px;
@@ -194,6 +200,10 @@ a:hover {
   .platform-card__meta {
     font-size: 13px;
     line-height: 21px;
+  }
+
+  .platform-content-grid {
+    grid-template-columns: 1fr;
   }
 }
 

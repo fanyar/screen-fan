@@ -106,6 +106,10 @@ const emit = defineEmits(['update:keyword', 'update:filter', 'search', 'reset'])
 }
 
 @media (max-width: 768px) {
+  .toolbar-panel {
+    display: none;
+  }
+
   .toolbar-keyword,
   .toolbar-filter {
     width: 100%;

@@ -90,6 +90,7 @@ import {useRoute} from 'vue-router'
 import {useThemeStore} from '@/store/modules/theme'
 import PlatformSearch from '@/components/platform/PlatformSearch.vue'
 const menu = PLATFORM_MENU
+const platformName = PLATFORM_NAME
 const showDarkModeToggle = PLATFORM_SHOW_DARK_MODE_TOGGLE
 const route = useRoute()
 const platformThemes = PLATFORM_THEMES
