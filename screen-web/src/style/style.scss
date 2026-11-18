@@ -442,3 +442,192 @@ a:hover {
     display: none;
   }
 }
+
+/* Theme picker is teleported to body, so its hover state needs global scope. */
+.platform-theme-dropdown.el-dropdown-menu {
+  padding: 5px;
+}
+
+.platform-theme-dropdown .el-dropdown-menu__item {
+  color: var(--sx-body);
+}
+
+.platform-theme-dropdown .el-dropdown-menu__item:not(.is-disabled):hover,
+.platform-theme-dropdown .el-dropdown-menu__item:not(.is-disabled):focus-visible {
+  color: var(--theme-color);
+  background-color: var(--theme-color-bg);
+}
+
+.platform-theme-dropdown .el-dropdown-menu__item.theme-option--active {
+  color: var(--theme-color);
+  background-color: var(--theme-color-bg);
+  font-weight: 600;
+}
+
+.platform-theme-dropdown .el-dropdown-menu__item.theme-option--active:not(.is-disabled):hover,
+.platform-theme-dropdown .el-dropdown-menu__item.theme-option--active:not(.is-disabled):focus-visible {
+  background-color: var(--theme-color-bg-hover);
+}
+
+@media (max-width: 720px) {
+  body header .platform-brand-text {
+    font-size: 16px !important;
+    line-height: 24px !important;
+  }
+
+  body .platform-main {
+    font-size: 12px !important;
+  }
+
+  body .platform-page-title {
+    font-size: 24px !important;
+    line-height: 32px !important;
+  }
+
+  body .platform-page-desc,
+  body .platform-cover__fallback {
+    font-size: 14px !important;
+    line-height: 21px !important;
+  }
+
+  body .platform-card__title {
+    font-size: 16px !important;
+    line-height: 24px !important;
+  }
+
+  body .platform-card__desc {
+    font-size: 14px !important;
+    line-height: 21px !important;
+  }
+
+  body .platform-card__meta,
+  body .platform-tag,
+  body .platform-badge {
+    font-size: 13px !important;
+    line-height: 19px !important;
+  }
+
+  body .list-total {
+    font-size: 13px !important;
+  }
+
+  body .list-footer .el-pagination,
+  body .list-footer .el-pagination * {
+    font-size: 12px !important;
+  }
+
+  body .el-button,
+  body header .el-dropdown .el-button,
+  body .el-input__inner,
+  body .el-select__placeholder,
+  body .el-dropdown-menu__item,
+  body .el-message {
+    font-size: 12px !important;
+  }
+
+  body .detail-back,
+  body .article-back,
+  body .back-button {
+    font-size: 13px !important;
+  }
+
+  body .detail-meta,
+  body .article-meta {
+    font-size: 12px !important;
+  }
+
+  body .detail-title,
+  body .article-title {
+    font-size: 24px !important;
+    line-height: 33px !important;
+  }
+
+  body .detail-description,
+  body .detail-section,
+  body .article-summary,
+  body .article-body,
+  body .movie-body {
+    font-size: 14px !important;
+    line-height: 23px !important;
+  }
+
+  body .markdown-content,
+  body .markdown-content p,
+  body .markdown-content li {
+    font-size: 14px !important;
+    line-height: 23px !important;
+  }
+
+  body .markdown-content h2 {
+    font-size: 20px !important;
+    line-height: 28px !important;
+  }
+
+  body .markdown-content h3 {
+    font-size: 16px !important;
+    line-height: 24px !important;
+  }
+
+  body .markdown-content code,
+  body .markdown-content pre code,
+  body .article-body code,
+  body .article-body pre code {
+    font-size: 12px !important;
+  }
+
+  body .article-body h2 {
+    font-size: 21px !important;
+    line-height: 29px !important;
+  }
+
+  body .article-body h3 {
+    font-size: 17px !important;
+    line-height: 25px !important;
+  }
+
+  body .movie-facts span,
+  body .score-item .score-head {
+    font-size: 12px !important;
+    line-height: 18px !important;
+  }
+
+  body .movie-facts strong {
+    font-size: 14px !important;
+    line-height: 20px !important;
+  }
+
+  body .score-item .score-head strong {
+    font-size: 16px !important;
+  }
+
+  body .movie-review h2,
+  body .related-title {
+    font-size: 18px !important;
+    line-height: 26px !important;
+  }
+
+  body .related-cover__fallback,
+  body .related-name {
+    font-size: 12px !important;
+    line-height: 18px !important;
+  }
+
+  body .model-panel h2,
+  body .board-header h2 {
+    font-size: 16px !important;
+  }
+
+  body .summary-stage span,
+  body .summary-counts,
+  body .selected-title strong,
+  body .delay-reason,
+  body .node-remark,
+  body .binding-warning,
+  body .viewer-tip {
+    font-size: 12px !important;
+  }
+
+  body .summary-stage strong {
+    font-size: 14px !important;
+  }
+}

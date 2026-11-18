@@ -101,7 +101,7 @@
           <img class="h-[22px]" :src="logoFan" :alt="platformName"/>
           <span v-if="hasText(platformName)">{{ platformName }}</span>
         </div>
-        <div v-if="hasText(home.footerText)">{{ home.footerText }}</div>
+        <div v-if="hasText(home.footerText)" class="home-footer-text">{{ home.footerText }}</div>
       </div>
     </footer>
   </div>
@@ -238,15 +238,15 @@ const scrollToSection = (selector) => {
   }
 
   .home-hero-title {
-    font-size: 33px;
-    line-height: 44px;
+    font-size: 31px;
+    line-height: 42px;
   }
 
   .home-hero-desc,
   .home-intro-desc,
   .home-contact-desc {
-    font-size: 15px;
-    line-height: 26px;
+    font-size: 13px;
+    line-height: 23px;
   }
 
   .home-hero-desc {
@@ -263,8 +263,8 @@ const scrollToSection = (selector) => {
   }
 
   .home-intro-title {
-    font-size: 30px;
-    line-height: 41px;
+    font-size: 28px;
+    line-height: 38px;
   }
 
   .home-features,
@@ -275,13 +275,18 @@ const scrollToSection = (selector) => {
 
   .home-section-title {
     margin-bottom: 28px;
-    font-size: 25px;
-    line-height: 35px;
+    font-size: 23px;
+    line-height: 32px;
   }
 
   .home-contact-phone {
-    font-size: 25px;
-    line-height: 36px;
+    font-size: 23px;
+    line-height: 32px;
+  }
+
+  .home-footer-text {
+    font-size: 12px;
+    line-height: 18px;
   }
 
   .home-footer-inner {

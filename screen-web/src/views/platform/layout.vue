@@ -11,7 +11,7 @@
               <path d="M120 44V4h10l26 23V4h10v40h-10L130 21v23z"/>
             </g>
           </svg>
-          <span class="text-[18px] font-semibold text-sx-title">{{ platformName }}</span>
+          <span class="platform-brand-text text-[18px] font-semibold text-sx-title">{{ platformName }}</span>
         </button>
         <div class="platform-actions flex shrink-0 items-center gap-[8px]">
           <PlatformSearch class="mobile-hide"/>
@@ -33,7 +33,7 @@
           >
             <el-icon><Moon v-if="!themeStore.isDark"/><Sunny v-else/></el-icon>
           </button>
-          <el-dropdown trigger="click" @command="themeStore.setTheme">
+          <el-dropdown trigger="click" popper-class="platform-theme-dropdown" @command="themeStore.setTheme">
             <button
                 type="button"
                 aria-label="换肤"
@@ -63,7 +63,7 @@
       <nav class="border-b border-sx-line bg-sx-nav-bg">
         <div class="scrollBar mx-auto flex w-full max-w-[1440px] items-center gap-[6px] overflow-x-auto px-[24px] py-[8px]">
           <button v-for="item in menu" :key="item.path"
-                  class="h-[40px] shrink-0 rounded-[8px] px-[16px] text-[17px] transition-colors"
+                  class="platform-nav-button h-[40px] shrink-0 rounded-[8px] px-[16px] text-[17px] transition-colors"
                   :class="isMenuActive(item.path)
                     ? 'bg-sx-soft font-medium text-sx-primary'
                     : 'text-sx-muted hover:bg-sx-canvas hover:text-sx-title'"
@@ -102,11 +102,10 @@ const isMenuActive = (path) => route.path === path || route.path.startsWith(`${p
 const isThemeActive = (themeId) => themeStore.currentThemeId === themeId
 
 const themeOptionStyle = (theme) => {
-  if (!isThemeActive(theme.id)) return undefined
   return {
-    color: theme.color,
-    backgroundColor: `${theme.color}1a`,
-    fontWeight: 600
+    '--theme-color': theme.color,
+    '--theme-color-bg': `${theme.color}1a`,
+    '--theme-color-bg-hover': `${theme.color}1f`
   }
 }
 
@@ -206,13 +205,13 @@ const themeOptionStyle = (theme) => {
 
   header :deep(.el-dropdown) .el-button {
     padding: 0 5px;
-    font-size: 14px;
+    font-size: 13px;
   }
 
   nav :deep(button) {
     height: 36px;
     padding: 0 12px;
-    font-size: 15px;
+    font-size: 13px;
   }
 
   nav .scrollBar {
