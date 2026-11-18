@@ -9,7 +9,9 @@
             var DESIGN_HEIGHT = 1080;
 
             function setRootFontSize() {
-                var isBrowseRoute = /^#\/(?:home|platform)(?:\/|$)/.test(location.hash);
+                var hash = location.hash;
+                var isBrowseRoute = !hash || hash === '#' || hash === '#/'
+                    || /^#\/(?:home|platform)(?:\/|$)/.test(hash);
                 if (isBrowseRoute) {
                     document.documentElement.style.fontSize = '108px';
                     return;

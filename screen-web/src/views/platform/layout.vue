@@ -185,6 +185,16 @@ const isMenuActive = (path) => route.path === path || route.path.startsWith(`${p
     padding: 0 12px;
     font-size: 15px;
   }
+
+  nav .scrollBar {
+    scrollbar-width: none;
+  }
+
+  nav .scrollBar::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
 }
 
 </style>
