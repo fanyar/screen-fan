@@ -36,9 +36,10 @@
           <el-dropdown trigger="click" @command="themeStore.setTheme">
             <button
                 type="button"
+                aria-label="换肤"
                 class="flex h-[34px] items-center rounded-[4px] px-[8px] text-[15px] text-sx-primary transition-colors hover:bg-sx-soft hover:text-sx-primary"
             >
-              <span>换肤</span>
+              <span class="theme-switch-icon" v-html="themeSwitchIcon"/>
             </button>
             <template #dropdown>
               <el-dropdown-menu>
@@ -46,13 +47,12 @@
                     v-for="theme in platformThemes"
                     :key="theme.id"
                     :command="theme.id"
+                    :class="{'theme-option--active': isThemeActive(theme.id)}"
+                    :style="themeOptionStyle(theme)"
                 >
                   <span class="flex items-center gap-[8px]">
                     <span class="h-[10px] w-[10px] rounded-full" :style="{background: theme.color}"/>
                     <span>{{ theme.name }}</span>
-                    <el-icon v-if="themeStore.currentThemeId === theme.id" class="text-sx-primary">
-                      <Check/>
-                    </el-icon>
                   </span>
                 </el-dropdown-item>
               </el-dropdown-menu>
@@ -89,6 +89,7 @@ import {
 import {useRoute} from 'vue-router'
 import {useThemeStore} from '@/store/modules/theme'
 import PlatformSearch from '@/components/platform/PlatformSearch.vue'
+import themeSwitchIcon from '@/assets/images/platform/theme-switch.svg?raw'
 const menu = PLATFORM_MENU
 const platformName = PLATFORM_NAME
 const showDarkModeToggle = PLATFORM_SHOW_DARK_MODE_TOGGLE
@@ -97,6 +98,17 @@ const platformThemes = PLATFORM_THEMES
 const themeStore = useThemeStore()
 
 const isMenuActive = (path) => route.path === path || route.path.startsWith(`${path}/`)
+
+const isThemeActive = (themeId) => themeStore.currentThemeId === themeId
+
+const themeOptionStyle = (theme) => {
+  if (!isThemeActive(theme.id)) return undefined
+  return {
+    color: theme.color,
+    backgroundColor: `${theme.color}1a`,
+    fontWeight: 600
+  }
+}
 
 </script>
 
@@ -147,6 +159,23 @@ const isMenuActive = (path) => route.path === path || route.path.startsWith(`${p
   --scrollbar-thumb-bg: var(--sx-primary);
   --scrollbar-thumb-hover: var(--sx-primary-hover);
   --scrollbar-track-bg: var(--sx-primary-soft);
+}
+
+.theme-switch-icon {
+  display: block;
+  width: 20px;
+  height: 18px;
+  color: inherit;
+}
+
+.theme-switch-icon :deep(svg) {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.theme-switch-icon :deep(svg path) {
+  fill: currentColor;
 }
 
 @media (max-width: 720px) {
