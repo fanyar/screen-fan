@@ -28,6 +28,8 @@ jobs:
           cache: npm
           cache-dependency-path: screen-web/package-lock.json
       - run: npm ci
+      - name: Install Linux native build dependencies
+        run: npm install --no-save @rollup/rollup-linux-x64-gnu@4.13.0 @esbuild/linux-x64@0.20.2
       - run: |
           set -o pipefail
           npm run build 2>&1 | tee build-output.log
