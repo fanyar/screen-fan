@@ -10,7 +10,7 @@
         class="search-input"
         autocomplete="off"
         clearable
-        placeholder="搜索作品、漫画、电影、动漫、文章"
+        placeholder="搜索作品、漫画、电影、动漫、模型、游戏、文章"
         @focus="openSearch"
         @input="handleInput"
         @clear="clearSearch"
@@ -93,7 +93,8 @@
 <script setup>
 import {computed, onBeforeUnmount, onMounted, ref} from 'vue'
 import {useRouter} from 'vue-router'
-import {globalSearch} from '@/api/platform'
+import {getModels, globalSearch} from '@/api/platform'
+import {PLATFORM_GAMES} from '@/const/games'
 
 const router = useRouter()
 const root = ref(null)
@@ -108,6 +109,19 @@ const result = ref({
   comics: [],
   movies: [],
   anime: [],
+  models: [],
+  games: [],
+  articles: [],
+  total: 0
+})
+
+const emptySearchResult = () => ({
+  works: [],
+  comics: [],
+  movies: [],
+  anime: [],
+  models: [],
+  games: [],
   articles: [],
   total: 0
 })
@@ -119,6 +133,8 @@ const groupDefinitions = [
   {key: 'comics', label: '漫画', short: '漫画', path: 'comics'},
   {key: 'movies', label: '电影', short: '电影', path: 'movies'},
   {key: 'anime', label: '动漫', short: '动漫', path: 'anime'},
+  {key: 'models', label: '模型', short: '模型', path: 'models'},
+  {key: 'games', label: '游戏', short: '游戏', path: 'games'},
   {key: 'articles', label: '文章', short: '文章', path: 'articles'}
 ]
 
@@ -162,6 +178,8 @@ const metaText = (type, item) => {
   if (type === 'comics') return `${item.status} · ${item.chapters} 话`
   if (type === 'movies') return `${item.year} · ${item.genre} · ${item.rating} 分`
   if (type === 'anime') return `${item.year} · ${item.genre} · ${item.episodes} 集`
+  if (type === 'models') return `${item.category} · ${(item.tags || []).slice(0, 2).join(' / ') || '模型'}`
+  if (type === 'games') return `${(item.tags || []).slice(0, 2).join(' / ') || '游戏'} · ${item.badge}`
   return `${item.date} · ${item.viewCount} 次阅读`
 }
 
@@ -174,7 +192,7 @@ const clearSearch = () => {
   keyword.value = ''
   loading.value = false
   visible.value = false
-  result.value = {works: [], comics: [], movies: [], anime: [], articles: [], total: 0}
+  result.value = emptySearchResult()
 }
 
 const closePanel = () => {
@@ -206,12 +224,29 @@ const runSearch = async () => {
   activeIndex.value = 0
   activeType.value = 'all'
   try {
-    const data = await globalSearch({keyword: keyword.value, limit: 5})
+    const queryKeyword = keyword.value
+    const [data, modelResult] = await Promise.all([
+      globalSearch({keyword: queryKeyword, limit: 5}),
+      getModels({keyword: queryKeyword, page: 1, pageSize: 5}).catch(() => ({items: []}))
+    ])
+    const normalizedKeyword = queryKeyword.toLowerCase()
+    const games = PLATFORM_GAMES.filter(game => [game.title, game.desc, game.tags]
+        .some(field => Array.isArray(field)
+            ? field.some(tag => tag.toLowerCase().includes(normalizedKeyword))
+            : field.toLowerCase().includes(normalizedKeyword)
+        ))
+        .slice(0, 5)
     if (requestId !== current) return
-    result.value = data
+    result.value = {
+      ...emptySearchResult(),
+      ...data,
+      models: modelResult.items || [],
+      games,
+      total: Number(data.total || 0) + (modelResult.items?.length || 0) + games.length
+    }
   } catch (error) {
     if (requestId === current) {
-      result.value = {works: [], comics: [], movies: [], anime: [], articles: [], total: 0}
+      result.value = emptySearchResult()
     }
   } finally {
     if (requestId === current) loading.value = false
@@ -219,12 +254,21 @@ const runSearch = async () => {
 }
 
 const openItem = (type, item) => {
+  const modelPath = item.fileUrl === '/platform/models/house-tour'
+    ? '/platform/models/house-tour'
+    : item.fileUrl === '/platform/models/villa'
+      ? '/platform/models/villa'
+      : item.fileUrl === '/platform/models/suzhou-garden'
+        ? '/platform/models/suzhou-garden'
+        : `/platform/models/${item.id}`
   const paths = {
     works: `/platform/works/${item.id}`,
     comics: `/platform/comics/${item.id}`,
     movies: `/platform/movies/${item.id}`,
     anime: `/platform/anime/${item.id}`,
-    articles: `/platform/articles/${item.id}`
+    articles: `/platform/articles/${item.id}`,
+    models: modelPath,
+    games: item.path
   }
   closePanel()
   clearSearch()
