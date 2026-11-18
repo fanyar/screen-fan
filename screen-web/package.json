@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "create:wuhan-bridge": "node scripts/create-wuhan-yangtze-river-bridge.js",
     "create:yingwuzhou-bridge": "node scripts/create-yingwuzhou-yangtze-river-bridge.js",
-    "create:hankou-changfeng-bridge": "node scripts/create-hankou-changfeng-bridge.js"
+    "create:hankou-changfeng-bridge": "node scripts/create-hankou-changfeng-bridge.js",
+    "sync:mock": "node scripts/sync-mock.mjs"
   },
   "dependencies": {
     "@kjgl77/datav-vue3": "^1.7.2",

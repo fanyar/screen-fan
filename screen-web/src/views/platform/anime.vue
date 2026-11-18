@@ -14,7 +14,7 @@
         @reset="reset"
     />
 
-    <div v-loading="loading" class="grid grid-cols-1 gap-[16px] sm:grid-cols-2 lg:grid-cols-3">
+    <div v-loading="loading" class="grid grid-cols-2 gap-[12px] sm:grid-cols-2 lg:grid-cols-3">
       <div
           v-for="item in anime"
           :key="item.id"

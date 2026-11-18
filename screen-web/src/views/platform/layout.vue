@@ -13,17 +13,8 @@
           </svg>
           <span class="text-[18px] font-semibold text-sx-title">{{ platformName }}</span>
         </button>
-        <div class="flex shrink-0 items-center gap-[8px]">
+        <div class="platform-actions flex shrink-0 items-center gap-[8px]">
           <PlatformSearch/>
-          <button
-              type="button"
-              class="header-profile"
-              aria-label="个人中心"
-              @click="$router.push('/platform/profile')"
-          >
-            <el-icon><User/></el-icon>
-            <span>我的</span>
-          </button>
           <button
               type="button"
               class="header-favorite"
@@ -67,31 +58,6 @@
               </el-dropdown-menu>
             </template>
           </el-dropdown>
-          <template v-if="userStore.isLoggedIn">
-            <span class="max-w-[96px] truncate text-[15px] text-sx-title">
-              {{ userStore.userInfo.name }}
-            </span>
-            <button
-                class="h-[34px] rounded-[4px] px-[8px] text-[15px] text-sx-muted transition-colors hover:bg-sx-soft hover:text-sx-primary"
-                @click="handleLogout"
-            >
-              退出
-            </button>
-          </template>
-          <template v-else>
-            <button
-                class="h-[34px] rounded-[4px] px-[10px] text-[15px] text-sx-muted transition-colors hover:bg-sx-soft hover:text-sx-primary"
-                @click="openAuth(PLATFORM_AUTH_MODES.LOGIN)"
-            >
-              登录
-            </button>
-            <button
-                class="h-[34px] rounded-[4px] bg-sx-primary px-[12px] text-[15px] text-white transition-colors hover:bg-sx-primary-hover"
-                @click="openAuth(PLATFORM_AUTH_MODES.REGISTER)"
-            >
-              注册
-            </button>
-          </template>
         </div>
       </div>
       <nav class="border-b border-sx-line bg-sx-nav-bg">
@@ -111,18 +77,10 @@
       <router-view></router-view>
     </main>
   </div>
-  <PlatformAuthDialog
-      v-model="authVisible"
-      :mode="authMode"
-      @mode-change="authMode = $event"
-  />
 </template>
 
 <script setup>
-import {ref} from 'vue'
-import {ElMessage} from 'element-plus'
 import {
-  PLATFORM_AUTH_MODES,
   PLATFORM_MENU,
   PLATFORM_NAME,
   PLATFORM_SHOW_DARK_MODE_TOGGLE,
@@ -130,29 +88,15 @@ import {
 } from '@/const/platform'
 import {useRoute} from 'vue-router'
 import {useThemeStore} from '@/store/modules/theme'
-import {useUserStore} from '@/store/modules/user'
-import PlatformAuthDialog from '@/components/platform/PlatformAuthDialog.vue'
 import PlatformSearch from '@/components/platform/PlatformSearch.vue'
-let menu = PLATFORM_MENU
-let showDarkModeToggle = PLATFORM_SHOW_DARK_MODE_TOGGLE
-let route = useRoute()
-let platformThemes = PLATFORM_THEMES
-let themeStore = useThemeStore()
-let userStore = useUserStore()
-let authVisible = ref(false)
-let authMode = ref(PLATFORM_AUTH_MODES.LOGIN)
+const menu = PLATFORM_MENU
+const showDarkModeToggle = PLATFORM_SHOW_DARK_MODE_TOGGLE
+const route = useRoute()
+const platformThemes = PLATFORM_THEMES
+const themeStore = useThemeStore()
 
 const isMenuActive = (path) => route.path === path || route.path.startsWith(`${path}/`)
 
-const openAuth = (mode) => {
-  authMode.value = mode
-  authVisible.value = true
-}
-
-const handleLogout = () => {
-  userStore.logout()
-  ElMessage.success('已退出登录')
-}
 </script>
 
 <style scoped lang="scss">
@@ -205,6 +149,10 @@ const handleLogout = () => {
 }
 
 @media (max-width: 720px) {
+  .platform-actions {
+    gap: 5px;
+  }
+
   .header-profile span,
   .header-favorite span {
     display: none;
@@ -215,6 +163,22 @@ const handleLogout = () => {
     width: 34px;
     justify-content: center;
     padding: 0;
+  }
+
+  .header-dark-toggle {
+    width: 30px;
+    height: 30px;
+  }
+
+  header :deep(.el-dropdown) .el-button {
+    padding: 0 5px;
+    font-size: 14px;
+  }
+
+  nav :deep(button) {
+    height: 36px;
+    padding: 0 12px;
+    font-size: 15px;
   }
 }
 

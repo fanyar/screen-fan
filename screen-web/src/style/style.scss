@@ -416,3 +416,19 @@ a:hover {
 
   color-scheme: dark;
 }
+
+@media (max-width: 720px) {
+  .list-footer {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .list-footer .el-pagination {
+    justify-content: center;
+  }
+
+  .list-footer .el-pagination .el-pagination__sizes {
+    display: none;
+  }
+}

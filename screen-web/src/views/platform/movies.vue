@@ -14,7 +14,7 @@
         @reset="reset"
     />
 
-    <div v-loading="loading" class="grid grid-cols-3 gap-[16px]">
+    <div v-loading="loading" class="grid grid-cols-2 gap-[12px] sm:grid-cols-3 sm:gap-[16px]">
       <div
           v-for="item in movies"
           :key="item.id"

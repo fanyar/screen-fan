@@ -1,0 +1,2996 @@
+{
+  "version": 1,
+  "generatedAt": "2026-11-18T07:48:47.051Z",
+  "works": {
+    "list": {
+      "items": [
+        {
+          "id": "7a96da9c-4584-401c-a032-3c13bf11dbe6",
+          "title": "甬莞高速洞头支线第TJ02标段",
+          "cover": "mock/assets/uploads/ca39b0a1-77bd-4072-a711-5a3660f89859.png",
+          "desc": "",
+          "tags": [
+            "可视化"
+          ],
+          "year": 2026
+        },
+        {
+          "id": "34f2e2bb-8f1a-4c30-891f-b2eca336f36b",
+          "title": "智慧试验室系统",
+          "cover": "mock/assets/uploads/846c7d27-7b0c-4353-aefa-0a29e648c80a.png",
+          "desc": "",
+          "tags": [
+            "水泥",
+            "试验室"
+          ],
+          "year": 2026
+        },
+        {
+          "id": "5731e0f8-1b70-43ad-9c89-8e67abc5ce88",
+          "title": "梁场可视化",
+          "cover": "mock/assets/uploads/59d1e426-d84c-42a8-b1dd-b7da84253227.png",
+          "desc": "推进新型工业化 培育新质生产力",
+          "tags": [
+            "数据可视化",
+            "大屏"
+          ],
+          "year": 2025
+        },
+        {
+          "id": "76f7b39c-0912-44a5-8fa7-8c42cd2134fa",
+          "title": "梁场产业平台",
+          "cover": "mock/assets/uploads/2ede2e1a-2ba4-47b6-b045-ddcbfe1394d9.png",
+          "desc": "对接产线 PLC 与传感器，实时展示工序节拍、质量合格率与产能趋势，异常自动高亮预警。",
+          "tags": [
+            "工业互联网",
+            "ECharts"
+          ],
+          "year": 2024
+        },
+        {
+          "id": "72ea3cac-6cd2-4e70-9568-4ad1aae8bd7d",
+          "title": "梁场应用平台",
+          "cover": "mock/assets/uploads/675b6ccc-6d6a-4af1-88c1-de62b17d6ff4.png",
+          "desc": "推进新型工业化 培育新质生产力",
+          "tags": [
+            "预制",
+            "存储",
+            "运输",
+            "架设"
+          ],
+          "year": 2024
+        },
+        {
+          "id": "2a6e7a54-29bf-4207-8106-9e88b0065ea2",
+          "title": "钢筋云工厂",
+          "cover": "mock/assets/uploads/8f804baa-495c-4722-b7d4-2235559c00b8.png",
+          "desc": "欢迎使用中交钢筋数字化云工厂 聚焦智慧建造、提供一体化价值增益服务",
+          "tags": [
+            "物联网",
+            "监测"
+          ],
+          "year": 2024
+        }
+      ],
+      "total": 6,
+      "page": 1,
+      "pageSize": 50
+    },
+    "details": {
+      "7a96da9c-4584-401c-a032-3c13bf11dbe6": {
+        "id": "7a96da9c-4584-401c-a032-3c13bf11dbe6",
+        "title": "甬莞高速洞头支线第TJ02标段",
+        "cover": "mock/assets/uploads/ca39b0a1-77bd-4072-a711-5a3660f89859.png",
+        "desc": "",
+        "tags": [
+          "可视化"
+        ],
+        "year": 2026,
+        "role": "",
+        "period": "",
+        "projectUrl": null,
+        "techStack": [],
+        "content": "",
+        "result": "",
+        "images": [],
+        "viewCount": 10,
+        "visitorCount": 2,
+        "related": []
+      },
+      "34f2e2bb-8f1a-4c30-891f-b2eca336f36b": {
+        "id": "34f2e2bb-8f1a-4c30-891f-b2eca336f36b",
+        "title": "智慧试验室系统",
+        "cover": "mock/assets/uploads/846c7d27-7b0c-4353-aefa-0a29e648c80a.png",
+        "desc": "",
+        "tags": [
+          "水泥",
+          "试验室"
+        ],
+        "year": 2026,
+        "role": "",
+        "period": "",
+        "projectUrl": null,
+        "techStack": [],
+        "content": "",
+        "result": "",
+        "images": [],
+        "viewCount": 8,
+        "visitorCount": 2,
+        "related": []
+      },
+      "5731e0f8-1b70-43ad-9c89-8e67abc5ce88": {
+        "id": "5731e0f8-1b70-43ad-9c89-8e67abc5ce88",
+        "title": "梁场可视化",
+        "cover": "mock/assets/uploads/59d1e426-d84c-42a8-b1dd-b7da84253227.png",
+        "desc": "推进新型工业化 培育新质生产力",
+        "tags": [
+          "数据可视化",
+          "大屏"
+        ],
+        "year": 2025,
+        "role": "",
+        "period": "",
+        "projectUrl": null,
+        "techStack": [],
+        "content": "",
+        "result": "",
+        "images": [],
+        "viewCount": 22,
+        "visitorCount": 6,
+        "related": []
+      },
+      "76f7b39c-0912-44a5-8fa7-8c42cd2134fa": {
+        "id": "76f7b39c-0912-44a5-8fa7-8c42cd2134fa",
+        "title": "梁场产业平台",
+        "cover": "mock/assets/uploads/2ede2e1a-2ba4-47b6-b045-ddcbfe1394d9.png",
+        "desc": "对接产线 PLC 与传感器，实时展示工序节拍、质量合格率与产能趋势，异常自动高亮预警。",
+        "tags": [
+          "工业互联网",
+          "ECharts"
+        ],
+        "year": 2024,
+        "role": "",
+        "period": "",
+        "projectUrl": null,
+        "techStack": [],
+        "content": "",
+        "result": "",
+        "images": [],
+        "viewCount": 9,
+        "visitorCount": 2,
+        "related": []
+      },
+      "72ea3cac-6cd2-4e70-9568-4ad1aae8bd7d": {
+        "id": "72ea3cac-6cd2-4e70-9568-4ad1aae8bd7d",
+        "title": "梁场应用平台",
+        "cover": "mock/assets/uploads/675b6ccc-6d6a-4af1-88c1-de62b17d6ff4.png",
+        "desc": "推进新型工业化 培育新质生产力",
+        "tags": [
+          "预制",
+          "存储",
+          "运输",
+          "架设"
+        ],
+        "year": 2024,
+        "role": "",
+        "period": "",
+        "projectUrl": null,
+        "techStack": [],
+        "content": "",
+        "result": "",
+        "images": [],
+        "viewCount": 9,
+        "visitorCount": 2,
+        "related": []
+      },
+      "2a6e7a54-29bf-4207-8106-9e88b0065ea2": {
+        "id": "2a6e7a54-29bf-4207-8106-9e88b0065ea2",
+        "title": "钢筋云工厂",
+        "cover": "mock/assets/uploads/8f804baa-495c-4722-b7d4-2235559c00b8.png",
+        "desc": "欢迎使用中交钢筋数字化云工厂 聚焦智慧建造、提供一体化价值增益服务",
+        "tags": [
+          "物联网",
+          "监测"
+        ],
+        "year": 2024,
+        "role": "",
+        "period": "",
+        "projectUrl": null,
+        "techStack": [],
+        "content": "",
+        "result": "",
+        "images": [],
+        "viewCount": 7,
+        "visitorCount": 1,
+        "related": []
+      }
+    }
+  },
+  "comics": {
+    "list": {
+      "items": [
+        {
+          "id": "ccbdd2bb-28ae-404e-9a71-7c901982a3b2",
+          "title": "像素星球",
+          "cover": "mock/assets/src/assets/images/platform/comics/city-night.svg",
+          "status": "连载中",
+          "chapters": 12,
+          "desc": "一个关于像素世界冒险的短篇连载。"
+        },
+        {
+          "id": "160d6d30-61f1-4e04-a023-5d3a7691caf4",
+          "title": "深夜代码",
+          "cover": "mock/assets/src/assets/images/platform/comics/daily-pieces.svg",
+          "status": "完结",
+          "chapters": 8,
+          "desc": "程序员日常吐槽四格漫画合集。"
+        },
+        {
+          "id": "e8aa01db-6892-4934-9811-e9ca5e5619d2",
+          "title": "猫与终端",
+          "cover": "mock/assets/src/assets/images/platform/comics/short-stories.svg",
+          "status": "连载中",
+          "chapters": 5,
+          "desc": "一只猫和一台旧终端的治愈故事。"
+        }
+      ],
+      "total": 3,
+      "page": 1,
+      "pageSize": 50
+    },
+    "details": {
+      "ccbdd2bb-28ae-404e-9a71-7c901982a3b2": {
+        "id": "ccbdd2bb-28ae-404e-9a71-7c901982a3b2",
+        "title": "像素星球",
+        "cover": "mock/assets/src/assets/images/platform/comics/city-night.svg",
+        "status": "连载中",
+        "chapters": 12,
+        "desc": "一个关于像素世界冒险的短篇连载。",
+        "chapterList": [
+          {
+            "id": "1c28a382-5376-4db6-b57e-84b520b9a780",
+            "comicId": "ccbdd2bb-28ae-404e-9a71-7c901982a3b2",
+            "chapterNo": 1,
+            "title": "第 1 话",
+            "summary": "本地存量章节，正文和页面可在后台上传补充。",
+            "pages": [
+              "mock/assets/src/assets/images/platform/comics/city-night.svg",
+              "mock/assets/src/assets/images/platform/comics/city-night.svg",
+              "mock/assets/src/assets/images/platform/comics/city-night.svg"
+            ],
+            "date": "2025-01-01"
+          },
+          {
+            "id": "36bc6412-d613-4bf5-8266-429231bee3f4",
+            "comicId": "ccbdd2bb-28ae-404e-9a71-7c901982a3b2",
+            "chapterNo": 2,
+            "title": "第 2 话",
+            "summary": "本地存量章节，正文和页面可在后台上传补充。",
+            "pages": [
+              "mock/assets/src/assets/images/platform/comics/city-night.svg",
+              "mock/assets/src/assets/images/platform/comics/city-night.svg",
+              "mock/assets/src/assets/images/platform/comics/city-night.svg"
+            ],
+            "date": "2025-01-02"
+          },
+          {
+            "id": "63fb39f8-198f-498b-9940-afc3eb2c1a1b",
+            "comicId": "ccbdd2bb-28ae-404e-9a71-7c901982a3b2",
+            "chapterNo": 3,
+            "title": "第 3 话",
+            "summary": "本地存量章节，正文和页面可在后台上传补充。",
+            "pages": [
+              "mock/assets/src/assets/images/platform/comics/city-night.svg",
+              "mock/assets/src/assets/images/platform/comics/city-night.svg",
+              "mock/assets/src/assets/images/platform/comics/city-night.svg"
+            ],
+            "date": "2025-01-03"
+          },
+          {
+            "id": "88f58d72-8a0e-4c8a-924e-23beac9e2341",
+            "comicId": "ccbdd2bb-28ae-404e-9a71-7c901982a3b2",
+            "chapterNo": 4,
+            "title": "第 4 话",
+            "summary": "本地存量章节，正文和页面可在后台上传补充。",
+            "pages": [
+              "mock/assets/src/assets/images/platform/comics/city-night.svg",
+              "mock/assets/src/assets/images/platform/comics/city-night.svg",
+              "mock/assets/src/assets/images/platform/comics/city-night.svg"
+            ],
+            "date": "2025-01-04"
+          },
+          {
+            "id": "d00a58d4-537c-456e-a52b-aa47d0b9d498",
+            "comicId": "ccbdd2bb-28ae-404e-9a71-7c901982a3b2",
+            "chapterNo": 5,
+            "title": "第 5 话",
+            "summary": "本地存量章节，正文和页面可在后台上传补充。",
+            "pages": [
+              "mock/assets/src/assets/images/platform/comics/city-night.svg",
+              "mock/assets/src/assets/images/platform/comics/city-night.svg",
+              "mock/assets/src/assets/images/platform/comics/city-night.svg"
+            ],
+            "date": "2025-01-05"
+          },
+          {
+            "id": "551b5d8d-233e-4ef3-b97c-7272bf73f2aa",
+            "comicId": "ccbdd2bb-28ae-404e-9a71-7c901982a3b2",
+            "chapterNo": 6,
+            "title": "第 6 话",
+            "summary": "本地存量章节，正文和页面可在后台上传补充。",
+            "pages": [
+              "mock/assets/src/assets/images/platform/comics/city-night.svg",
+              "mock/assets/src/assets/images/platform/comics/city-night.svg",
+              "mock/assets/src/assets/images/platform/comics/city-night.svg"
+            ],
+            "date": "2025-01-06"
+          },
+          {
+            "id": "10ddba18-8b5f-482f-92a8-051355a65845",
+            "comicId": "ccbdd2bb-28ae-404e-9a71-7c901982a3b2",
+            "chapterNo": 7,
+            "title": "第 7 话",
+            "summary": "本地存量章节，正文和页面可在后台上传补充。",
+            "pages": [
+              "mock/assets/src/assets/images/platform/comics/city-night.svg",
+              "mock/assets/src/assets/images/platform/comics/city-night.svg",
+              "mock/assets/src/assets/images/platform/comics/city-night.svg"
+            ],
+            "date": "2025-01-07"
+          },
+          {
+            "id": "ec7612f2-8f1a-475c-8d3d-a14173b03cbb",
+            "comicId": "ccbdd2bb-28ae-404e-9a71-7c901982a3b2",
+            "chapterNo": 8,
+            "title": "第 8 话",
+            "summary": "本地存量章节，正文和页面可在后台上传补充。",
+            "pages": [
+              "mock/assets/src/assets/images/platform/comics/city-night.svg",
+              "mock/assets/src/assets/images/platform/comics/city-night.svg",
+              "mock/assets/src/assets/images/platform/comics/city-night.svg"
+            ],
+            "date": "2025-01-08"
+          },
+          {
+            "id": "53067c39-54c5-415d-ba45-2df433466695",
+            "comicId": "ccbdd2bb-28ae-404e-9a71-7c901982a3b2",
+            "chapterNo": 9,
+            "title": "第 9 话",
+            "summary": "本地存量章节，正文和页面可在后台上传补充。",
+            "pages": [
+              "mock/assets/src/assets/images/platform/comics/city-night.svg",
+              "mock/assets/src/assets/images/platform/comics/city-night.svg",
+              "mock/assets/src/assets/images/platform/comics/city-night.svg"
+            ],
+            "date": "2025-01-09"
+          },
+          {
+            "id": "e703e211-96eb-4760-b888-c205c8fc50b5",
+            "comicId": "ccbdd2bb-28ae-404e-9a71-7c901982a3b2",
+            "chapterNo": 10,
+            "title": "第 10 话",
+            "summary": "本地存量章节，正文和页面可在后台上传补充。",
+            "pages": [
+              "mock/assets/src/assets/images/platform/comics/city-night.svg",
+              "mock/assets/src/assets/images/platform/comics/city-night.svg",
+              "mock/assets/src/assets/images/platform/comics/city-night.svg"
+            ],
+            "date": "2025-01-10"
+          },
+          {
+            "id": "04ac1f40-8104-4232-8092-77736d7f76ef",
+            "comicId": "ccbdd2bb-28ae-404e-9a71-7c901982a3b2",
+            "chapterNo": 11,
+            "title": "第 11 话",
+            "summary": "本地存量章节，正文和页面可在后台上传补充。",
+            "pages": [
+              "mock/assets/src/assets/images/platform/comics/city-night.svg",
+              "mock/assets/src/assets/images/platform/comics/city-night.svg",
+              "mock/assets/src/assets/images/platform/comics/city-night.svg"
+            ],
+            "date": "2025-01-11"
+          },
+          {
+            "id": "1e4e9da1-12d9-4edc-8e43-5b29fbcc6932",
+            "comicId": "ccbdd2bb-28ae-404e-9a71-7c901982a3b2",
+            "chapterNo": 12,
+            "title": "第 12 话",
+            "summary": "本地存量章节，正文和页面可在后台上传补充。",
+            "pages": [
+              "mock/assets/src/assets/images/platform/comics/city-night.svg",
+              "mock/assets/src/assets/images/platform/comics/city-night.svg",
+              "mock/assets/src/assets/images/platform/comics/city-night.svg"
+            ],
+            "date": "2025-01-12"
+          }
+        ],
+        "viewCount": 13,
+        "visitorCount": 3,
+        "related": [
+          {
+            "id": "160d6d30-61f1-4e04-a023-5d3a7691caf4",
+            "title": "深夜代码",
+            "cover": "mock/assets/src/assets/images/platform/comics/daily-pieces.svg",
+            "contentType": "comics"
+          },
+          {
+            "id": "e8aa01db-6892-4934-9811-e9ca5e5619d2",
+            "title": "猫与终端",
+            "cover": "mock/assets/src/assets/images/platform/comics/short-stories.svg",
+            "contentType": "comics"
+          }
+        ]
+      },
+      "160d6d30-61f1-4e04-a023-5d3a7691caf4": {
+        "id": "160d6d30-61f1-4e04-a023-5d3a7691caf4",
+        "title": "深夜代码",
+        "cover": "mock/assets/src/assets/images/platform/comics/daily-pieces.svg",
+        "status": "完结",
+        "chapters": 8,
+        "desc": "程序员日常吐槽四格漫画合集。",
+        "chapterList": [
+          {
+            "id": "f81ebdcd-ce7e-48e4-a1d2-679ebea72262",
+            "comicId": "160d6d30-61f1-4e04-a023-5d3a7691caf4",
+            "chapterNo": 1,
+            "title": "第 1 话",
+            "summary": "本地存量章节，正文和页面可在后台上传补充。",
+            "pages": [
+              "mock/assets/src/assets/images/platform/comics/daily-pieces.svg",
+              "mock/assets/src/assets/images/platform/comics/daily-pieces.svg",
+              "mock/assets/src/assets/images/platform/comics/daily-pieces.svg"
+            ],
+            "date": "2025-01-01"
+          },
+          {
+            "id": "69fc5ff8-8289-4dfc-a660-35fa4ad55b86",
+            "comicId": "160d6d30-61f1-4e04-a023-5d3a7691caf4",
+            "chapterNo": 2,
+            "title": "第 2 话",
+            "summary": "本地存量章节，正文和页面可在后台上传补充。",
+            "pages": [
+              "mock/assets/src/assets/images/platform/comics/daily-pieces.svg",
+              "mock/assets/src/assets/images/platform/comics/daily-pieces.svg",
+              "mock/assets/src/assets/images/platform/comics/daily-pieces.svg"
+            ],
+            "date": "2025-01-02"
+          },
+          {
+            "id": "5e506be8-d0c2-434a-9eac-94d812a225e2",
+            "comicId": "160d6d30-61f1-4e04-a023-5d3a7691caf4",
+            "chapterNo": 3,
+            "title": "第 3 话",
+            "summary": "本地存量章节，正文和页面可在后台上传补充。",
+            "pages": [
+              "mock/assets/src/assets/images/platform/comics/daily-pieces.svg",
+              "mock/assets/src/assets/images/platform/comics/daily-pieces.svg",
+              "mock/assets/src/assets/images/platform/comics/daily-pieces.svg"
+            ],
+            "date": "2025-01-03"
+          },
+          {
+            "id": "98ac564c-8be3-4861-9efa-b78d3611ae7e",
+            "comicId": "160d6d30-61f1-4e04-a023-5d3a7691caf4",
+            "chapterNo": 4,
+            "title": "第 4 话",
+            "summary": "本地存量章节，正文和页面可在后台上传补充。",
+            "pages": [
+              "mock/assets/src/assets/images/platform/comics/daily-pieces.svg",
+              "mock/assets/src/assets/images/platform/comics/daily-pieces.svg",
+              "mock/assets/src/assets/images/platform/comics/daily-pieces.svg"
+            ],
+            "date": "2025-01-04"
+          },
+          {
+            "id": "91174136-d751-4023-978f-eb67579df733",
+            "comicId": "160d6d30-61f1-4e04-a023-5d3a7691caf4",
+            "chapterNo": 5,
+            "title": "第 5 话",
+            "summary": "本地存量章节，正文和页面可在后台上传补充。",
+            "pages": [
+              "mock/assets/src/assets/images/platform/comics/daily-pieces.svg",
+              "mock/assets/src/assets/images/platform/comics/daily-pieces.svg",
+              "mock/assets/src/assets/images/platform/comics/daily-pieces.svg"
+            ],
+            "date": "2025-01-05"
+          },
+          {
+            "id": "c97f50a0-0a46-4e09-b4dc-00e12d225a87",
+            "comicId": "160d6d30-61f1-4e04-a023-5d3a7691caf4",
+            "chapterNo": 6,
+            "title": "第 6 话",
+            "summary": "本地存量章节，正文和页面可在后台上传补充。",
+            "pages": [
+              "mock/assets/src/assets/images/platform/comics/daily-pieces.svg",
+              "mock/assets/src/assets/images/platform/comics/daily-pieces.svg",
+              "mock/assets/src/assets/images/platform/comics/daily-pieces.svg"
+            ],
+            "date": "2025-01-06"
+          },
+          {
+            "id": "e3508480-7099-4b7c-bbae-73ec0248cf08",
+            "comicId": "160d6d30-61f1-4e04-a023-5d3a7691caf4",
+            "chapterNo": 7,
+            "title": "第 7 话",
+            "summary": "本地存量章节，正文和页面可在后台上传补充。",
+            "pages": [
+              "mock/assets/src/assets/images/platform/comics/daily-pieces.svg",
+              "mock/assets/src/assets/images/platform/comics/daily-pieces.svg",
+              "mock/assets/src/assets/images/platform/comics/daily-pieces.svg"
+            ],
+            "date": "2025-01-07"
+          },
+          {
+            "id": "7d5ae6e2-82f3-45e8-98eb-549fefa0d377",
+            "comicId": "160d6d30-61f1-4e04-a023-5d3a7691caf4",
+            "chapterNo": 8,
+            "title": "第 8 话",
+            "summary": "本地存量章节，正文和页面可在后台上传补充。",
+            "pages": [
+              "mock/assets/src/assets/images/platform/comics/daily-pieces.svg",
+              "mock/assets/src/assets/images/platform/comics/daily-pieces.svg",
+              "mock/assets/src/assets/images/platform/comics/daily-pieces.svg"
+            ],
+            "date": "2025-01-08"
+          }
+        ],
+        "viewCount": 19,
+        "visitorCount": 2,
+        "related": [
+          {
+            "id": "ccbdd2bb-28ae-404e-9a71-7c901982a3b2",
+            "title": "像素星球",
+            "cover": "mock/assets/src/assets/images/platform/comics/city-night.svg",
+            "contentType": "comics"
+          },
+          {
+            "id": "e8aa01db-6892-4934-9811-e9ca5e5619d2",
+            "title": "猫与终端",
+            "cover": "mock/assets/src/assets/images/platform/comics/short-stories.svg",
+            "contentType": "comics"
+          }
+        ]
+      },
+      "e8aa01db-6892-4934-9811-e9ca5e5619d2": {
+        "id": "e8aa01db-6892-4934-9811-e9ca5e5619d2",
+        "title": "猫与终端",
+        "cover": "mock/assets/src/assets/images/platform/comics/short-stories.svg",
+        "status": "连载中",
+        "chapters": 5,
+        "desc": "一只猫和一台旧终端的治愈故事。",
+        "chapterList": [
+          {
+            "id": "191425f6-f66d-4546-81a8-40195c1c129a",
+            "comicId": "e8aa01db-6892-4934-9811-e9ca5e5619d2",
+            "chapterNo": 1,
+            "title": "第 1 话",
+            "summary": "本地存量章节，正文和页面可在后台上传补充。",
+            "pages": [
+              "mock/assets/src/assets/images/platform/comics/short-stories.svg",
+              "mock/assets/src/assets/images/platform/comics/short-stories.svg",
+              "mock/assets/src/assets/images/platform/comics/short-stories.svg"
+            ],
+            "date": "2025-01-01"
+          },
+          {
+            "id": "cdeb3531-1e71-4e28-b870-cf92e7f9f176",
+            "comicId": "e8aa01db-6892-4934-9811-e9ca5e5619d2",
+            "chapterNo": 2,
+            "title": "第 2 话",
+            "summary": "本地存量章节，正文和页面可在后台上传补充。",
+            "pages": [
+              "mock/assets/src/assets/images/platform/comics/short-stories.svg",
+              "mock/assets/src/assets/images/platform/comics/short-stories.svg",
+              "mock/assets/src/assets/images/platform/comics/short-stories.svg"
+            ],
+            "date": "2025-01-02"
+          },
+          {
+            "id": "f9e13baa-e6a7-4c5b-81af-d8d9c2b76889",
+            "comicId": "e8aa01db-6892-4934-9811-e9ca5e5619d2",
+            "chapterNo": 3,
+            "title": "第 3 话",
+            "summary": "本地存量章节，正文和页面可在后台上传补充。",
+            "pages": [
+              "mock/assets/src/assets/images/platform/comics/short-stories.svg",
+              "mock/assets/src/assets/images/platform/comics/short-stories.svg",
+              "mock/assets/src/assets/images/platform/comics/short-stories.svg"
+            ],
+            "date": "2025-01-03"
+          },
+          {
+            "id": "b354e9ef-629f-4459-aaa8-22b6b386e06f",
+            "comicId": "e8aa01db-6892-4934-9811-e9ca5e5619d2",
+            "chapterNo": 4,
+            "title": "第 4 话",
+            "summary": "本地存量章节，正文和页面可在后台上传补充。",
+            "pages": [
+              "mock/assets/src/assets/images/platform/comics/short-stories.svg",
+              "mock/assets/src/assets/images/platform/comics/short-stories.svg",
+              "mock/assets/src/assets/images/platform/comics/short-stories.svg"
+            ],
+            "date": "2025-01-04"
+          },
+          {
+            "id": "a19122d4-3439-4788-ad8a-9c7a54c0cd81",
+            "comicId": "e8aa01db-6892-4934-9811-e9ca5e5619d2",
+            "chapterNo": 5,
+            "title": "第 5 话",
+            "summary": "本地存量章节，正文和页面可在后台上传补充。",
+            "pages": [
+              "mock/assets/src/assets/images/platform/comics/short-stories.svg",
+              "mock/assets/src/assets/images/platform/comics/short-stories.svg",
+              "mock/assets/src/assets/images/platform/comics/short-stories.svg"
+            ],
+            "date": "2025-01-05"
+          }
+        ],
+        "viewCount": 8,
+        "visitorCount": 2,
+        "related": [
+          {
+            "id": "ccbdd2bb-28ae-404e-9a71-7c901982a3b2",
+            "title": "像素星球",
+            "cover": "mock/assets/src/assets/images/platform/comics/city-night.svg",
+            "contentType": "comics"
+          },
+          {
+            "id": "160d6d30-61f1-4e04-a023-5d3a7691caf4",
+            "title": "深夜代码",
+            "cover": "mock/assets/src/assets/images/platform/comics/daily-pieces.svg",
+            "contentType": "comics"
+          }
+        ]
+      }
+    }
+  },
+  "movies": {
+    "list": {
+      "items": [
+        {
+          "id": "47b08539-a5a3-47a2-a7f3-1cf7d662a65b",
+          "title": "别为往事懊恼",
+          "cover": "https://img.guangsuimage.com/cover/ed0a89247c828bbf05a6506f4fa54745.jpg",
+          "playUrl": "http://vedio.yxdsrq.com/jilupian/bieweiwangshiaonao/",
+          "year": 2026,
+          "rating": 6,
+          "genre": "纪录",
+          "note": "来源状态：正片。",
+          "watchDate": null,
+          "director": null,
+          "castNames": [],
+          "review": null,
+          "storyScore": null,
+          "visualScore": null,
+          "soundScore": null,
+          "rewatchValue": null
+        },
+        {
+          "id": "73233221-39c3-40ae-bc6c-775a8840fed2",
+          "title": "普贾，我的爱人",
+          "cover": "https://img.guangsuimage.com/cover/6327d4ebbea5d09bcfbab280d9ff5fba.jpg",
+          "playUrl": "http://vedio.yxdsrq.com/kongbupian/pujiawodeairen/",
+          "year": 2026,
+          "rating": 3,
+          "genre": "恐怖",
+          "note": "来源状态：正片。",
+          "watchDate": null,
+          "director": null,
+          "castNames": [],
+          "review": null,
+          "storyScore": null,
+          "visualScore": null,
+          "soundScore": null,
+          "rewatchValue": null
+        },
+        {
+          "id": "8a3f7ccb-be52-4699-8915-99d53dca9b6f",
+          "title": "疯狂穷富翁",
+          "cover": "https://img.lzipic.com/upload/vod/20261003-1/6891584826d24e996b55528f0e83a3b6.webp",
+          "playUrl": "http://vedio.yxdsrq.com/juqingpian/fengkuangqiongfuweng/",
+          "year": 2026,
+          "rating": 5,
+          "genre": "剧情",
+          "note": "来源状态：正片。",
+          "watchDate": null,
+          "director": null,
+          "castNames": [],
+          "review": null,
+          "storyScore": null,
+          "visualScore": null,
+          "soundScore": null,
+          "rewatchValue": null
+        },
+        {
+          "id": "a5b69181-5e92-4157-a5e5-31d2dc0c7fec",
+          "title": "储物柜",
+          "cover": "https://img.guangsuimage.com/cover/408eb7f43ae6263d261b4e66d8b65ecf.jpg",
+          "playUrl": "http://vedio.yxdsrq.com/kongbupian/chuwugui/",
+          "year": 2026,
+          "rating": 2,
+          "genre": "恐怖",
+          "note": "来源状态：正片。",
+          "watchDate": null,
+          "director": null,
+          "castNames": [],
+          "review": null,
+          "storyScore": null,
+          "visualScore": null,
+          "soundScore": null,
+          "rewatchValue": null
+        },
+        {
+          "id": "629e6ca8-bf82-41c5-8ec7-240d05b92a5e",
+          "title": "心跳声",
+          "cover": "https://img.guangsuimage.com/cover/e2afccb9c06008edca76eaefb606d4bd.jpg",
+          "playUrl": "http://vedio.yxdsrq.com/juqingpian/xintiaosheng/",
+          "year": 2026,
+          "rating": 8,
+          "genre": "剧情",
+          "note": "来源状态：正片。",
+          "watchDate": null,
+          "director": null,
+          "castNames": [],
+          "review": null,
+          "storyScore": null,
+          "visualScore": null,
+          "soundScore": null,
+          "rewatchValue": null
+        },
+        {
+          "id": "bfd0f7ec-e897-4700-b99e-afb63327739a",
+          "title": "勿信楼上人",
+          "cover": "https://img.guangsuimage.com/cover/e531f0b2bddcb79bd0a8a814be181cb6.jpg",
+          "playUrl": "http://vedio.yxdsrq.com/juqingpian/wuxinloushangren/",
+          "year": 2026,
+          "rating": 2,
+          "genre": "剧情",
+          "note": "来源状态：正片。",
+          "watchDate": null,
+          "director": null,
+          "castNames": [],
+          "review": null,
+          "storyScore": null,
+          "visualScore": null,
+          "soundScore": null,
+          "rewatchValue": null
+        },
+        {
+          "id": "2044909c-4cfb-42db-81e5-bcbf25e672b0",
+          "title": "希望囚徒",
+          "cover": "https://img.jisuimage.com/cover/af8eb9275a36df48f1da258095f1d4d9.jpg",
+          "playUrl": "http://vedio.yxdsrq.com/jilupian/xiwangqiutu/",
+          "year": 2026,
+          "rating": 8,
+          "genre": "纪录",
+          "note": "来源状态：正片。",
+          "watchDate": null,
+          "director": null,
+          "castNames": [],
+          "review": null,
+          "storyScore": null,
+          "visualScore": null,
+          "soundScore": null,
+          "rewatchValue": null
+        },
+        {
+          "id": "dfcb424c-bef4-4ba8-b717-76cae46e0b66",
+          "title": "凶楼绝路",
+          "cover": "https://img.guangsuimage.com/cover/cadf63424798d6a6f53d2a23c14da0f1.jpg",
+          "playUrl": "http://vedio.yxdsrq.com/kongbupian/xiongloujuelu/",
+          "year": 2026,
+          "rating": 6,
+          "genre": "恐怖",
+          "note": "来源状态：抢先版。",
+          "watchDate": null,
+          "director": null,
+          "castNames": [],
+          "review": null,
+          "storyScore": null,
+          "visualScore": null,
+          "soundScore": null,
+          "rewatchValue": null
+        },
+        {
+          "id": "a9d9f1d3-dd9f-497b-8533-59f78cf5a496",
+          "title": "失控撞劫",
+          "cover": "https://img.202766.xyz/douban/37812480.webp",
+          "playUrl": "http://vedio.yxdsrq.com/kongbupian/shikongzhuangjie1/",
+          "year": 2026,
+          "rating": 5,
+          "genre": "恐怖",
+          "note": "来源状态：HD。",
+          "watchDate": null,
+          "director": null,
+          "castNames": [],
+          "review": null,
+          "storyScore": null,
+          "visualScore": null,
+          "soundScore": null,
+          "rewatchValue": null
+        },
+        {
+          "id": "fba8834d-93fb-4a1a-a7df-9f67b71b29fb",
+          "title": "现实实验",
+          "cover": "https://img.guangsuimage.com/cover/d542679cd869484e83686b45affc5579.jpg",
+          "playUrl": "http://vedio.yxdsrq.com/kongbupian/xianshishiyan/",
+          "year": 2026,
+          "rating": 6,
+          "genre": "恐怖",
+          "note": "来源状态：正片。",
+          "watchDate": null,
+          "director": null,
+          "castNames": [],
+          "review": null,
+          "storyScore": null,
+          "visualScore": null,
+          "soundScore": null,
+          "rewatchValue": null
+        },
+        {
+          "id": "3435ff6f-afa7-445e-b969-bc75160381ce",
+          "title": "给阿嫲的情书",
+          "cover": "mock/assets/uploads/a40ee540-edd2-477d-9312-e5eebb92e772.jpg",
+          "playUrl": null,
+          "year": 2026,
+          "rating": 9.2,
+          "genre": "爱情",
+          "note": "",
+          "watchDate": null,
+          "director": null,
+          "castNames": [],
+          "review": null,
+          "storyScore": null,
+          "visualScore": null,
+          "soundScore": null,
+          "rewatchValue": null
+        }
+      ],
+      "total": 11,
+      "page": 1,
+      "pageSize": 50
+    },
+    "details": {
+      "47b08539-a5a3-47a2-a7f3-1cf7d662a65b": {
+        "id": "47b08539-a5a3-47a2-a7f3-1cf7d662a65b",
+        "title": "别为往事懊恼",
+        "cover": "https://img.guangsuimage.com/cover/ed0a89247c828bbf05a6506f4fa54745.jpg",
+        "playUrl": "http://vedio.yxdsrq.com/jilupian/bieweiwangshiaonao/",
+        "year": 2026,
+        "rating": 6,
+        "genre": "纪录",
+        "note": "来源状态：正片。",
+        "watchDate": null,
+        "director": null,
+        "castNames": [],
+        "review": null,
+        "storyScore": null,
+        "visualScore": null,
+        "soundScore": null,
+        "rewatchValue": null,
+        "viewCount": 14,
+        "visitorCount": 6,
+        "related": [
+          {
+            "id": "2044909c-4cfb-42db-81e5-bcbf25e672b0",
+            "title": "希望囚徒",
+            "cover": "https://img.jisuimage.com/cover/af8eb9275a36df48f1da258095f1d4d9.jpg",
+            "contentType": "movies"
+          }
+        ]
+      },
+      "73233221-39c3-40ae-bc6c-775a8840fed2": {
+        "id": "73233221-39c3-40ae-bc6c-775a8840fed2",
+        "title": "普贾，我的爱人",
+        "cover": "https://img.guangsuimage.com/cover/6327d4ebbea5d09bcfbab280d9ff5fba.jpg",
+        "playUrl": "http://vedio.yxdsrq.com/kongbupian/pujiawodeairen/",
+        "year": 2026,
+        "rating": 3,
+        "genre": "恐怖",
+        "note": "来源状态：正片。",
+        "watchDate": null,
+        "director": null,
+        "castNames": [],
+        "review": null,
+        "storyScore": null,
+        "visualScore": null,
+        "soundScore": null,
+        "rewatchValue": null,
+        "viewCount": 7,
+        "visitorCount": 1,
+        "related": [
+          {
+            "id": "a5b69181-5e92-4157-a5e5-31d2dc0c7fec",
+            "title": "储物柜",
+            "cover": "https://img.guangsuimage.com/cover/408eb7f43ae6263d261b4e66d8b65ecf.jpg",
+            "contentType": "movies"
+          },
+          {
+            "id": "dfcb424c-bef4-4ba8-b717-76cae46e0b66",
+            "title": "凶楼绝路",
+            "cover": "https://img.guangsuimage.com/cover/cadf63424798d6a6f53d2a23c14da0f1.jpg",
+            "contentType": "movies"
+          },
+          {
+            "id": "a9d9f1d3-dd9f-497b-8533-59f78cf5a496",
+            "title": "失控撞劫",
+            "cover": "https://img.202766.xyz/douban/37812480.webp",
+            "contentType": "movies"
+          }
+        ]
+      },
+      "8a3f7ccb-be52-4699-8915-99d53dca9b6f": {
+        "id": "8a3f7ccb-be52-4699-8915-99d53dca9b6f",
+        "title": "疯狂穷富翁",
+        "cover": "https://img.lzipic.com/upload/vod/20261003-1/6891584826d24e996b55528f0e83a3b6.webp",
+        "playUrl": "http://vedio.yxdsrq.com/juqingpian/fengkuangqiongfuweng/",
+        "year": 2026,
+        "rating": 5,
+        "genre": "剧情",
+        "note": "来源状态：正片。",
+        "watchDate": null,
+        "director": null,
+        "castNames": [],
+        "review": null,
+        "storyScore": null,
+        "visualScore": null,
+        "soundScore": null,
+        "rewatchValue": null,
+        "viewCount": 9,
+        "visitorCount": 2,
+        "related": [
+          {
+            "id": "629e6ca8-bf82-41c5-8ec7-240d05b92a5e",
+            "title": "心跳声",
+            "cover": "https://img.guangsuimage.com/cover/e2afccb9c06008edca76eaefb606d4bd.jpg",
+            "contentType": "movies"
+          },
+          {
+            "id": "bfd0f7ec-e897-4700-b99e-afb63327739a",
+            "title": "勿信楼上人",
+            "cover": "https://img.guangsuimage.com/cover/e531f0b2bddcb79bd0a8a814be181cb6.jpg",
+            "contentType": "movies"
+          }
+        ]
+      },
+      "a5b69181-5e92-4157-a5e5-31d2dc0c7fec": {
+        "id": "a5b69181-5e92-4157-a5e5-31d2dc0c7fec",
+        "title": "储物柜",
+        "cover": "https://img.guangsuimage.com/cover/408eb7f43ae6263d261b4e66d8b65ecf.jpg",
+        "playUrl": "http://vedio.yxdsrq.com/kongbupian/chuwugui/",
+        "year": 2026,
+        "rating": 2,
+        "genre": "恐怖",
+        "note": "来源状态：正片。",
+        "watchDate": null,
+        "director": null,
+        "castNames": [],
+        "review": null,
+        "storyScore": null,
+        "visualScore": null,
+        "soundScore": null,
+        "rewatchValue": null,
+        "viewCount": 7,
+        "visitorCount": 1,
+        "related": [
+          {
+            "id": "73233221-39c3-40ae-bc6c-775a8840fed2",
+            "title": "普贾，我的爱人",
+            "cover": "https://img.guangsuimage.com/cover/6327d4ebbea5d09bcfbab280d9ff5fba.jpg",
+            "contentType": "movies"
+          },
+          {
+            "id": "dfcb424c-bef4-4ba8-b717-76cae46e0b66",
+            "title": "凶楼绝路",
+            "cover": "https://img.guangsuimage.com/cover/cadf63424798d6a6f53d2a23c14da0f1.jpg",
+            "contentType": "movies"
+          },
+          {
+            "id": "a9d9f1d3-dd9f-497b-8533-59f78cf5a496",
+            "title": "失控撞劫",
+            "cover": "https://img.202766.xyz/douban/37812480.webp",
+            "contentType": "movies"
+          }
+        ]
+      },
+      "629e6ca8-bf82-41c5-8ec7-240d05b92a5e": {
+        "id": "629e6ca8-bf82-41c5-8ec7-240d05b92a5e",
+        "title": "心跳声",
+        "cover": "https://img.guangsuimage.com/cover/e2afccb9c06008edca76eaefb606d4bd.jpg",
+        "playUrl": "http://vedio.yxdsrq.com/juqingpian/xintiaosheng/",
+        "year": 2026,
+        "rating": 8,
+        "genre": "剧情",
+        "note": "来源状态：正片。",
+        "watchDate": null,
+        "director": null,
+        "castNames": [],
+        "review": null,
+        "storyScore": null,
+        "visualScore": null,
+        "soundScore": null,
+        "rewatchValue": null,
+        "viewCount": 7,
+        "visitorCount": 1,
+        "related": [
+          {
+            "id": "8a3f7ccb-be52-4699-8915-99d53dca9b6f",
+            "title": "疯狂穷富翁",
+            "cover": "https://img.lzipic.com/upload/vod/20261003-1/6891584826d24e996b55528f0e83a3b6.webp",
+            "contentType": "movies"
+          },
+          {
+            "id": "bfd0f7ec-e897-4700-b99e-afb63327739a",
+            "title": "勿信楼上人",
+            "cover": "https://img.guangsuimage.com/cover/e531f0b2bddcb79bd0a8a814be181cb6.jpg",
+            "contentType": "movies"
+          }
+        ]
+      },
+      "bfd0f7ec-e897-4700-b99e-afb63327739a": {
+        "id": "bfd0f7ec-e897-4700-b99e-afb63327739a",
+        "title": "勿信楼上人",
+        "cover": "https://img.guangsuimage.com/cover/e531f0b2bddcb79bd0a8a814be181cb6.jpg",
+        "playUrl": "http://vedio.yxdsrq.com/juqingpian/wuxinloushangren/",
+        "year": 2026,
+        "rating": 2,
+        "genre": "剧情",
+        "note": "来源状态：正片。",
+        "watchDate": null,
+        "director": null,
+        "castNames": [],
+        "review": null,
+        "storyScore": null,
+        "visualScore": null,
+        "soundScore": null,
+        "rewatchValue": null,
+        "viewCount": 7,
+        "visitorCount": 1,
+        "related": [
+          {
+            "id": "8a3f7ccb-be52-4699-8915-99d53dca9b6f",
+            "title": "疯狂穷富翁",
+            "cover": "https://img.lzipic.com/upload/vod/20261003-1/6891584826d24e996b55528f0e83a3b6.webp",
+            "contentType": "movies"
+          },
+          {
+            "id": "629e6ca8-bf82-41c5-8ec7-240d05b92a5e",
+            "title": "心跳声",
+            "cover": "https://img.guangsuimage.com/cover/e2afccb9c06008edca76eaefb606d4bd.jpg",
+            "contentType": "movies"
+          }
+        ]
+      },
+      "2044909c-4cfb-42db-81e5-bcbf25e672b0": {
+        "id": "2044909c-4cfb-42db-81e5-bcbf25e672b0",
+        "title": "希望囚徒",
+        "cover": "https://img.jisuimage.com/cover/af8eb9275a36df48f1da258095f1d4d9.jpg",
+        "playUrl": "http://vedio.yxdsrq.com/jilupian/xiwangqiutu/",
+        "year": 2026,
+        "rating": 8,
+        "genre": "纪录",
+        "note": "来源状态：正片。",
+        "watchDate": null,
+        "director": null,
+        "castNames": [],
+        "review": null,
+        "storyScore": null,
+        "visualScore": null,
+        "soundScore": null,
+        "rewatchValue": null,
+        "viewCount": 7,
+        "visitorCount": 1,
+        "related": [
+          {
+            "id": "47b08539-a5a3-47a2-a7f3-1cf7d662a65b",
+            "title": "别为往事懊恼",
+            "cover": "https://img.guangsuimage.com/cover/ed0a89247c828bbf05a6506f4fa54745.jpg",
+            "contentType": "movies"
+          }
+        ]
+      },
+      "dfcb424c-bef4-4ba8-b717-76cae46e0b66": {
+        "id": "dfcb424c-bef4-4ba8-b717-76cae46e0b66",
+        "title": "凶楼绝路",
+        "cover": "https://img.guangsuimage.com/cover/cadf63424798d6a6f53d2a23c14da0f1.jpg",
+        "playUrl": "http://vedio.yxdsrq.com/kongbupian/xiongloujuelu/",
+        "year": 2026,
+        "rating": 6,
+        "genre": "恐怖",
+        "note": "来源状态：抢先版。",
+        "watchDate": null,
+        "director": null,
+        "castNames": [],
+        "review": null,
+        "storyScore": null,
+        "visualScore": null,
+        "soundScore": null,
+        "rewatchValue": null,
+        "viewCount": 7,
+        "visitorCount": 1,
+        "related": [
+          {
+            "id": "73233221-39c3-40ae-bc6c-775a8840fed2",
+            "title": "普贾，我的爱人",
+            "cover": "https://img.guangsuimage.com/cover/6327d4ebbea5d09bcfbab280d9ff5fba.jpg",
+            "contentType": "movies"
+          },
+          {
+            "id": "a5b69181-5e92-4157-a5e5-31d2dc0c7fec",
+            "title": "储物柜",
+            "cover": "https://img.guangsuimage.com/cover/408eb7f43ae6263d261b4e66d8b65ecf.jpg",
+            "contentType": "movies"
+          },
+          {
+            "id": "a9d9f1d3-dd9f-497b-8533-59f78cf5a496",
+            "title": "失控撞劫",
+            "cover": "https://img.202766.xyz/douban/37812480.webp",
+            "contentType": "movies"
+          }
+        ]
+      },
+      "a9d9f1d3-dd9f-497b-8533-59f78cf5a496": {
+        "id": "a9d9f1d3-dd9f-497b-8533-59f78cf5a496",
+        "title": "失控撞劫",
+        "cover": "https://img.202766.xyz/douban/37812480.webp",
+        "playUrl": "http://vedio.yxdsrq.com/kongbupian/shikongzhuangjie1/",
+        "year": 2026,
+        "rating": 5,
+        "genre": "恐怖",
+        "note": "来源状态：HD。",
+        "watchDate": null,
+        "director": null,
+        "castNames": [],
+        "review": null,
+        "storyScore": null,
+        "visualScore": null,
+        "soundScore": null,
+        "rewatchValue": null,
+        "viewCount": 7,
+        "visitorCount": 1,
+        "related": [
+          {
+            "id": "73233221-39c3-40ae-bc6c-775a8840fed2",
+            "title": "普贾，我的爱人",
+            "cover": "https://img.guangsuimage.com/cover/6327d4ebbea5d09bcfbab280d9ff5fba.jpg",
+            "contentType": "movies"
+          },
+          {
+            "id": "a5b69181-5e92-4157-a5e5-31d2dc0c7fec",
+            "title": "储物柜",
+            "cover": "https://img.guangsuimage.com/cover/408eb7f43ae6263d261b4e66d8b65ecf.jpg",
+            "contentType": "movies"
+          },
+          {
+            "id": "dfcb424c-bef4-4ba8-b717-76cae46e0b66",
+            "title": "凶楼绝路",
+            "cover": "https://img.guangsuimage.com/cover/cadf63424798d6a6f53d2a23c14da0f1.jpg",
+            "contentType": "movies"
+          }
+        ]
+      },
+      "fba8834d-93fb-4a1a-a7df-9f67b71b29fb": {
+        "id": "fba8834d-93fb-4a1a-a7df-9f67b71b29fb",
+        "title": "现实实验",
+        "cover": "https://img.guangsuimage.com/cover/d542679cd869484e83686b45affc5579.jpg",
+        "playUrl": "http://vedio.yxdsrq.com/kongbupian/xianshishiyan/",
+        "year": 2026,
+        "rating": 6,
+        "genre": "恐怖",
+        "note": "来源状态：正片。",
+        "watchDate": null,
+        "director": null,
+        "castNames": [],
+        "review": null,
+        "storyScore": null,
+        "visualScore": null,
+        "soundScore": null,
+        "rewatchValue": null,
+        "viewCount": 7,
+        "visitorCount": 1,
+        "related": [
+          {
+            "id": "73233221-39c3-40ae-bc6c-775a8840fed2",
+            "title": "普贾，我的爱人",
+            "cover": "https://img.guangsuimage.com/cover/6327d4ebbea5d09bcfbab280d9ff5fba.jpg",
+            "contentType": "movies"
+          },
+          {
+            "id": "a5b69181-5e92-4157-a5e5-31d2dc0c7fec",
+            "title": "储物柜",
+            "cover": "https://img.guangsuimage.com/cover/408eb7f43ae6263d261b4e66d8b65ecf.jpg",
+            "contentType": "movies"
+          },
+          {
+            "id": "dfcb424c-bef4-4ba8-b717-76cae46e0b66",
+            "title": "凶楼绝路",
+            "cover": "https://img.guangsuimage.com/cover/cadf63424798d6a6f53d2a23c14da0f1.jpg",
+            "contentType": "movies"
+          }
+        ]
+      },
+      "3435ff6f-afa7-445e-b969-bc75160381ce": {
+        "id": "3435ff6f-afa7-445e-b969-bc75160381ce",
+        "title": "给阿嫲的情书",
+        "cover": "mock/assets/uploads/a40ee540-edd2-477d-9312-e5eebb92e772.jpg",
+        "playUrl": null,
+        "year": 2026,
+        "rating": 9.2,
+        "genre": "爱情",
+        "note": "",
+        "watchDate": null,
+        "director": null,
+        "castNames": [],
+        "review": null,
+        "storyScore": null,
+        "visualScore": null,
+        "soundScore": null,
+        "rewatchValue": null,
+        "viewCount": 7,
+        "visitorCount": 1,
+        "related": []
+      }
+    }
+  },
+  "anime": {
+    "list": {
+      "items": [
+        {
+          "id": "290376fc-6dda-4596-862f-253a1548c74a",
+          "title": "师尊：这个冲师逆徒才不是圣子 动态漫画",
+          "cover": "https://img.guangsuimage.com/cover/ef787dffe53627045b60ebd58188fa30.jpg",
+          "playUrl": "http://vedio.yxdsrq.com/dongman/shizunzhegechongshinitucaibushishengzidongtaimanhua/",
+          "year": 2026,
+          "rating": 7,
+          "genre": "恋爱",
+          "status": "第1集",
+          "episodes": 1,
+          "note": "数据来源：星空影院动漫栏目。",
+          "review": null
+        },
+        {
+          "id": "c8680f47-22b1-4a70-9857-298c221901f1",
+          "title": "牧神记",
+          "cover": "https://img.lzipic.com/upload/vod/20241027-1/f6c217351f2b1ef044263484af7f7dd4.jpg",
+          "playUrl": "http://vedio.yxdsrq.com/dongman/mushenji/",
+          "year": 2026,
+          "rating": 7,
+          "genre": "玄幻",
+          "status": "更新至第02集",
+          "episodes": 2,
+          "note": "数据来源：星空影院动漫栏目。",
+          "review": null
+        },
+        {
+          "id": "82e02439-3a20-41e0-ac49-94ca6d814551",
+          "title": "都市古仙医",
+          "cover": "https://img.lzipic.com/upload/vod/20241002-1/28ccdda6571d92bf5ecad9a666647e99.jpg",
+          "playUrl": "http://vedio.yxdsrq.com/dongman/dushiguxianyi/",
+          "year": 2026,
+          "rating": 3,
+          "genre": "都市",
+          "status": "更新至第06集",
+          "episodes": 6,
+          "note": "数据来源：星空影院动漫栏目。",
+          "review": null
+        },
+        {
+          "id": "3b54246c-1f23-4db4-bbd0-060796c6f7ae",
+          "title": "仙逆",
+          "cover": "https://img.jisuimage.com/cover/896b690b9566f53a875e03a3a324c091.jpg",
+          "playUrl": "http://vedio.yxdsrq.com/dongman/xianni/",
+          "year": 2026,
+          "rating": 10,
+          "genre": "仙侠",
+          "status": "更新至第03集",
+          "episodes": 3,
+          "note": "数据来源：星空影院动漫栏目。",
+          "review": null
+        },
+        {
+          "id": "f3cc8ce1-4d06-416d-a651-8f812a74b9ea",
+          "title": "灵武大陆",
+          "cover": "https://img.lzipic.com/upload/vod/20240726-1/5d95edc29d2ad7ed71c757cc855bb446.jpg",
+          "playUrl": "http://vedio.yxdsrq.com/dongman/lingwudalu/",
+          "year": 2026,
+          "rating": 6,
+          "genre": "玄幻",
+          "status": "更新至第04集",
+          "episodes": 4,
+          "note": "数据来源：星空影院动漫栏目。",
+          "review": null
+        },
+        {
+          "id": "52e7c8bf-77a9-457c-8251-d5cd837913b8",
+          "title": "掌门低调点",
+          "cover": "https://img.jisuimage.com/cover/d3ed9e3df6007d59a203f7b692880796.jpg",
+          "playUrl": "http://vedio.yxdsrq.com/dongman/zhangmendidiaodian/",
+          "year": 2026,
+          "rating": 7,
+          "genre": "搞笑",
+          "status": "第24集",
+          "episodes": 24,
+          "note": "数据来源：星空影院动漫栏目。",
+          "review": null
+        },
+        {
+          "id": "34222c3e-2ed3-41d5-9167-3bca0c5f1f27",
+          "title": "动态漫画·全民诡异：开局掌握零元购",
+          "cover": "https://img.lzipic.com/upload/vod/20250415-1/7ecb36e7b9450ee2185e3b3a8e0f9de8.jpg",
+          "playUrl": "http://vedio.yxdsrq.com/dongman/dongtaimanhuaquanminguiyikaijuzhangwolingyuangou/",
+          "year": 2026,
+          "rating": 2,
+          "genre": "悬疑",
+          "status": "更新至第09集",
+          "episodes": 9,
+          "note": "数据来源：星空影院动漫栏目。",
+          "review": null
+        },
+        {
+          "id": "6e903221-1c47-4300-853a-1cefc1d8101c",
+          "title": "九阳武神",
+          "cover": "https://img.lzipic.com/upload/vod/20251122-1/0e36ecf8bb53e958c8c17e97a4b40833.jpg",
+          "playUrl": "http://vedio.yxdsrq.com/dongman/jiuyangwushen/",
+          "year": 2026,
+          "rating": 6,
+          "genre": "热血",
+          "status": "更新至第03集",
+          "episodes": 3,
+          "note": "数据来源：星空影院动漫栏目。",
+          "review": null
+        },
+        {
+          "id": "9ecc4058-6395-4c26-8062-d1769cf23cef",
+          "title": "遮天动画版",
+          "cover": "https://img.lzipic.com/upload/vod/20230503-1/5a197f31f09c5c3a41ea8f555e2e2a04.jpg",
+          "playUrl": "http://vedio.yxdsrq.com/dongman/zhetiandonghuaban/",
+          "year": 2026,
+          "rating": 10,
+          "genre": "玄幻",
+          "status": "更新至第15集",
+          "episodes": 15,
+          "note": "数据来源：星空影院动漫栏目。",
+          "review": null
+        },
+        {
+          "id": "c35ba98c-59f3-454a-b7ac-a5b0bb86b796",
+          "title": "遮天",
+          "cover": "https://img.jisuimage.com/cover/eabe8e1fe6add3ddf6d65b6df954b376.jpg",
+          "playUrl": "http://vedio.yxdsrq.com/dongman/zhetian/",
+          "year": 2026,
+          "rating": 10,
+          "genre": "玄幻",
+          "status": "第15集",
+          "episodes": 15,
+          "note": "数据来源：星空影院动漫栏目。",
+          "review": null
+        }
+      ],
+      "total": 10,
+      "page": 1,
+      "pageSize": 50
+    },
+    "details": {
+      "290376fc-6dda-4596-862f-253a1548c74a": {
+        "id": "290376fc-6dda-4596-862f-253a1548c74a",
+        "title": "师尊：这个冲师逆徒才不是圣子 动态漫画",
+        "cover": "https://img.guangsuimage.com/cover/ef787dffe53627045b60ebd58188fa30.jpg",
+        "playUrl": "http://vedio.yxdsrq.com/dongman/shizunzhegechongshinitucaibushishengzidongtaimanhua/",
+        "year": 2026,
+        "rating": 7,
+        "genre": "恋爱",
+        "status": "第1集",
+        "episodes": 1,
+        "note": "数据来源：星空影院动漫栏目。",
+        "review": null,
+        "viewCount": 19,
+        "visitorCount": 11,
+        "related": []
+      },
+      "c8680f47-22b1-4a70-9857-298c221901f1": {
+        "id": "c8680f47-22b1-4a70-9857-298c221901f1",
+        "title": "牧神记",
+        "cover": "https://img.lzipic.com/upload/vod/20241027-1/f6c217351f2b1ef044263484af7f7dd4.jpg",
+        "playUrl": "http://vedio.yxdsrq.com/dongman/mushenji/",
+        "year": 2026,
+        "rating": 7,
+        "genre": "玄幻",
+        "status": "更新至第02集",
+        "episodes": 2,
+        "note": "数据来源：星空影院动漫栏目。",
+        "review": null,
+        "viewCount": 8,
+        "visitorCount": 2,
+        "related": [
+          {
+            "id": "f3cc8ce1-4d06-416d-a651-8f812a74b9ea",
+            "title": "灵武大陆",
+            "cover": "https://img.lzipic.com/upload/vod/20240726-1/5d95edc29d2ad7ed71c757cc855bb446.jpg",
+            "contentType": "anime"
+          },
+          {
+            "id": "9ecc4058-6395-4c26-8062-d1769cf23cef",
+            "title": "遮天动画版",
+            "cover": "https://img.lzipic.com/upload/vod/20230503-1/5a197f31f09c5c3a41ea8f555e2e2a04.jpg",
+            "contentType": "anime"
+          },
+          {
+            "id": "c35ba98c-59f3-454a-b7ac-a5b0bb86b796",
+            "title": "遮天",
+            "cover": "https://img.jisuimage.com/cover/eabe8e1fe6add3ddf6d65b6df954b376.jpg",
+            "contentType": "anime"
+          }
+        ]
+      },
+      "82e02439-3a20-41e0-ac49-94ca6d814551": {
+        "id": "82e02439-3a20-41e0-ac49-94ca6d814551",
+        "title": "都市古仙医",
+        "cover": "https://img.lzipic.com/upload/vod/20241002-1/28ccdda6571d92bf5ecad9a666647e99.jpg",
+        "playUrl": "http://vedio.yxdsrq.com/dongman/dushiguxianyi/",
+        "year": 2026,
+        "rating": 3,
+        "genre": "都市",
+        "status": "更新至第06集",
+        "episodes": 6,
+        "note": "数据来源：星空影院动漫栏目。",
+        "review": null,
+        "viewCount": 7,
+        "visitorCount": 1,
+        "related": []
+      },
+      "3b54246c-1f23-4db4-bbd0-060796c6f7ae": {
+        "id": "3b54246c-1f23-4db4-bbd0-060796c6f7ae",
+        "title": "仙逆",
+        "cover": "https://img.jisuimage.com/cover/896b690b9566f53a875e03a3a324c091.jpg",
+        "playUrl": "http://vedio.yxdsrq.com/dongman/xianni/",
+        "year": 2026,
+        "rating": 10,
+        "genre": "仙侠",
+        "status": "更新至第03集",
+        "episodes": 3,
+        "note": "数据来源：星空影院动漫栏目。",
+        "review": null,
+        "viewCount": 7,
+        "visitorCount": 1,
+        "related": []
+      },
+      "f3cc8ce1-4d06-416d-a651-8f812a74b9ea": {
+        "id": "f3cc8ce1-4d06-416d-a651-8f812a74b9ea",
+        "title": "灵武大陆",
+        "cover": "https://img.lzipic.com/upload/vod/20240726-1/5d95edc29d2ad7ed71c757cc855bb446.jpg",
+        "playUrl": "http://vedio.yxdsrq.com/dongman/lingwudalu/",
+        "year": 2026,
+        "rating": 6,
+        "genre": "玄幻",
+        "status": "更新至第04集",
+        "episodes": 4,
+        "note": "数据来源：星空影院动漫栏目。",
+        "review": null,
+        "viewCount": 7,
+        "visitorCount": 1,
+        "related": [
+          {
+            "id": "c8680f47-22b1-4a70-9857-298c221901f1",
+            "title": "牧神记",
+            "cover": "https://img.lzipic.com/upload/vod/20241027-1/f6c217351f2b1ef044263484af7f7dd4.jpg",
+            "contentType": "anime"
+          },
+          {
+            "id": "9ecc4058-6395-4c26-8062-d1769cf23cef",
+            "title": "遮天动画版",
+            "cover": "https://img.lzipic.com/upload/vod/20230503-1/5a197f31f09c5c3a41ea8f555e2e2a04.jpg",
+            "contentType": "anime"
+          },
+          {
+            "id": "c35ba98c-59f3-454a-b7ac-a5b0bb86b796",
+            "title": "遮天",
+            "cover": "https://img.jisuimage.com/cover/eabe8e1fe6add3ddf6d65b6df954b376.jpg",
+            "contentType": "anime"
+          }
+        ]
+      },
+      "52e7c8bf-77a9-457c-8251-d5cd837913b8": {
+        "id": "52e7c8bf-77a9-457c-8251-d5cd837913b8",
+        "title": "掌门低调点",
+        "cover": "https://img.jisuimage.com/cover/d3ed9e3df6007d59a203f7b692880796.jpg",
+        "playUrl": "http://vedio.yxdsrq.com/dongman/zhangmendidiaodian/",
+        "year": 2026,
+        "rating": 7,
+        "genre": "搞笑",
+        "status": "第24集",
+        "episodes": 24,
+        "note": "数据来源：星空影院动漫栏目。",
+        "review": null,
+        "viewCount": 7,
+        "visitorCount": 1,
+        "related": []
+      },
+      "34222c3e-2ed3-41d5-9167-3bca0c5f1f27": {
+        "id": "34222c3e-2ed3-41d5-9167-3bca0c5f1f27",
+        "title": "动态漫画·全民诡异：开局掌握零元购",
+        "cover": "https://img.lzipic.com/upload/vod/20250415-1/7ecb36e7b9450ee2185e3b3a8e0f9de8.jpg",
+        "playUrl": "http://vedio.yxdsrq.com/dongman/dongtaimanhuaquanminguiyikaijuzhangwolingyuangou/",
+        "year": 2026,
+        "rating": 2,
+        "genre": "悬疑",
+        "status": "更新至第09集",
+        "episodes": 9,
+        "note": "数据来源：星空影院动漫栏目。",
+        "review": null,
+        "viewCount": 7,
+        "visitorCount": 1,
+        "related": []
+      },
+      "6e903221-1c47-4300-853a-1cefc1d8101c": {
+        "id": "6e903221-1c47-4300-853a-1cefc1d8101c",
+        "title": "九阳武神",
+        "cover": "https://img.lzipic.com/upload/vod/20251122-1/0e36ecf8bb53e958c8c17e97a4b40833.jpg",
+        "playUrl": "http://vedio.yxdsrq.com/dongman/jiuyangwushen/",
+        "year": 2026,
+        "rating": 6,
+        "genre": "热血",
+        "status": "更新至第03集",
+        "episodes": 3,
+        "note": "数据来源：星空影院动漫栏目。",
+        "review": null,
+        "viewCount": 7,
+        "visitorCount": 1,
+        "related": []
+      },
+      "9ecc4058-6395-4c26-8062-d1769cf23cef": {
+        "id": "9ecc4058-6395-4c26-8062-d1769cf23cef",
+        "title": "遮天动画版",
+        "cover": "https://img.lzipic.com/upload/vod/20230503-1/5a197f31f09c5c3a41ea8f555e2e2a04.jpg",
+        "playUrl": "http://vedio.yxdsrq.com/dongman/zhetiandonghuaban/",
+        "year": 2026,
+        "rating": 10,
+        "genre": "玄幻",
+        "status": "更新至第15集",
+        "episodes": 15,
+        "note": "数据来源：星空影院动漫栏目。",
+        "review": null,
+        "viewCount": 7,
+        "visitorCount": 1,
+        "related": [
+          {
+            "id": "c8680f47-22b1-4a70-9857-298c221901f1",
+            "title": "牧神记",
+            "cover": "https://img.lzipic.com/upload/vod/20241027-1/f6c217351f2b1ef044263484af7f7dd4.jpg",
+            "contentType": "anime"
+          },
+          {
+            "id": "f3cc8ce1-4d06-416d-a651-8f812a74b9ea",
+            "title": "灵武大陆",
+            "cover": "https://img.lzipic.com/upload/vod/20240726-1/5d95edc29d2ad7ed71c757cc855bb446.jpg",
+            "contentType": "anime"
+          },
+          {
+            "id": "c35ba98c-59f3-454a-b7ac-a5b0bb86b796",
+            "title": "遮天",
+            "cover": "https://img.jisuimage.com/cover/eabe8e1fe6add3ddf6d65b6df954b376.jpg",
+            "contentType": "anime"
+          }
+        ]
+      },
+      "c35ba98c-59f3-454a-b7ac-a5b0bb86b796": {
+        "id": "c35ba98c-59f3-454a-b7ac-a5b0bb86b796",
+        "title": "遮天",
+        "cover": "https://img.jisuimage.com/cover/eabe8e1fe6add3ddf6d65b6df954b376.jpg",
+        "playUrl": "http://vedio.yxdsrq.com/dongman/zhetian/",
+        "year": 2026,
+        "rating": 10,
+        "genre": "玄幻",
+        "status": "第15集",
+        "episodes": 15,
+        "note": "数据来源：星空影院动漫栏目。",
+        "review": null,
+        "viewCount": 7,
+        "visitorCount": 1,
+        "related": [
+          {
+            "id": "c8680f47-22b1-4a70-9857-298c221901f1",
+            "title": "牧神记",
+            "cover": "https://img.lzipic.com/upload/vod/20241027-1/f6c217351f2b1ef044263484af7f7dd4.jpg",
+            "contentType": "anime"
+          },
+          {
+            "id": "f3cc8ce1-4d06-416d-a651-8f812a74b9ea",
+            "title": "灵武大陆",
+            "cover": "https://img.lzipic.com/upload/vod/20240726-1/5d95edc29d2ad7ed71c757cc855bb446.jpg",
+            "contentType": "anime"
+          },
+          {
+            "id": "9ecc4058-6395-4c26-8062-d1769cf23cef",
+            "title": "遮天动画版",
+            "cover": "https://img.lzipic.com/upload/vod/20230503-1/5a197f31f09c5c3a41ea8f555e2e2a04.jpg",
+            "contentType": "anime"
+          }
+        ]
+      }
+    }
+  },
+  "articles": {
+    "list": {
+      "items": [
+        {
+          "id": "283e66ce-aa1e-4daa-a6bd-a16f04e22381",
+          "title": "Vue 3 组合式 API 在大屏项目中的实践",
+          "desc": "从 setup 语法糖到 composables 拆分，聊聊大屏组件如何做到逻辑复用且不失控。",
+          "tags": [
+            "Vue3",
+            "大屏"
+          ],
+          "date": "2025-06-12",
+          "status": "published",
+          "scheduledAt": null,
+          "viewCount": 29
+        },
+        {
+          "id": "6a3e7b4e-b84f-4964-8be5-f43bcf7febdd",
+          "title": "Tailwind + pxtorem：大屏自适应的双轨方案",
+          "desc": "大屏走 rem 等比缩放，营销页走响应式断点，一套构建体系里两种适配模式并存的经验。",
+          "tags": [
+            "Tailwind",
+            "自适应"
+          ],
+          "date": "2025-04-08",
+          "status": "published",
+          "scheduledAt": null,
+          "viewCount": 17
+        },
+        {
+          "id": "299824ee-b0bd-4cbe-91b1-5c06d0225053",
+          "title": "ECharts 性能优化：十万级数据点的大屏渲染",
+          "desc": "数据抽样、增量渲染与 canvas 分层，让实时刷新的大屏在低配设备上也能流畅运行。",
+          "tags": [
+            "ECharts",
+            "性能"
+          ],
+          "date": "2024-11-20",
+          "status": "published",
+          "scheduledAt": null,
+          "viewCount": 11
+        },
+        {
+          "id": "6bb669e8-084a-428b-bab1-ad1e1d70d5b0",
+          "title": "从零搭建一个数据可视化平台的前端架构",
+          "desc": "路由、状态、组件分层与构建优化的整体思路，以及踩过的那些坑。",
+          "tags": [
+            "架构",
+            "可视化"
+          ],
+          "date": "2024-09-05",
+          "status": "published",
+          "scheduledAt": null,
+          "viewCount": 7
+        }
+      ],
+      "total": 4,
+      "page": 1,
+      "pageSize": 50
+    },
+    "details": {
+      "283e66ce-aa1e-4daa-a6bd-a16f04e22381": {
+        "id": "283e66ce-aa1e-4daa-a6bd-a16f04e22381",
+        "title": "Vue 3 组合式 API 在大屏项目中的实践",
+        "desc": "从 setup 语法糖到 composables 拆分，聊聊大屏组件如何做到逻辑复用且不失控。",
+        "tags": [
+          "Vue3",
+          "大屏"
+        ],
+        "date": "2025-06-12",
+        "status": "published",
+        "content": null,
+        "viewCount": 30,
+        "visitorCount": 3,
+        "previous": null,
+        "next": {
+          "id": "6a3e7b4e-b84f-4964-8be5-f43bcf7febdd",
+          "title": "Tailwind + pxtorem：大屏自适应的双轨方案",
+          "desc": "大屏走 rem 等比缩放，营销页走响应式断点，一套构建体系里两种适配模式并存的经验。",
+          "tags": [
+            "Tailwind",
+            "自适应"
+          ],
+          "date": "2025-04-08",
+          "status": "published",
+          "scheduledAt": null,
+          "viewCount": 17
+        },
+        "related": []
+      },
+      "6a3e7b4e-b84f-4964-8be5-f43bcf7febdd": {
+        "id": "6a3e7b4e-b84f-4964-8be5-f43bcf7febdd",
+        "title": "Tailwind + pxtorem：大屏自适应的双轨方案",
+        "desc": "大屏走 rem 等比缩放，营销页走响应式断点，一套构建体系里两种适配模式并存的经验。",
+        "tags": [
+          "Tailwind",
+          "自适应"
+        ],
+        "date": "2025-04-08",
+        "status": "published",
+        "content": null,
+        "viewCount": 18,
+        "visitorCount": 3,
+        "previous": {
+          "id": "283e66ce-aa1e-4daa-a6bd-a16f04e22381",
+          "title": "Vue 3 组合式 API 在大屏项目中的实践",
+          "desc": "从 setup 语法糖到 composables 拆分，聊聊大屏组件如何做到逻辑复用且不失控。",
+          "tags": [
+            "Vue3",
+            "大屏"
+          ],
+          "date": "2025-06-12",
+          "status": "published",
+          "scheduledAt": null,
+          "viewCount": 30
+        },
+        "next": {
+          "id": "299824ee-b0bd-4cbe-91b1-5c06d0225053",
+          "title": "ECharts 性能优化：十万级数据点的大屏渲染",
+          "desc": "数据抽样、增量渲染与 canvas 分层，让实时刷新的大屏在低配设备上也能流畅运行。",
+          "tags": [
+            "ECharts",
+            "性能"
+          ],
+          "date": "2024-11-20",
+          "status": "published",
+          "scheduledAt": null,
+          "viewCount": 11
+        },
+        "related": []
+      },
+      "299824ee-b0bd-4cbe-91b1-5c06d0225053": {
+        "id": "299824ee-b0bd-4cbe-91b1-5c06d0225053",
+        "title": "ECharts 性能优化：十万级数据点的大屏渲染",
+        "desc": "数据抽样、增量渲染与 canvas 分层，让实时刷新的大屏在低配设备上也能流畅运行。",
+        "tags": [
+          "ECharts",
+          "性能"
+        ],
+        "date": "2024-11-20",
+        "status": "published",
+        "content": null,
+        "viewCount": 12,
+        "visitorCount": 2,
+        "previous": {
+          "id": "6a3e7b4e-b84f-4964-8be5-f43bcf7febdd",
+          "title": "Tailwind + pxtorem：大屏自适应的双轨方案",
+          "desc": "大屏走 rem 等比缩放，营销页走响应式断点，一套构建体系里两种适配模式并存的经验。",
+          "tags": [
+            "Tailwind",
+            "自适应"
+          ],
+          "date": "2025-04-08",
+          "status": "published",
+          "scheduledAt": null,
+          "viewCount": 18
+        },
+        "next": {
+          "id": "6bb669e8-084a-428b-bab1-ad1e1d70d5b0",
+          "title": "从零搭建一个数据可视化平台的前端架构",
+          "desc": "路由、状态、组件分层与构建优化的整体思路，以及踩过的那些坑。",
+          "tags": [
+            "架构",
+            "可视化"
+          ],
+          "date": "2024-09-05",
+          "status": "published",
+          "scheduledAt": null,
+          "viewCount": 7
+        },
+        "related": []
+      },
+      "6bb669e8-084a-428b-bab1-ad1e1d70d5b0": {
+        "id": "6bb669e8-084a-428b-bab1-ad1e1d70d5b0",
+        "title": "从零搭建一个数据可视化平台的前端架构",
+        "desc": "路由、状态、组件分层与构建优化的整体思路，以及踩过的那些坑。",
+        "tags": [
+          "架构",
+          "可视化"
+        ],
+        "date": "2024-09-05",
+        "status": "published",
+        "content": null,
+        "viewCount": 8,
+        "visitorCount": 1,
+        "previous": {
+          "id": "299824ee-b0bd-4cbe-91b1-5c06d0225053",
+          "title": "ECharts 性能优化：十万级数据点的大屏渲染",
+          "desc": "数据抽样、增量渲染与 canvas 分层，让实时刷新的大屏在低配设备上也能流畅运行。",
+          "tags": [
+            "ECharts",
+            "性能"
+          ],
+          "date": "2024-11-20",
+          "status": "published",
+          "scheduledAt": null,
+          "viewCount": 12
+        },
+        "next": null,
+        "related": []
+      }
+    }
+  },
+  "models": {
+    "list": {
+      "items": [
+        {
+          "id": "3dbe9405-439f-47d3-aef7-dcf36ad638c9",
+          "title": "预应力混凝土梁桥",
+          "category": "桥梁",
+          "cover": "mock/assets/uploads/b9230e37-332a-4bbd-aae9-249183c8c5c2.png",
+          "fileUrl": "mock/assets/platform/models/bridge-sample.glb",
+          "desc": "内置示例桥梁模型，用于验证卡片列表、GLB 加载和三维交互。可在后台修改或下架。",
+          "tags": [
+            "桥梁",
+            "GLB",
+            "示例"
+          ],
+          "status": "published",
+          "updatedAt": "2026-11-04T16:22:22.629111"
+        },
+        {
+          "id": "4167cbac-cfba-4143-8e96-5416327b7730",
+          "title": "武汉长江大桥",
+          "category": "桥梁",
+          "cover": "mock/assets/uploads/c2ea2cee-6f54-49aa-b59f-cb87441982a7.png",
+          "fileUrl": "mock/assets/platform/models/wuhan-yangtze-river-bridge.glb",
+          "desc": "参考武汉长江大桥双层钢桁梁结构生成的程序化 Three.js 模型，包含公路层、铁路层、钢桁架、桥墩与桥头堡。",
+          "tags": [
+            "武汉",
+            "长江大桥",
+            "Three.js",
+            "钢桁梁"
+          ],
+          "status": "published",
+          "updatedAt": "2026-11-04T16:21:42.897440"
+        },
+        {
+          "id": "87756db5-6782-4eed-a3b0-476152e8c24b",
+          "title": "鹦鹉洲长江大桥",
+          "category": "桥梁",
+          "cover": "mock/assets/uploads/cc2ed814-16f0-433a-b460-23581eac965f.png",
+          "fileUrl": "mock/assets/platform/models/yingwuzhou-yangtze-river-bridge.glb",
+          "desc": "参考鹦鹉洲长江大桥三塔四跨悬索结构生成的程序化 Three.js 模型，包含橙红色钢箱梁、三座桥塔、主缆、吊索与引桥。",
+          "tags": [
+            "武汉",
+            "鹦鹉洲",
+            "Three.js",
+            "悬索桥"
+          ],
+          "status": "published",
+          "updatedAt": "2026-11-05T08:36:00.758601"
+        },
+        {
+          "id": "3d6793cc-f2b2-4080-bcb6-c9bf8179f945",
+          "title": "武汉市汉口长丰桥",
+          "category": "桥梁",
+          "cover": "mock/assets/uploads/2698c40e-8db3-4fc3-91df-60d5157dcafb.png",
+          "fileUrl": "mock/assets/platform/models/hankou-changfeng-bridge.glb",
+          "desc": "参考武汉长丰桥设计的盛夏蓝中承式钢管混凝土系杆拱桥模型，按主跨 252m、边拱 60m、桥宽 27m 与双向六车道比例构建。",
+          "tags": [
+            "武汉",
+            "汉口",
+            "长丰桥",
+            "Three.js",
+            "盛夏蓝",
+            "系杆拱桥"
+          ],
+          "status": "published",
+          "updatedAt": "2026-11-18T15:04:48.392933"
+        },
+        {
+          "id": "72769e01-de62-46a9-8d11-8b07e756b0fc",
+          "title": "三室两厅 · 户型漫游",
+          "category": "户型",
+          "cover": "mock/assets/platform/models/house-tour.png",
+          "fileUrl": "/platform/models/house-tour",
+          "desc": "三室两厅结构示意图，约109㎡，包含3室2厅1厨1卫。支持全屋俯视、室内环视、房间切换与门口热点导航。",
+          "tags": [
+            "户型",
+            "三室两厅",
+            "Three.js",
+            "室内漫游"
+          ],
+          "status": "published",
+          "updatedAt": "2026-11-06T08:59:35.315706"
+        },
+        {
+          "id": "d62825c2-1522-4155-9c93-f7218b6ee7ea",
+          "title": "新中式三层别墅",
+          "category": "别墅",
+          "cover": "mock/assets/platform/models/villa.png",
+          "fileUrl": "/platform/models/villa",
+          "desc": "新中式三层别墅三维漫游，包含庭院、长方形无边水景池、双车位车库与三层重点室内空间。默认展示晴天外观，可切换庭院、泳池、车库和楼层视角。",
+          "tags": [
+            "别墅",
+            "新中式",
+            "Three.js",
+            "庭院",
+            "无边泳池",
+            "双车位车库"
+          ],
+          "status": "published",
+          "updatedAt": "2026-11-06T09:34:17.611483"
+        },
+        {
+          "id": "afaaddcc-4212-473b-b54f-379c5f80574b",
+          "title": "苏州拙政园 · 中部园景",
+          "category": "园林",
+          "cover": "mock/assets/platform/models/suzhou-garden.png",
+          "fileUrl": "/platform/models/suzhou-garden",
+          "desc": "参考拙政园中部构建的沉浸式三维园景，包含远香堂、小飞虹廊桥、荷风四面亭、香洲、水面、荷花、假山、树木与江南远山。支持固定视角与自动漫游。",
+          "tags": [
+            "苏州",
+            "拙政园",
+            "Three.js",
+            "远香堂",
+            "小飞虹",
+            "长廊",
+            "水面",
+            "假山"
+          ],
+          "status": "published",
+          "updatedAt": "2026-11-18T15:04:48.394918"
+        }
+      ],
+      "total": 7,
+      "page": 1,
+      "pageSize": 50
+    },
+    "details": {
+      "3dbe9405-439f-47d3-aef7-dcf36ad638c9": {
+        "id": "3dbe9405-439f-47d3-aef7-dcf36ad638c9",
+        "title": "预应力混凝土梁桥",
+        "category": "桥梁",
+        "cover": "mock/assets/uploads/b9230e37-332a-4bbd-aae9-249183c8c5c2.png",
+        "fileUrl": "mock/assets/platform/models/bridge-sample.glb",
+        "desc": "内置示例桥梁模型，用于验证卡片列表、GLB 加载和三维交互。可在后台修改或下架。",
+        "tags": [
+          "桥梁",
+          "GLB",
+          "示例"
+        ],
+        "status": "published",
+        "updatedAt": "2026-11-04T16:22:22.629111"
+      },
+      "4167cbac-cfba-4143-8e96-5416327b7730": {
+        "id": "4167cbac-cfba-4143-8e96-5416327b7730",
+        "title": "武汉长江大桥",
+        "category": "桥梁",
+        "cover": "mock/assets/uploads/c2ea2cee-6f54-49aa-b59f-cb87441982a7.png",
+        "fileUrl": "mock/assets/platform/models/wuhan-yangtze-river-bridge.glb",
+        "desc": "参考武汉长江大桥双层钢桁梁结构生成的程序化 Three.js 模型，包含公路层、铁路层、钢桁架、桥墩与桥头堡。",
+        "tags": [
+          "武汉",
+          "长江大桥",
+          "Three.js",
+          "钢桁梁"
+        ],
+        "status": "published",
+        "updatedAt": "2026-11-04T16:21:42.897440"
+      },
+      "87756db5-6782-4eed-a3b0-476152e8c24b": {
+        "id": "87756db5-6782-4eed-a3b0-476152e8c24b",
+        "title": "鹦鹉洲长江大桥",
+        "category": "桥梁",
+        "cover": "mock/assets/uploads/cc2ed814-16f0-433a-b460-23581eac965f.png",
+        "fileUrl": "mock/assets/platform/models/yingwuzhou-yangtze-river-bridge.glb",
+        "desc": "参考鹦鹉洲长江大桥三塔四跨悬索结构生成的程序化 Three.js 模型，包含橙红色钢箱梁、三座桥塔、主缆、吊索与引桥。",
+        "tags": [
+          "武汉",
+          "鹦鹉洲",
+          "Three.js",
+          "悬索桥"
+        ],
+        "status": "published",
+        "updatedAt": "2026-11-05T08:36:00.758601"
+      },
+      "3d6793cc-f2b2-4080-bcb6-c9bf8179f945": {
+        "id": "3d6793cc-f2b2-4080-bcb6-c9bf8179f945",
+        "title": "武汉市汉口长丰桥",
+        "category": "桥梁",
+        "cover": "mock/assets/uploads/2698c40e-8db3-4fc3-91df-60d5157dcafb.png",
+        "fileUrl": "mock/assets/platform/models/hankou-changfeng-bridge.glb",
+        "desc": "参考武汉长丰桥设计的盛夏蓝中承式钢管混凝土系杆拱桥模型，按主跨 252m、边拱 60m、桥宽 27m 与双向六车道比例构建。",
+        "tags": [
+          "武汉",
+          "汉口",
+          "长丰桥",
+          "Three.js",
+          "盛夏蓝",
+          "系杆拱桥"
+        ],
+        "status": "published",
+        "updatedAt": "2026-11-18T15:04:48.392933"
+      },
+      "72769e01-de62-46a9-8d11-8b07e756b0fc": {
+        "id": "72769e01-de62-46a9-8d11-8b07e756b0fc",
+        "title": "三室两厅 · 户型漫游",
+        "category": "户型",
+        "cover": "mock/assets/platform/models/house-tour.png",
+        "fileUrl": "/platform/models/house-tour",
+        "desc": "三室两厅结构示意图，约109㎡，包含3室2厅1厨1卫。支持全屋俯视、室内环视、房间切换与门口热点导航。",
+        "tags": [
+          "户型",
+          "三室两厅",
+          "Three.js",
+          "室内漫游"
+        ],
+        "status": "published",
+        "updatedAt": "2026-11-06T08:59:35.315706"
+      },
+      "d62825c2-1522-4155-9c93-f7218b6ee7ea": {
+        "id": "d62825c2-1522-4155-9c93-f7218b6ee7ea",
+        "title": "新中式三层别墅",
+        "category": "别墅",
+        "cover": "mock/assets/platform/models/villa.png",
+        "fileUrl": "/platform/models/villa",
+        "desc": "新中式三层别墅三维漫游，包含庭院、长方形无边水景池、双车位车库与三层重点室内空间。默认展示晴天外观，可切换庭院、泳池、车库和楼层视角。",
+        "tags": [
+          "别墅",
+          "新中式",
+          "Three.js",
+          "庭院",
+          "无边泳池",
+          "双车位车库"
+        ],
+        "status": "published",
+        "updatedAt": "2026-11-06T09:34:17.611483"
+      },
+      "afaaddcc-4212-473b-b54f-379c5f80574b": {
+        "id": "afaaddcc-4212-473b-b54f-379c5f80574b",
+        "title": "苏州拙政园 · 中部园景",
+        "category": "园林",
+        "cover": "mock/assets/platform/models/suzhou-garden.png",
+        "fileUrl": "/platform/models/suzhou-garden",
+        "desc": "参考拙政园中部构建的沉浸式三维园景，包含远香堂、小飞虹廊桥、荷风四面亭、香洲、水面、荷花、假山、树木与江南远山。支持固定视角与自动漫游。",
+        "tags": [
+          "苏州",
+          "拙政园",
+          "Three.js",
+          "远香堂",
+          "小飞虹",
+          "长廊",
+          "水面",
+          "假山"
+        ],
+        "status": "published",
+        "updatedAt": "2026-11-18T15:04:48.394918"
+      }
+    },
+    "progress": {
+      "3dbe9405-439f-47d3-aef7-dcf36ad638c9": {
+        "nodes": [],
+        "summary": {
+          "total": 0,
+          "completed": 0,
+          "inProgress": 0,
+          "notStarted": 0,
+          "delayed": 0,
+          "progressPercent": 0,
+          "currentStage": "暂无进度数据",
+          "updatedAt": null
+        },
+        "unboundNodeNames": []
+      },
+      "4167cbac-cfba-4143-8e96-5416327b7730": {
+        "nodes": [
+          {
+            "id": "wuhan-unit-01",
+            "parentId": null,
+            "nodeType": "unit",
+            "name": "第一联",
+            "meshKey": null,
+            "status": "in_progress",
+            "displayStatus": "in_progress",
+            "progressPercent": 50,
+            "weight": 1,
+            "plannedStartDate": "2026-01-05",
+            "plannedEndDate": "2027-04-30",
+            "actualStartDate": "2026-01-05",
+            "actualEndDate": null,
+            "owner": "桥梁项目部",
+            "delayReason": null,
+            "remark": "主桥共9跨，每跨包含钢桁梁、桥面板和下层铁路梁。",
+            "children": [
+              {
+                "id": "wuhan-unit-01-span-1",
+                "parentId": "wuhan-unit-01",
+                "nodeType": "span",
+                "name": "第1跨",
+                "meshKey": null,
+                "status": "completed",
+                "displayStatus": "completed",
+                "progressPercent": 100,
+                "weight": 3,
+                "plannedStartDate": "2026-01-05",
+                "plannedEndDate": "2026-12-05",
+                "actualStartDate": "2026-01-05",
+                "actualEndDate": "2026-12-05",
+                "owner": "桥梁项目部",
+                "delayReason": null,
+                "remark": null,
+                "children": [
+                  {
+                    "id": "wuhan-unit-01-span-1-lower-beam",
+                    "parentId": "wuhan-unit-01-span-1",
+                    "nodeType": "member",
+                    "name": "下层铁路梁",
+                    "meshKey": "Unit-01.Span-01.lower-beam",
+                    "status": "completed",
+                    "displayStatus": "completed",
+                    "progressPercent": 100,
+                    "weight": 1,
+                    "plannedStartDate": "2026-01-05",
+                    "plannedEndDate": "2026-12-05",
+                    "actualStartDate": "2026-01-05",
+                    "actualEndDate": "2026-12-05",
+                    "owner": "桥梁班组1",
+                    "delayReason": null,
+                    "remark": "数据驱动示例节点",
+                    "children": []
+                  },
+                  {
+                    "id": "wuhan-unit-01-span-1-deck",
+                    "parentId": "wuhan-unit-01-span-1",
+                    "nodeType": "member",
+                    "name": "桥面板",
+                    "meshKey": "Unit-01.Span-01.deck",
+                    "status": "completed",
+                    "displayStatus": "completed",
+                    "progressPercent": 100,
+                    "weight": 1,
+                    "plannedStartDate": "2026-01-05",
+                    "plannedEndDate": "2026-12-05",
+                    "actualStartDate": "2026-01-05",
+                    "actualEndDate": "2026-12-05",
+                    "owner": "桥梁班组1",
+                    "delayReason": null,
+                    "remark": "数据驱动示例节点",
+                    "children": []
+                  },
+                  {
+                    "id": "wuhan-unit-01-span-1-girder",
+                    "parentId": "wuhan-unit-01-span-1",
+                    "nodeType": "member",
+                    "name": "钢桁梁",
+                    "meshKey": "Unit-01.Span-01.girder",
+                    "status": "completed",
+                    "displayStatus": "completed",
+                    "progressPercent": 100,
+                    "weight": 1,
+                    "plannedStartDate": "2026-01-05",
+                    "plannedEndDate": "2026-12-05",
+                    "actualStartDate": "2026-01-05",
+                    "actualEndDate": "2026-12-05",
+                    "owner": "桥梁班组1",
+                    "delayReason": null,
+                    "remark": "数据驱动示例节点",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "id": "wuhan-unit-01-span-2",
+                "parentId": "wuhan-unit-01",
+                "nodeType": "span",
+                "name": "第2跨",
+                "meshKey": null,
+                "status": "completed",
+                "displayStatus": "completed",
+                "progressPercent": 100,
+                "weight": 3,
+                "plannedStartDate": "2026-01-05",
+                "plannedEndDate": "2027-01-04",
+                "actualStartDate": "2026-01-05",
+                "actualEndDate": "2027-01-04",
+                "owner": "桥梁项目部",
+                "delayReason": null,
+                "remark": null,
+                "children": [
+                  {
+                    "id": "wuhan-unit-01-span-2-lower-beam",
+                    "parentId": "wuhan-unit-01-span-2",
+                    "nodeType": "member",
+                    "name": "下层铁路梁",
+                    "meshKey": "Unit-01.Span-02.lower-beam",
+                    "status": "completed",
+                    "displayStatus": "completed",
+                    "progressPercent": 100,
+                    "weight": 1,
+                    "plannedStartDate": "2026-01-05",
+                    "plannedEndDate": "2027-01-04",
+                    "actualStartDate": "2026-01-05",
+                    "actualEndDate": "2027-01-04",
+                    "owner": "桥梁班组2",
+                    "delayReason": null,
+                    "remark": "数据驱动示例节点",
+                    "children": []
+                  },
+                  {
+                    "id": "wuhan-unit-01-span-2-deck",
+                    "parentId": "wuhan-unit-01-span-2",
+                    "nodeType": "member",
+                    "name": "桥面板",
+                    "meshKey": "Unit-01.Span-02.deck",
+                    "status": "completed",
+                    "displayStatus": "completed",
+                    "progressPercent": 100,
+                    "weight": 1,
+                    "plannedStartDate": "2026-01-05",
+                    "plannedEndDate": "2027-01-04",
+                    "actualStartDate": "2026-01-05",
+                    "actualEndDate": "2027-01-04",
+                    "owner": "桥梁班组2",
+                    "delayReason": null,
+                    "remark": "数据驱动示例节点",
+                    "children": []
+                  },
+                  {
+                    "id": "wuhan-unit-01-span-2-girder",
+                    "parentId": "wuhan-unit-01-span-2",
+                    "nodeType": "member",
+                    "name": "钢桁梁",
+                    "meshKey": "Unit-01.Span-02.girder",
+                    "status": "completed",
+                    "displayStatus": "completed",
+                    "progressPercent": 100,
+                    "weight": 1,
+                    "plannedStartDate": "2026-01-05",
+                    "plannedEndDate": "2027-01-04",
+                    "actualStartDate": "2026-01-05",
+                    "actualEndDate": "2027-01-04",
+                    "owner": "桥梁班组2",
+                    "delayReason": null,
+                    "remark": "数据驱动示例节点",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "id": "wuhan-unit-01-span-3",
+                "parentId": "wuhan-unit-01",
+                "nodeType": "span",
+                "name": "第3跨",
+                "meshKey": null,
+                "status": "completed",
+                "displayStatus": "completed",
+                "progressPercent": 100,
+                "weight": 3,
+                "plannedStartDate": "2026-01-05",
+                "plannedEndDate": "2027-02-03",
+                "actualStartDate": "2026-01-05",
+                "actualEndDate": "2027-02-03",
+                "owner": "桥梁项目部",
+                "delayReason": null,
+                "remark": null,
+                "children": [
+                  {
+                    "id": "wuhan-unit-01-span-3-lower-beam",
+                    "parentId": "wuhan-unit-01-span-3",
+                    "nodeType": "member",
+                    "name": "下层铁路梁",
+                    "meshKey": "Unit-01.Span-03.lower-beam",
+                    "status": "completed",
+                    "displayStatus": "completed",
+                    "progressPercent": 100,
+                    "weight": 1,
+                    "plannedStartDate": "2026-01-05",
+                    "plannedEndDate": "2027-02-03",
+                    "actualStartDate": "2026-01-05",
+                    "actualEndDate": "2027-02-03",
+                    "owner": "桥梁班组3",
+                    "delayReason": null,
+                    "remark": "数据驱动示例节点",
+                    "children": []
+                  },
+                  {
+                    "id": "wuhan-unit-01-span-3-deck",
+                    "parentId": "wuhan-unit-01-span-3",
+                    "nodeType": "member",
+                    "name": "桥面板",
+                    "meshKey": "Unit-01.Span-03.deck",
+                    "status": "completed",
+                    "displayStatus": "completed",
+                    "progressPercent": 100,
+                    "weight": 1,
+                    "plannedStartDate": "2026-01-05",
+                    "plannedEndDate": "2027-02-03",
+                    "actualStartDate": "2026-01-05",
+                    "actualEndDate": "2027-02-03",
+                    "owner": "桥梁班组3",
+                    "delayReason": null,
+                    "remark": "数据驱动示例节点",
+                    "children": []
+                  },
+                  {
+                    "id": "wuhan-unit-01-span-3-girder",
+                    "parentId": "wuhan-unit-01-span-3",
+                    "nodeType": "member",
+                    "name": "钢桁梁",
+                    "meshKey": "Unit-01.Span-03.girder",
+                    "status": "completed",
+                    "displayStatus": "completed",
+                    "progressPercent": 100,
+                    "weight": 1,
+                    "plannedStartDate": "2026-01-05",
+                    "plannedEndDate": "2027-02-03",
+                    "actualStartDate": "2026-01-05",
+                    "actualEndDate": "2027-02-03",
+                    "owner": "桥梁班组3",
+                    "delayReason": null,
+                    "remark": "数据驱动示例节点",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "id": "wuhan-unit-01-span-4",
+                "parentId": "wuhan-unit-01",
+                "nodeType": "span",
+                "name": "第4跨",
+                "meshKey": null,
+                "status": "completed",
+                "displayStatus": "completed",
+                "progressPercent": 100,
+                "weight": 3,
+                "plannedStartDate": "2026-01-05",
+                "plannedEndDate": "2027-03-05",
+                "actualStartDate": "2026-01-05",
+                "actualEndDate": "2027-03-05",
+                "owner": "桥梁项目部",
+                "delayReason": null,
+                "remark": null,
+                "children": [
+                  {
+                    "id": "wuhan-unit-01-span-4-lower-beam",
+                    "parentId": "wuhan-unit-01-span-4",
+                    "nodeType": "member",
+                    "name": "下层铁路梁",
+                    "meshKey": "Unit-01.Span-04.lower-beam",
+                    "status": "completed",
+                    "displayStatus": "completed",
+                    "progressPercent": 100,
+                    "weight": 1,
+                    "plannedStartDate": "2026-01-05",
+                    "plannedEndDate": "2027-03-05",
+                    "actualStartDate": "2026-01-05",
+                    "actualEndDate": "2027-03-05",
+                    "owner": "桥梁班组4",
+                    "delayReason": null,
+                    "remark": "数据驱动示例节点",
+                    "children": []
+                  },
+                  {
+                    "id": "wuhan-unit-01-span-4-deck",
+                    "parentId": "wuhan-unit-01-span-4",
+                    "nodeType": "member",
+                    "name": "桥面板",
+                    "meshKey": "Unit-01.Span-04.deck",
+                    "status": "completed",
+                    "displayStatus": "completed",
+                    "progressPercent": 100,
+                    "weight": 1,
+                    "plannedStartDate": "2026-01-05",
+                    "plannedEndDate": "2027-03-05",
+                    "actualStartDate": "2026-01-05",
+                    "actualEndDate": "2027-03-05",
+                    "owner": "桥梁班组4",
+                    "delayReason": null,
+                    "remark": "数据驱动示例节点",
+                    "children": []
+                  },
+                  {
+                    "id": "wuhan-unit-01-span-4-girder",
+                    "parentId": "wuhan-unit-01-span-4",
+                    "nodeType": "member",
+                    "name": "钢桁梁",
+                    "meshKey": "Unit-01.Span-04.girder",
+                    "status": "completed",
+                    "displayStatus": "completed",
+                    "progressPercent": 100,
+                    "weight": 1,
+                    "plannedStartDate": "2026-01-05",
+                    "plannedEndDate": "2027-03-05",
+                    "actualStartDate": "2026-01-05",
+                    "actualEndDate": "2027-03-05",
+                    "owner": "桥梁班组4",
+                    "delayReason": null,
+                    "remark": "数据驱动示例节点",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "id": "wuhan-unit-01-span-5",
+                "parentId": "wuhan-unit-01",
+                "nodeType": "span",
+                "name": "第5跨",
+                "meshKey": null,
+                "status": "completed",
+                "displayStatus": "completed",
+                "progressPercent": 100,
+                "weight": 3,
+                "plannedStartDate": "2026-01-05",
+                "plannedEndDate": "2027-04-04",
+                "actualStartDate": "2026-01-05",
+                "actualEndDate": "2027-04-04",
+                "owner": "桥梁项目部",
+                "delayReason": null,
+                "remark": null,
+                "children": [
+                  {
+                    "id": "wuhan-unit-01-span-5-lower-beam",
+                    "parentId": "wuhan-unit-01-span-5",
+                    "nodeType": "member",
+                    "name": "下层铁路梁",
+                    "meshKey": "Unit-01.Span-05.lower-beam",
+                    "status": "completed",
+                    "displayStatus": "completed",
+                    "progressPercent": 100,
+                    "weight": 1,
+                    "plannedStartDate": "2026-01-05",
+                    "plannedEndDate": "2027-04-04",
+                    "actualStartDate": "2026-01-05",
+                    "actualEndDate": "2027-04-04",
+                    "owner": "桥梁班组5",
+                    "delayReason": null,
+                    "remark": "数据驱动示例节点",
+                    "children": []
+                  },
+                  {
+                    "id": "wuhan-unit-01-span-5-deck",
+                    "parentId": "wuhan-unit-01-span-5",
+                    "nodeType": "member",
+                    "name": "桥面板",
+                    "meshKey": "Unit-01.Span-05.deck",
+                    "status": "completed",
+                    "displayStatus": "completed",
+                    "progressPercent": 100,
+                    "weight": 1,
+                    "plannedStartDate": "2026-01-05",
+                    "plannedEndDate": "2027-04-04",
+                    "actualStartDate": "2026-01-05",
+                    "actualEndDate": "2027-04-04",
+                    "owner": "桥梁班组5",
+                    "delayReason": null,
+                    "remark": "数据驱动示例节点",
+                    "children": []
+                  },
+                  {
+                    "id": "wuhan-unit-01-span-5-girder",
+                    "parentId": "wuhan-unit-01-span-5",
+                    "nodeType": "member",
+                    "name": "钢桁梁",
+                    "meshKey": "Unit-01.Span-05.girder",
+                    "status": "completed",
+                    "displayStatus": "completed",
+                    "progressPercent": 100,
+                    "weight": 1,
+                    "plannedStartDate": "2026-01-05",
+                    "plannedEndDate": "2027-04-04",
+                    "actualStartDate": "2026-01-05",
+                    "actualEndDate": "2027-04-04",
+                    "owner": "桥梁班组5",
+                    "delayReason": null,
+                    "remark": "数据驱动示例节点",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "id": "wuhan-unit-01-span-6",
+                "parentId": "wuhan-unit-01",
+                "nodeType": "span",
+                "name": "第6跨",
+                "meshKey": null,
+                "status": "in_progress",
+                "displayStatus": "in_progress",
+                "progressPercent": 50,
+                "weight": 3,
+                "plannedStartDate": "2026-01-05",
+                "plannedEndDate": "2027-05-04",
+                "actualStartDate": "2026-01-05",
+                "actualEndDate": null,
+                "owner": "桥梁项目部",
+                "delayReason": null,
+                "remark": null,
+                "children": [
+                  {
+                    "id": "wuhan-unit-01-span-6-lower-beam",
+                    "parentId": "wuhan-unit-01-span-6",
+                    "nodeType": "member",
+                    "name": "下层铁路梁",
+                    "meshKey": "Unit-01.Span-06.lower-beam",
+                    "status": "delayed",
+                    "displayStatus": "delayed",
+                    "progressPercent": 50,
+                    "weight": 1,
+                    "plannedStartDate": "2026-01-05",
+                    "plannedEndDate": "2027-05-04",
+                    "actualStartDate": "2026-01-05",
+                    "actualEndDate": null,
+                    "owner": "桥梁班组6",
+                    "delayReason": "钢结构供货延迟",
+                    "remark": "数据驱动示例节点",
+                    "children": []
+                  },
+                  {
+                    "id": "wuhan-unit-01-span-6-deck",
+                    "parentId": "wuhan-unit-01-span-6",
+                    "nodeType": "member",
+                    "name": "桥面板",
+                    "meshKey": "Unit-01.Span-06.deck",
+                    "status": "in_progress",
+                    "displayStatus": "in_progress",
+                    "progressPercent": 50,
+                    "weight": 1,
+                    "plannedStartDate": "2026-01-05",
+                    "plannedEndDate": "2027-05-04",
+                    "actualStartDate": "2026-01-05",
+                    "actualEndDate": null,
+                    "owner": "桥梁班组6",
+                    "delayReason": null,
+                    "remark": "数据驱动示例节点",
+                    "children": []
+                  },
+                  {
+                    "id": "wuhan-unit-01-span-6-girder",
+                    "parentId": "wuhan-unit-01-span-6",
+                    "nodeType": "member",
+                    "name": "钢桁梁",
+                    "meshKey": "Unit-01.Span-06.girder",
+                    "status": "completed",
+                    "displayStatus": "completed",
+                    "progressPercent": 100,
+                    "weight": 1,
+                    "plannedStartDate": "2026-01-05",
+                    "plannedEndDate": "2027-05-04",
+                    "actualStartDate": "2026-01-05",
+                    "actualEndDate": "2027-05-04",
+                    "owner": "桥梁班组6",
+                    "delayReason": null,
+                    "remark": "数据驱动示例节点",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "id": "wuhan-unit-01-span-7",
+                "parentId": "wuhan-unit-01",
+                "nodeType": "span",
+                "name": "第7跨",
+                "meshKey": null,
+                "status": "not_started",
+                "displayStatus": "not_started",
+                "progressPercent": 0,
+                "weight": 3,
+                "plannedStartDate": "2026-01-05",
+                "plannedEndDate": "2027-06-03",
+                "actualStartDate": "2026-01-05",
+                "actualEndDate": null,
+                "owner": "桥梁项目部",
+                "delayReason": null,
+                "remark": null,
+                "children": [
+                  {
+                    "id": "wuhan-unit-01-span-7-lower-beam",
+                    "parentId": "wuhan-unit-01-span-7",
+                    "nodeType": "member",
+                    "name": "下层铁路梁",
+                    "meshKey": "Unit-01.Span-07.lower-beam",
+                    "status": "not_started",
+                    "displayStatus": "not_started",
+                    "progressPercent": 0,
+                    "weight": 1,
+                    "plannedStartDate": "2026-01-05",
+                    "plannedEndDate": "2027-06-03",
+                    "actualStartDate": "2026-01-05",
+                    "actualEndDate": null,
+                    "owner": "桥梁班组7",
+                    "delayReason": null,
+                    "remark": "数据驱动示例节点",
+                    "children": []
+                  },
+                  {
+                    "id": "wuhan-unit-01-span-7-deck",
+                    "parentId": "wuhan-unit-01-span-7",
+                    "nodeType": "member",
+                    "name": "桥面板",
+                    "meshKey": "Unit-01.Span-07.deck",
+                    "status": "not_started",
+                    "displayStatus": "not_started",
+                    "progressPercent": 0,
+                    "weight": 1,
+                    "plannedStartDate": "2026-01-05",
+                    "plannedEndDate": "2027-06-03",
+                    "actualStartDate": "2026-01-05",
+                    "actualEndDate": null,
+                    "owner": "桥梁班组7",
+                    "delayReason": null,
+                    "remark": "数据驱动示例节点",
+                    "children": []
+                  },
+                  {
+                    "id": "wuhan-unit-01-span-7-girder",
+                    "parentId": "wuhan-unit-01-span-7",
+                    "nodeType": "member",
+                    "name": "钢桁梁",
+                    "meshKey": "Unit-01.Span-07.girder",
+                    "status": "not_started",
+                    "displayStatus": "not_started",
+                    "progressPercent": 0,
+                    "weight": 1,
+                    "plannedStartDate": "2026-01-05",
+                    "plannedEndDate": "2027-06-03",
+                    "actualStartDate": "2026-01-05",
+                    "actualEndDate": null,
+                    "owner": "桥梁班组7",
+                    "delayReason": null,
+                    "remark": "数据驱动示例节点",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "id": "wuhan-unit-01-span-8",
+                "parentId": "wuhan-unit-01",
+                "nodeType": "span",
+                "name": "第8跨",
+                "meshKey": null,
+                "status": "not_started",
+                "displayStatus": "not_started",
+                "progressPercent": 0,
+                "weight": 3,
+                "plannedStartDate": "2026-01-05",
+                "plannedEndDate": "2027-07-03",
+                "actualStartDate": "2026-01-05",
+                "actualEndDate": null,
+                "owner": "桥梁项目部",
+                "delayReason": null,
+                "remark": null,
+                "children": [
+                  {
+                    "id": "wuhan-unit-01-span-8-lower-beam",
+                    "parentId": "wuhan-unit-01-span-8",
+                    "nodeType": "member",
+                    "name": "下层铁路梁",
+                    "meshKey": "Unit-01.Span-08.lower-beam",
+                    "status": "not_started",
+                    "displayStatus": "not_started",
+                    "progressPercent": 0,
+                    "weight": 1,
+                    "plannedStartDate": "2026-01-05",
+                    "plannedEndDate": "2027-07-03",
+                    "actualStartDate": "2026-01-05",
+                    "actualEndDate": null,
+                    "owner": "桥梁班组8",
+                    "delayReason": null,
+                    "remark": "数据驱动示例节点",
+                    "children": []
+                  },
+                  {
+                    "id": "wuhan-unit-01-span-8-deck",
+                    "parentId": "wuhan-unit-01-span-8",
+                    "nodeType": "member",
+                    "name": "桥面板",
+                    "meshKey": "Unit-01.Span-08.deck",
+                    "status": "not_started",
+                    "displayStatus": "not_started",
+                    "progressPercent": 0,
+                    "weight": 1,
+                    "plannedStartDate": "2026-01-05",
+                    "plannedEndDate": "2027-07-03",
+                    "actualStartDate": "2026-01-05",
+                    "actualEndDate": null,
+                    "owner": "桥梁班组8",
+                    "delayReason": null,
+                    "remark": "数据驱动示例节点",
+                    "children": []
+                  },
+                  {
+                    "id": "wuhan-unit-01-span-8-girder",
+                    "parentId": "wuhan-unit-01-span-8",
+                    "nodeType": "member",
+                    "name": "钢桁梁",
+                    "meshKey": "Unit-01.Span-08.girder",
+                    "status": "not_started",
+                    "displayStatus": "not_started",
+                    "progressPercent": 0,
+                    "weight": 1,
+                    "plannedStartDate": "2026-01-05",
+                    "plannedEndDate": "2027-07-03",
+                    "actualStartDate": "2026-01-05",
+                    "actualEndDate": null,
+                    "owner": "桥梁班组8",
+                    "delayReason": null,
+                    "remark": "数据驱动示例节点",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "id": "wuhan-unit-01-span-9",
+                "parentId": "wuhan-unit-01",
+                "nodeType": "span",
+                "name": "第9跨",
+                "meshKey": null,
+                "status": "not_started",
+                "displayStatus": "not_started",
+                "progressPercent": 0,
+                "weight": 3,
+                "plannedStartDate": "2026-01-05",
+                "plannedEndDate": "2027-08-02",
+                "actualStartDate": "2026-01-05",
+                "actualEndDate": null,
+                "owner": "桥梁项目部",
+                "delayReason": null,
+                "remark": null,
+                "children": [
+                  {
+                    "id": "wuhan-unit-01-span-9-lower-beam",
+                    "parentId": "wuhan-unit-01-span-9",
+                    "nodeType": "member",
+                    "name": "下层铁路梁",
+                    "meshKey": "Unit-01.Span-09.lower-beam",
+                    "status": "not_started",
+                    "displayStatus": "not_started",
+                    "progressPercent": 0,
+                    "weight": 1,
+                    "plannedStartDate": "2026-01-05",
+                    "plannedEndDate": "2027-08-02",
+                    "actualStartDate": "2026-01-05",
+                    "actualEndDate": null,
+                    "owner": "桥梁班组9",
+                    "delayReason": null,
+                    "remark": "数据驱动示例节点",
+                    "children": []
+                  },
+                  {
+                    "id": "wuhan-unit-01-span-9-deck",
+                    "parentId": "wuhan-unit-01-span-9",
+                    "nodeType": "member",
+                    "name": "桥面板",
+                    "meshKey": "Unit-01.Span-09.deck",
+                    "status": "not_started",
+                    "displayStatus": "not_started",
+                    "progressPercent": 0,
+                    "weight": 1,
+                    "plannedStartDate": "2026-01-05",
+                    "plannedEndDate": "2027-08-02",
+                    "actualStartDate": "2026-01-05",
+                    "actualEndDate": null,
+                    "owner": "桥梁班组9",
+                    "delayReason": null,
+                    "remark": "数据驱动示例节点",
+                    "children": []
+                  },
+                  {
+                    "id": "wuhan-unit-01-span-9-girder",
+                    "parentId": "wuhan-unit-01-span-9",
+                    "nodeType": "member",
+                    "name": "钢桁梁",
+                    "meshKey": "Unit-01.Span-09.girder",
+                    "status": "not_started",
+                    "displayStatus": "not_started",
+                    "progressPercent": 0,
+                    "weight": 1,
+                    "plannedStartDate": "2026-01-05",
+                    "plannedEndDate": "2027-08-02",
+                    "actualStartDate": "2026-01-05",
+                    "actualEndDate": null,
+                    "owner": "桥梁班组9",
+                    "delayReason": null,
+                    "remark": "数据驱动示例节点",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "summary": {
+          "total": 27,
+          "completed": 16,
+          "inProgress": 1,
+          "notStarted": 9,
+          "delayed": 1,
+          "progressPercent": 63,
+          "currentStage": "下层铁路梁（延期）",
+          "updatedAt": "2026-11-05T09:39:05.198426"
+        },
+        "unboundNodeNames": []
+      },
+      "87756db5-6782-4eed-a3b0-476152e8c24b": {
+        "nodes": [],
+        "summary": {
+          "total": 0,
+          "completed": 0,
+          "inProgress": 0,
+          "notStarted": 0,
+          "delayed": 0,
+          "progressPercent": 0,
+          "currentStage": "暂无进度数据",
+          "updatedAt": null
+        },
+        "unboundNodeNames": []
+      },
+      "3d6793cc-f2b2-4080-bcb6-c9bf8179f945": {
+        "nodes": [],
+        "summary": {
+          "total": 0,
+          "completed": 0,
+          "inProgress": 0,
+          "notStarted": 0,
+          "delayed": 0,
+          "progressPercent": 0,
+          "currentStage": "暂无进度数据",
+          "updatedAt": null
+        },
+        "unboundNodeNames": []
+      },
+      "72769e01-de62-46a9-8d11-8b07e756b0fc": {
+        "nodes": [],
+        "summary": {
+          "total": 0,
+          "completed": 0,
+          "inProgress": 0,
+          "notStarted": 0,
+          "delayed": 0,
+          "progressPercent": 0,
+          "currentStage": "暂无进度数据",
+          "updatedAt": null
+        },
+        "unboundNodeNames": []
+      },
+      "d62825c2-1522-4155-9c93-f7218b6ee7ea": {
+        "nodes": [],
+        "summary": {
+          "total": 0,
+          "completed": 0,
+          "inProgress": 0,
+          "notStarted": 0,
+          "delayed": 0,
+          "progressPercent": 0,
+          "currentStage": "暂无进度数据",
+          "updatedAt": null
+        },
+        "unboundNodeNames": []
+      },
+      "afaaddcc-4212-473b-b54f-379c5f80574b": {
+        "nodes": [],
+        "summary": {
+          "total": 0,
+          "completed": 0,
+          "inProgress": 0,
+          "notStarted": 0,
+          "delayed": 0,
+          "progressPercent": 0,
+          "currentStage": "暂无进度数据",
+          "updatedAt": null
+        },
+        "unboundNodeNames": []
+      }
+    },
+    "snapshots": {
+      "3dbe9405-439f-47d3-aef7-dcf36ad638c9": [],
+      "4167cbac-cfba-4143-8e96-5416327b7730": [
+        {
+          "id": "cf9662c7-d525-4844-ade9-a49d85c165ea",
+          "modelId": "4167cbac-cfba-4143-8e96-5416327b7730",
+          "capturedAt": "2026-11-05T09:39:05.220084"
+        }
+      ],
+      "87756db5-6782-4eed-a3b0-476152e8c24b": [],
+      "3d6793cc-f2b2-4080-bcb6-c9bf8179f945": [],
+      "72769e01-de62-46a9-8d11-8b07e756b0fc": [],
+      "d62825c2-1522-4155-9c93-f7218b6ee7ea": [],
+      "afaaddcc-4212-473b-b54f-379c5f80574b": []
+    }
+  },
+  "homeConfig": {
+    "platformName": "FAN · 凡集",
+    "heroBadge": "",
+    "heroTitle": "FAN · 凡集",
+    "heroDescription": "一站式数据可视化展示平台，拖拽式自由布局、多数据源接入与实时更新，十分钟搭建专业数据大屏。",
+    "heroVideoUrl": null,
+    "heroPrimaryButtonText": "进入平台",
+    "heroSecondaryButtonText": "了解产品",
+    "introTitle": "让数据一眼被看见",
+    "introDescription": "FAN · 凡集是一站式数据可视化展示平台，旨在帮助用户快速通过可视化图表展示大量数据，低门槛快速打造出专业大屏数据展示。精心预设多种行业模板，极致展示数据魅力。采用拖拽式自由布局，全图形化编辑，快速可视化制作。FAN · 凡集支持多种数据来源配置，支持数据实时同步更新，同时基于 Web 页面渲染，可灵活投屏多种屏幕终端。",
+    "introBackgroundUrl": "https://qcloudimg.tencent-cloud.cn/trisys/assets/product/images/fTj6N6HCvoIdYGdjh9eF2.png",
+    "featureTitle": "产品特性",
+    "features": [
+      {
+        "title": "酷炫大屏",
+        "desc": "由专业设计师精心预设生产情况总览，政府工作指数，销售实时监控等多种行业模板，丰富的图形组件，使您可以通过图形化的界面在十分钟之内快速搭建起专业、美观、酷炫的大屏展示。",
+        "image": "https://qcloudimg.tencent-cloud.cn/trisys/assets/product/images/xvJ7ntosp7BrsXiqbGm5E.png"
+      },
+      {
+        "title": "自由布局",
+        "desc": "不必预先导入数据，用户可以直接将所要呈现的组件拖拽到画布上进行自由配置和布局，通过点击拖拽即可调整图层顺序，全程图形化编辑操作，所见即所得。",
+        "image": "https://qcloudimg.tencent-cloud.cn/trisys/assets/product/images/qaagxLeAKs31tIiylVbnH.png"
+      },
+      {
+        "title": "灵活多端",
+        "desc": "用户可按实际屏幕尺寸自定义任意画布大小，适配各种拼接大屏场景。大屏以网页形式预览和发布，页面基于 Web 渲染，无需额外安装软件，使用浏览器即可灵活投放至多种屏幕终端。",
+        "image": "https://qcloudimg.tencent-cloud.cn/trisys/assets/product/images/F0E8XtBLzoJO_5QCtVFNA.png"
+      }
+    ],
+    "contactTitle": "联系我们",
+    "contactDescription": "项目咨询与产品演示，欢迎随时联系",
+    "contactPhone": "156****7568",
+    "footerText": "© 2026 FAN · 凡集 · 保留所有权利"
+  },
+  "contentFacets": {
+    "workTags": [
+      "ECharts",
+      "可视化",
+      "大屏",
+      "存储",
+      "工业互联网",
+      "数据可视化",
+      "架设",
+      "水泥",
+      "物联网",
+      "监测",
+      "试验室",
+      "运输",
+      "预制"
+    ],
+    "workYears": [
+      2026,
+      2025,
+      2024
+    ],
+    "comicStatuses": [
+      "完结",
+      "连载中"
+    ],
+    "movieGenres": [
+      "剧情",
+      "恐怖",
+      "爱情",
+      "纪录"
+    ],
+    "movieYears": [
+      2026
+    ],
+    "animeGenres": [
+      "仙侠",
+      "恋爱",
+      "悬疑",
+      "搞笑",
+      "热血",
+      "玄幻",
+      "都市"
+    ],
+    "animeYears": [
+      2026
+    ],
+    "articleTags": [
+      "ECharts",
+      "Tailwind",
+      "Vue3",
+      "可视化",
+      "大屏",
+      "性能",
+      "架构",
+      "自适应"
+    ],
+    "articleYears": [
+      2025,
+      2024
+    ]
+  },
+  "modelFacets": {
+    "categories": [
+      "别墅",
+      "园林",
+      "户型",
+      "桥梁"
+    ]
+  }
+}

@@ -1,2 +1,14 @@
 .DS_Store
 .git.bak/
+node_modules/
+dist/
+coverage/
+*.log
+.env
+.env.*
+!.env.example
+.DS_Store
+
+screen-admin/server/target/
+screen-admin/server/data/
+screen-web/dist/

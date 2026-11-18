@@ -5,6 +5,7 @@ import {fileURLToPath, URL} from 'node:url'
 const backendTarget = process.env.BACKEND_TARGET || 'http://localhost:8666/'
 
 export default defineConfig({
+  base: process.env.VITE_BASE_PATH || '/',
   plugins: [
     vue()
   ],
@@ -57,8 +58,7 @@ export default defineConfig({
         manualChunks: {
           'element-plus': ['element-plus'],
           'echarts': ['echarts'],
-          three: ['three'],
-          'vue-core': ['vue', 'vue-router', 'pinia']
+          three: ['three']
         }
       }
     },

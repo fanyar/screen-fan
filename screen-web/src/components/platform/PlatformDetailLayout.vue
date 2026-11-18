@@ -224,6 +224,11 @@ const slots = useSlots()
     grid-template-rows: min(38vh, 300px) minmax(0, 1fr);
   }
 
+  .detail-cover--poster {
+    aspect-ratio: auto;
+    height: 100%;
+  }
+
   .detail-content {
     padding: 24px 20px;
   }

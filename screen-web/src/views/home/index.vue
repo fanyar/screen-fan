@@ -1,10 +1,10 @@
 <template>
   <div class="h-screen w-full overflow-y-auto bg-white text-[14px] text-[#1f2937] scrollBar">
     <header class="sticky top-0 z-20 border-b border-[#e8edf5] bg-white/90 backdrop-blur">
-      <div class="mx-auto flex h-[64px] w-full max-w-[1200px] items-center justify-between px-[24px]">
+      <div class="home-header-inner mx-auto flex h-[64px] w-full max-w-[1200px] items-center justify-between px-[24px]">
         <button class="flex items-center gap-[10px]" @click="$router.push('/home')">
           <img class="h-[28px]" :src="logoFan" :alt="platformName"/>
-          <span v-if="hasText(platformName)" class="text-[18px] font-semibold text-[#1f2937]">{{ platformName }}</span>
+          <span v-if="hasText(platformName)" class="home-brand-name text-[18px] font-semibold text-[#1f2937]">{{ platformName }}</span>
         </button>
         <nav class="hidden items-center gap-[32px] md:flex">
           <button v-if="introVisible" class="text-[14px] text-[#495770] transition-colors hover:text-sx-primary"
@@ -23,7 +23,7 @@
       </div>
     </header>
 
-    <section class="relative flex h-[72vh] max-h-[820px] min-h-[560px] w-full items-center overflow-hidden bg-sx-navy">
+    <section class="home-hero relative flex h-[72vh] max-h-[820px] min-h-[560px] w-full items-center overflow-hidden bg-sx-navy">
       <video class="absolute inset-0 h-full w-full object-cover" loop="loop" muted="muted" preload="auto"
              autoplay="autoplay" playsinline>
         <source v-if="home.heroVideoUrl" :src="home.heroVideoUrl">
@@ -31,15 +31,15 @@
       </video>
       <div
           class="absolute inset-0 bg-gradient-to-r from-[rgba(4,12,24,0.88)] via-[rgba(4,12,24,0.55)] to-[rgba(4,12,24,0.15)]"></div>
-      <div class="relative mx-auto w-full max-w-[1200px] px-[24px]">
+      <div class="home-hero-inner relative mx-auto w-full max-w-[1200px] px-[24px]">
         <div class="max-w-[640px] pb-[24px]">
           <span v-if="hasText(home.heroBadge)"
               class="mb-[18px] inline-flex items-center rounded-[4px] border border-[rgba(34,211,238,0.45)] bg-[rgba(34,211,238,0.12)] px-[12px] py-[6px] text-[14px] text-sx-accent">{{ home.heroBadge }}</span>
-          <h1 v-if="hasText(home.heroTitle)" class="text-[44px] font-semibold leading-[58px] text-white">{{ home.heroTitle }}</h1>
-          <p v-if="hasText(home.heroDescription)" class="mt-[16px] max-w-[560px] text-[16px] leading-[28px] text-[#d8e9ff]">
+          <h1 v-if="hasText(home.heroTitle)" class="home-hero-title text-[44px] font-semibold leading-[58px] text-white">{{ home.heroTitle }}</h1>
+          <p v-if="hasText(home.heroDescription)" class="home-hero-desc mt-[16px] max-w-[560px] text-[16px] leading-[28px] text-[#d8e9ff]">
             {{ home.heroDescription }}
           </p>
-          <div v-if="heroActionsVisible" class="mt-[36px] flex flex-wrap items-center gap-[16px]">
+          <div v-if="heroActionsVisible" class="home-hero-actions mt-[36px] flex flex-wrap items-center gap-[16px]">
             <el-button v-if="hasText(home.heroPrimaryButtonText)" type="primary" class="!h-[48px] !px-[28px] !text-[16px]"
                        @click="$router.push('/platform')">{{ home.heroPrimaryButtonText }}
             </el-button>
@@ -57,19 +57,19 @@
              class="scroll-mt-[88px] w-full bg-cover"
              :class="{'home-introduce-bg': hasText(home.introBackgroundUrl)}"
              :style="introStyle">
-      <div class="mx-auto w-full max-w-[1200px] px-[24px] py-[110px]">
+      <div class="home-intro-inner mx-auto w-full max-w-[1200px] px-[24px] py-[110px]">
         <div class="max-w-[560px]">
-          <div v-if="hasText(home.introTitle)" class="pb-[12px] text-[40px] font-medium leading-[52px] text-[#111827]">{{ home.introTitle }}</div>
-          <div v-if="hasText(home.introDescription)" class="text-[16px] leading-[28px] text-[#495770]">
+          <div v-if="hasText(home.introTitle)" class="home-intro-title pb-[12px] text-[40px] font-medium leading-[52px] text-[#111827]">{{ home.introTitle }}</div>
+          <div v-if="hasText(home.introDescription)" class="home-intro-desc text-[16px] leading-[28px] text-[#495770]">
             {{ home.introDescription }}
           </div>
         </div>
       </div>
     </section>
 
-    <section v-if="featuresVisible" id="product-features" class="scroll-mt-[88px] py-[90px]">
+    <section v-if="featuresVisible" id="product-features" class="home-features scroll-mt-[88px] py-[90px]">
       <div class="mx-auto w-full max-w-[1200px] px-[24px]">
-        <div v-if="hasText(home.featureTitle)" class="mb-[50px] text-center text-[28px] font-medium leading-[40px] text-[#111827]">{{ home.featureTitle }}</div>
+        <div v-if="hasText(home.featureTitle)" class="home-section-title mb-[50px] text-center text-[28px] font-medium leading-[40px] text-[#111827]">{{ home.featureTitle }}</div>
         <el-row :gutter="24">
           <el-col v-for="item in visibleFeatures" :key="item.title || item.image || item.desc" :xs="24" :sm="12" :md="8">
             <div
@@ -87,17 +87,16 @@
       </div>
     </section>
 
-    <section v-if="contactVisible" id="contact-us" class="scroll-mt-[88px] bg-[#f5f7fa] py-[90px]">
+    <section v-if="contactVisible" id="contact-us" class="home-contact scroll-mt-[88px] bg-[#f5f7fa] py-[90px]">
       <div class="mx-auto w-full max-w-[1200px] px-[24px] text-center">
-        <div v-if="hasText(home.contactTitle)" class="text-[28px] font-medium leading-[40px] text-[#111827]">{{ home.contactTitle }}</div>
-        <div v-if="hasText(home.contactDescription)" class="mt-[14px] text-[16px] leading-[26px] text-[#495770]">{{ home.contactDescription }}</div>
-        <div v-if="hasText(home.contactPhone)" class="mt-[26px] text-[30px] font-semibold leading-[42px] text-sx-primary">{{ home.contactPhone }}</div>
-        <PlatformContactForm/>
+        <div v-if="hasText(home.contactTitle)" class="home-section-title text-[28px] font-medium leading-[40px] text-[#111827]">{{ home.contactTitle }}</div>
+        <div v-if="hasText(home.contactDescription)" class="home-contact-desc mt-[14px] text-[16px] leading-[26px] text-[#495770]">{{ home.contactDescription }}</div>
+        <div v-if="hasText(home.contactPhone)" class="home-contact-phone mt-[26px] text-[30px] font-semibold leading-[42px] text-sx-primary">{{ home.contactPhone }}</div>
       </div>
     </section>
 
     <footer class="bg-sx-navy py-[28px]">
-      <div class="mx-auto flex w-full max-w-[1200px] flex-wrap items-center justify-between gap-[12px] px-[24px] text-[14px] text-[#8ea8c7]">
+      <div class="home-footer-inner mx-auto flex w-full max-w-[1200px] flex-wrap items-center justify-between gap-[12px] px-[24px] text-[14px] text-[#8ea8c7]">
         <div class="flex items-center gap-[8px]">
           <img class="h-[22px]" :src="logoFan" :alt="platformName"/>
           <span v-if="hasText(platformName)">{{ platformName }}</span>
@@ -112,7 +111,6 @@
 import {computed, onMounted, ref} from 'vue'
 import logoFan from '@/assets/images/platform/logo-fan.svg'
 import {getHomeConfig} from '@/api/platform'
-import PlatformContactForm from '@/components/platform/PlatformContactForm.vue'
 
 const fallbackHomeConfig = {
   platformName: 'FAN · 凡集',
@@ -197,5 +195,97 @@ const scrollToSection = (selector) => {
 <style scoped lang="scss">
 .home-introduce-bg {
   background: url("https://qcloudimg.tencent-cloud.cn/trisys/assets/product/images/fTj6N6HCvoIdYGdjh9eF2.png") no-repeat left -10px;
+}
+
+.home-hero-desc,
+.home-intro-desc,
+.home-contact-desc {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 720px) {
+  .home-header-inner {
+    height: auto;
+    min-height: 58px;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 10px 14px !important;
+  }
+
+  .home-header-inner > button:first-child {
+    min-width: 0;
+  }
+
+  .home-header-inner .el-button {
+    flex: none;
+  }
+
+  .home-brand-name {
+    display: none;
+  }
+
+  .home-hero {
+    height: auto;
+    min-height: 490px;
+    max-height: none;
+    padding: 68px 0 58px;
+  }
+
+  .home-hero-inner,
+  .home-intro-inner {
+    padding-right: 16px !important;
+    padding-left: 16px !important;
+  }
+
+  .home-hero-title {
+    font-size: 33px;
+    line-height: 44px;
+  }
+
+  .home-hero-desc,
+  .home-intro-desc,
+  .home-contact-desc {
+    font-size: 15px;
+    line-height: 26px;
+  }
+
+  .home-hero-desc {
+    margin-top: 12px;
+  }
+
+  .home-hero-actions {
+    margin-top: 22px;
+  }
+
+  .home-intro-inner {
+    padding-top: 66px;
+    padding-bottom: 66px;
+  }
+
+  .home-intro-title {
+    font-size: 30px;
+    line-height: 41px;
+  }
+
+  .home-features,
+  .home-contact {
+    padding-top: 66px;
+    padding-bottom: 66px;
+  }
+
+  .home-section-title {
+    margin-bottom: 28px;
+    font-size: 25px;
+    line-height: 35px;
+  }
+
+  .home-contact-phone {
+    font-size: 25px;
+    line-height: 36px;
+  }
+
+  .home-footer-inner {
+    padding: 22px 16px;
+  }
 }
 </style>

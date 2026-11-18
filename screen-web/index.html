@@ -9,12 +9,19 @@
             var DESIGN_HEIGHT = 1080;
 
             function setRootFontSize() {
+                var isBrowseRoute = /^#\/(?:home|platform)(?:\/|$)/.test(location.hash);
+                if (isBrowseRoute) {
+                    document.documentElement.style.fontSize = '108px';
+                    return;
+                }
+
                 var viewportHeight = document.documentElement.clientHeight || window.innerHeight;
                 document.documentElement.style.fontSize = viewportHeight / (DESIGN_HEIGHT / 108) + 'px';
             }
 
             setRootFontSize();
             window.addEventListener('resize', setRootFontSize);
+            window.addEventListener('hashchange', setRootFontSize);
             window.addEventListener('pageshow', function (event) {
                 if (event.persisted) {
                     setRootFontSize();
