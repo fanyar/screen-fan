@@ -28,10 +28,25 @@ jobs:
           cache: npm
           cache-dependency-path: screen-web/package-lock.json
       - run: npm ci
-      - run: npm run build
+      - run: |
+          set -o pipefail
+          npm run build 2>&1 | tee build-output.log
         env:
           VITE_BASE_PATH: /screen-fan/
           VITE_USE_MOCK: 'true'
+      - name: Upload build log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: screen-web-build-log
+          path: screen-web/build-output.log
+          if-no-files-found: warn
+      - name: Summarize build failure
+        if: failure()
+        run: |
+          tail -60 build-output.log | while IFS= read -r line; do
+            echo "::error::${line}"
+          done
       - uses: actions/upload-pages-artifact@v3
         with:
           path: screen-web/dist
