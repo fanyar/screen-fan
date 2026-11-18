@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 168" role="img" aria-label="城市之桥封面">
+  <rect width="300" height="168" fill="#0f172a"/>
+  <path d="M36 116V66h18v22h16V54h18v34h18V74h16v42Z" fill="#1e293b"/>
+  <path d="M172 116V78h14v16h16V62h16v32h16V84h14v32Z" fill="#334155"/>
+  <path d="M12 132h276v10H12zM62 112h12v20H62zM128 112h12v20h-12zM194 112h12v20h-12zM244 112h12v20h-12z" fill="#38bdf8"/>
+  <rect x="24" y="24" width="42" height="6" fill="#e2e8f0"/>
+  <rect x="24" y="38" width="24" height="6" fill="#94a3b8"/>
+</svg>

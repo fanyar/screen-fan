@@ -1,0 +1,24 @@
+
+:root,
+:root[theme-mode='green'] {
+  --tarin-base-background: #2695a1;
+  --train-base-color: #333;
+  --train-backImg: url('@/assets/screen/module/img2.png');
+}
+
+:root[theme-mode='cyan'] {
+  --tarin-base-background: #ff4763;
+  --train-base-color: #333;
+  --train-backImg: url('@/assets/screen/module/img1.png');
+}
+
+
+:root[theme-mode='orange'] {
+  --tarin-base-background: #fa9200;
+  --train-base-color: #fff;
+  --train-backImg: url('@/assets/screen/module/img10.png');
+}
+
+
+
+

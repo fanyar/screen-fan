@@ -1,0 +1,2784 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FAN · 凡集</title>
+    <style>
+        :root {
+            --surface: #ffffff;
+            --canvas: #eef1f5;
+            --line: #d9dee7;
+            --text: #1f2937;
+            --muted: #667085;
+            --primary: #1668dc;
+            --primary-hover: #0f5ac2;
+            --primary-soft: #e8f1ff;
+            --danger: #c93a3a;
+            --danger-soft: #fdecec;
+            --success: #16805c;
+            --success-soft: #e7f6ef;
+            --warning: #a15c00;
+            --warning-soft: #fff3e0;
+            --shadow: 0 8px 28px rgba(15, 23, 42, .12);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-width: 320px;
+            color: var(--text);
+            background: var(--canvas);
+            font-size: 14px;
+        }
+
+        button,
+        input,
+        select,
+        textarea {
+            font: inherit;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .login-shell {
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 24px;
+            background:
+                linear-gradient(135deg, rgba(22, 104, 220, .12), transparent 34%),
+                linear-gradient(315deg, rgba(22, 128, 92, .12), transparent 30%),
+                var(--canvas);
+        }
+
+        .login-panel {
+            width: min(400px, 100%);
+            padding: 30px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--surface);
+            box-shadow: var(--shadow);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .brand-mark {
+            display: grid;
+            place-items: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 6px;
+            color: #fff;
+            background: var(--primary);
+            font-size: 15px;
+        }
+
+        .brand-logo {
+            display: block;
+            width: auto;
+            height: 26px;
+        }
+
+        .login-title {
+            margin: 24px 0 4px;
+            font-size: 22px;
+        }
+
+        .login-subtitle {
+            margin: 0 0 24px;
+            color: var(--muted);
+        }
+
+        .field {
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .field-label {
+            display: block;
+            margin-bottom: 6px;
+            color: #344054;
+            font-weight: 600;
+        }
+
+        .control {
+            width: 100%;
+            min-height: 38px;
+            padding: 8px 10px;
+            border: 1px solid var(--line);
+            border-radius: 5px;
+            outline: none;
+            background: #fff;
+            color: var(--text);
+        }
+
+        .control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(22, 104, 220, .12);
+        }
+
+        textarea.control {
+            min-height: 88px;
+            resize: vertical;
+            line-height: 1.5;
+        }
+
+        textarea.control-markdown {
+            min-height: 300px;
+            font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+            font-size: 13px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            min-height: 36px;
+            padding: 7px 12px;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            transition: background .15s, border-color .15s, color .15s;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            color: #fff;
+            background: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+        }
+
+        .btn-normal {
+            color: #344054;
+            border-color: var(--line);
+            background: #fff;
+        }
+
+        .btn-normal:hover {
+            color: var(--primary);
+            border-color: #aebccd;
+            background: #f8fafc;
+        }
+
+        .btn-danger {
+            color: var(--danger);
+            border-color: #efb4b4;
+            background: #fff;
+        }
+
+        .btn-danger:hover {
+            background: var(--danger-soft);
+        }
+
+        .btn-block {
+            width: 100%;
+            margin-top: 8px;
+        }
+
+        .app-shell {
+            display: grid;
+            min-height: 100vh;
+            grid-template-columns: 214px 1fr;
+        }
+
+        .app-shell.singleton-view {
+            height: 100vh;
+        }
+
+        .app-shell.singleton-view .main {
+            min-height: 0;
+        }
+
+        .app-shell.singleton-view .content {
+            min-height: 0;
+            overflow: hidden;
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            padding: 18px 12px;
+            border-right: 1px solid var(--line);
+            background: #172233;
+            color: #d8e0ec;
+        }
+
+        .sidebar-brand {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            padding: 0 7px 20px;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .sidebar-brand .brand-mark {
+            width: 30px;
+            height: 30px;
+            background: var(--primary);
+            font-size: 13px;
+        }
+
+        .sidebar-brand .brand-logo {
+            height: 22px;
+        }
+
+        .menu {
+            display: grid;
+            gap: 4px;
+        }
+
+        .menu-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            width: 100%;
+            min-height: 38px;
+            padding: 8px 10px;
+            border: 0;
+            border-radius: 5px;
+            color: #b8c4d6;
+            background: transparent;
+            text-align: left;
+        }
+
+        .menu-btn:hover,
+        .menu-btn.active {
+            color: #fff;
+            background: rgba(255, 255, 255, .09);
+        }
+
+        .menu-btn.active {
+            background: var(--primary);
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
+
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            min-height: 60px;
+            padding: 10px 24px;
+            border-bottom: 1px solid var(--line);
+            background: #fff;
+        }
+
+        .topbar-title {
+            margin: 0;
+            font-size: 19px;
+        }
+
+        .user-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--muted);
+        }
+
+        .user-name {
+            max-width: 130px;
+            overflow: hidden;
+            color: var(--text);
+            font-weight: 600;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .content {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            padding: 22px 24px;
+        }
+
+        .panel {
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: #fff;
+        }
+
+        .dashboard {
+            display: grid;
+            gap: 18px;
+        }
+
+        .stat-grid {
+            display: grid;
+            gap: 12px;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        .stat-card {
+            padding: 18px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: #fff;
+        }
+
+        .stat-card.warning {
+            border-color: rgba(161, 92, 0, .35);
+            background: var(--warning-soft);
+        }
+
+        .stat-card span,
+        .dashboard-row span {
+            display: block;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .stat-card strong {
+            display: block;
+            margin-top: 8px;
+            font-size: 28px;
+            line-height: 34px;
+        }
+
+        .dashboard-columns {
+            display: grid;
+            gap: 18px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .dashboard-columns .panel-header h2 {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .dashboard-list {
+            padding: 8px 16px 16px;
+        }
+
+        .dashboard-row {
+            display: grid;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            grid-template-columns: 34px minmax(0, 1fr) 86px 82px;
+        }
+
+        .dashboard-row + .dashboard-row {
+            border-top: 1px solid var(--line);
+        }
+
+        .dashboard-row .primary {
+            overflow: hidden;
+            color: var(--text);
+            font-weight: 600;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .dashboard-row .rank {
+            width: 26px;
+            height: 26px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: var(--primary-soft);
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .dashboard-row.message {
+            grid-template-columns: minmax(0, .7fr) minmax(0, 1.5fr) 74px;
+        }
+
+        .dashboard-row .wide {
+            overflow: hidden;
+            color: var(--text);
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .dashboard-empty {
+            padding: 24px 0;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        .panel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            flex-wrap: wrap;
+            padding: 15px 16px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .toolbar {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            flex-wrap: wrap;
+        }
+
+        .search {
+            width: min(280px, 100%);
+        }
+
+        .table-wrap {
+            overflow-x: auto;
+        }
+
+        .singleton-editor {
+            display: grid;
+            flex: 1;
+            grid-template-rows: minmax(0, 1fr) auto;
+            min-height: 0;
+        }
+
+        .singleton-editor-body {
+            overflow-y: auto;
+            padding: 22px 18px;
+        }
+
+        .singleton-form-grid {
+            max-width: 1080px;
+        }
+
+        .singleton-editor-footer {
+            display: flex;
+            justify-content: flex-end;
+            gap: 9px;
+            padding: 14px 18px;
+            border-top: 1px solid var(--line);
+            background: #f8fafc;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .models-table-panel table {
+            table-layout: fixed;
+        }
+
+        .models-table-panel #overviewHeader {
+            width: 10%;
+        }
+
+        .models-table-panel #contentHeader {
+            width: 34%;
+        }
+
+        .models-table-panel #metaHeader {
+            width: 14%;
+        }
+
+        .models-table-panel #tagHeader {
+            width: 28%;
+        }
+
+        .models-table-panel th:last-child {
+            width: 14%;
+        }
+
+        th,
+        td {
+            padding: 12px 14px;
+            border-bottom: 1px solid #e6eaf0;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+        th {
+            color: #475467;
+            background: #f7f9fc;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        td {
+            color: var(--text);
+        }
+
+        tr:last-child td {
+            border-bottom: 0;
+        }
+
+        .main-cell {
+            max-width: 330px;
+            padding: 0;
+        }
+
+        .models-table-panel .main-cell {
+            max-width: none;
+            padding: 12px 14px;
+        }
+
+        .models-table-panel .main-text,
+        .models-table-panel .sub-text {
+            overflow-wrap: anywhere;
+        }
+
+        .main-text {
+            margin: 0;
+            font-weight: 650;
+        }
+
+        .sub-text {
+            margin: 3px 0 0;
+            color: var(--muted);
+        }
+
+        .clamp {
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+        }
+
+        .thumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 36px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 4px;
+            background: #f2f5f8;
+            color: #98a2b3;
+            font-size: 11px;
+        }
+
+        .thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            max-width: 190px;
+        }
+
+        .tag {
+            padding: 2px 7px;
+            border-radius: 4px;
+            background: var(--primary-soft);
+            color: #114dA3;
+            font-size: 12px;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .status-active {
+            background: var(--success-soft);
+            color: var(--success);
+        }
+
+        .status-done {
+            background: var(--warning-soft);
+            color: var(--warning);
+        }
+
+        .status-draft {
+            background: var(--danger-soft);
+            color: var(--danger);
+        }
+
+        .rating {
+            color: var(--warning);
+            font-weight: 700;
+        }
+
+        .empty {
+            padding: 42px 16px;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        .dialog-backdrop {
+            position: fixed;
+            inset: 0;
+            display: none;
+            place-items: center;
+            padding: 20px;
+            background: rgba(15, 23, 42, .44);
+            z-index: 20;
+        }
+
+        .dialog-backdrop.visible {
+            display: grid;
+        }
+
+        #confirmDialog {
+            z-index: 50;
+        }
+
+        .chapter-editor {
+            display: grid;
+            gap: 18px;
+        }
+
+        .chapter-row {
+            display: grid;
+            gap: 12px;
+            padding: 14px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+        }
+
+        .chapter-basics {
+            display: grid;
+            gap: 10px;
+            grid-template-columns: 90px minmax(0, 1fr) 160px;
+        }
+
+        .chapter-row label {
+            display: grid;
+            gap: 5px;
+        }
+
+        .chapter-row label span,
+        .chapter-pages > span {
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .chapter-summary,
+        .chapter-pages {
+            display: grid;
+            gap: 5px;
+        }
+
+        .chapter-page-rows {
+            display: grid;
+            gap: 8px;
+        }
+
+        .chapter-page-row {
+            display: grid;
+            gap: 8px;
+            grid-template-columns: minmax(0, 1fr) auto auto;
+        }
+
+        .chapter-actions {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .progress-editor {
+            display: grid;
+            gap: 12px;
+        }
+
+        .progress-toolbar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .progress-summary-line {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-left: auto;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .progress-status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .progress-row {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            align-items: start;
+            gap: 10px;
+            padding: 14px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: #fff;
+        }
+
+        .progress-basics,
+        .progress-times {
+            display: grid;
+            gap: 10px;
+        }
+
+        .progress-basics {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        .progress-times {
+            grid-column: 1 / -1;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .progress-extra {
+            display: grid;
+            gap: 10px;
+            grid-template-columns: minmax(0, 1fr);
+            grid-column: 1 / -1;
+        }
+
+        .progress-remove {
+            grid-column: 1 / -1;
+            justify-self: end;
+        }
+
+        .progress-row label {
+            display: grid;
+            gap: 5px;
+            min-width: 0;
+        }
+
+        .progress-row label span {
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .progress-audit {
+            display: grid;
+            gap: 6px;
+            padding: 10px 12px;
+            border: 1px dashed var(--line);
+            border-radius: 6px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        @media (max-width: 900px) {
+            .progress-times,
+            .progress-extra {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        .dialog {
+            width: min(760px, 100%);
+            max-height: min(86vh, 760px);
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: #fff;
+            box-shadow: var(--shadow);
+        }
+
+        .dialog-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 18px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .dialog-title {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .close-btn {
+            width: 30px;
+            height: 30px;
+            border: 0;
+            border-radius: 4px;
+            color: var(--muted);
+            background: transparent;
+            font-size: 20px;
+            line-height: 1;
+        }
+
+        .close-btn:hover {
+            color: var(--danger);
+            background: var(--danger-soft);
+        }
+
+        .dialog-body {
+            max-height: calc(86vh - 142px);
+            overflow-y: auto;
+            padding: 18px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0 14px;
+        }
+
+        .field-wide {
+            grid-column: 1 / -1;
+        }
+
+        .dialog-footer {
+            display: flex;
+            justify-content: flex-end;
+            gap: 9px;
+            padding: 14px 18px;
+            border-top: 1px solid var(--line);
+            background: #f8fafc;
+        }
+
+        .cover-row {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 8px;
+        }
+
+        .feature-editor {
+            display: grid;
+            gap: 10px;
+        }
+
+        .gallery-editor {
+            display: grid;
+            gap: 8px;
+        }
+
+        .gallery-row {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto auto;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .feature-row {
+            display: grid;
+            grid-template-columns: minmax(120px, 0.8fr) minmax(150px, 1.2fr) minmax(180px, 1.6fr) auto;
+            gap: 8px;
+            align-items: end;
+            padding: 10px;
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            background: #f8fafc;
+        }
+
+        .feature-field .field-label {
+            margin-bottom: 4px;
+            font-size: 12px;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .confirm-text {
+            margin: 0;
+            color: #475467;
+            line-height: 1.65;
+        }
+
+        .toast {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            min-width: 220px;
+            max-width: min(420px, calc(100vw - 40px));
+            padding: 11px 14px;
+            border-left: 3px solid var(--primary);
+            border-radius: 6px;
+            background: #172233;
+            color: #fff;
+            box-shadow: var(--shadow);
+            z-index: 40;
+        }
+
+        .toast.error {
+            border-left-color: var(--danger);
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        @media (max-width: 760px) {
+            .app-shell {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                padding: 10px;
+                border-right: 0;
+                border-bottom: 1px solid var(--line);
+            }
+
+            .sidebar-brand {
+                padding-bottom: 10px;
+            }
+
+            .menu {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                overflow-x: auto;
+            }
+
+            .content {
+                padding: 14px;
+            }
+
+            .topbar {
+                padding: 10px 14px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .main-cell {
+                max-width: 190px;
+            }
+
+            .feature-row {
+                grid-template-columns: 1fr;
+                align-items: stretch;
+            }
+
+            .gallery-row {
+                grid-template-columns: 1fr;
+                align-items: stretch;
+            }
+
+            .stat-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .dashboard-columns {
+                grid-template-columns: 1fr;
+            }
+
+            .dashboard-row,
+            .dashboard-row.message {
+                grid-template-columns: 1fr;
+            }
+
+            .dashboard-row .rank {
+                display: none;
+            }
+
+            .dashboard-row .wide {
+                white-space: normal;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="loginView" class="login-shell hidden">
+    <section class="login-panel">
+        <div class="brand"><img class="brand-logo" src="logo-fan.svg" alt="">FAN · 凡集</div>
+        <h1 class="login-title">账号登录</h1>
+        <p class="login-subtitle">本地内容数据管理</p>
+        <form id="loginForm">
+            <label class="field">
+                <span class="field-label">账号</span>
+                <input id="account" class="control" autocomplete="username" required>
+            </label>
+            <label class="field">
+                <span class="field-label">密码</span>
+                <input id="password" class="control" type="password" autocomplete="current-password" required>
+            </label>
+            <button id="loginButton" class="btn btn-primary btn-block" type="submit">登录</button>
+        </form>
+    </section>
+</div>
+
+<div id="appView" class="app-shell hidden">
+    <aside class="sidebar">
+        <div class="sidebar-brand"><img class="brand-logo" src="logo-fan.svg" alt="">FAN · 凡集</div>
+        <nav id="menu" class="menu"></nav>
+    </aside>
+    <main class="main">
+        <header class="topbar">
+            <h1 id="moduleTitle" class="topbar-title">作品</h1>
+            <div class="user-area">
+                <span id="userName" class="user-name"></span>
+                <button id="logoutButton" class="btn btn-normal" type="button">退出</button>
+            </div>
+        </header>
+        <section class="content">
+            <div id="dashboardView" class="dashboard hidden">
+                <div id="dashboardStats" class="stat-grid"></div>
+                <div class="dashboard-columns">
+                    <div class="panel">
+                        <div class="panel-header"><h2>热门文章</h2></div>
+                        <div id="popularArticles" class="dashboard-list"></div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-header"><h2>最近留言</h2></div>
+                        <div id="recentMessages" class="dashboard-list"></div>
+                    </div>
+                </div>
+            </div>
+            <form id="singletonForm" class="panel singleton-editor hidden">
+                <div class="singleton-editor-body">
+                    <div id="singletonFields" class="form-grid singleton-form-grid"></div>
+                </div>
+                <footer class="singleton-editor-footer">
+                    <button id="saveSingletonButton" class="btn btn-primary" type="submit">保存首页配置</button>
+                </footer>
+            </form>
+            <div id="tablePanel" class="panel">
+                <div class="panel-header">
+                    <div id="searchToolbar" class="toolbar">
+                        <input id="searchInput" class="control search" placeholder="搜索标题或描述">
+                    </div>
+                    <div id="createToolbar" class="toolbar">
+                        <button id="createButton" class="btn btn-primary" type="button">新增</button>
+                    </div>
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th id="overviewHeader" style="width:68px">封面</th>
+                            <th id="contentHeader">内容</th>
+                            <th id="metaHeader" style="width:130px">年份</th>
+                            <th id="tagHeader" style="width:170px">标签/状态</th>
+                            <th style="width:116px">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+
+<div id="editDialog" class="dialog-backdrop">
+    <section class="dialog" role="dialog" aria-modal="true">
+        <header class="dialog-header">
+            <h2 id="editDialogTitle" class="dialog-title">新增</h2>
+            <button id="closeEditButton" class="close-btn" type="button" aria-label="关闭">&times;</button>
+        </header>
+        <form id="editForm">
+            <div class="dialog-body">
+                <div id="formFields" class="form-grid"></div>
+            </div>
+            <footer class="dialog-footer">
+                <button class="btn btn-normal" type="button" data-close-edit>取消</button>
+                <button id="saveButton" class="btn btn-primary" type="submit">保存</button>
+            </footer>
+        </form>
+    </section>
+</div>
+
+<div id="confirmDialog" class="dialog-backdrop">
+    <section class="dialog" style="width:min(410px,100%)" role="dialog" aria-modal="true">
+        <header class="dialog-header">
+            <h2 class="dialog-title">删除确认</h2>
+            <button class="close-btn" type="button" data-close-confirm aria-label="关闭">&times;</button>
+        </header>
+        <div class="dialog-body"><p id="confirmText" class="confirm-text"></p></div>
+        <footer class="dialog-footer">
+            <button class="btn btn-normal" type="button" data-close-confirm>取消</button>
+            <button id="confirmDeleteButton" class="btn btn-danger" type="button">删除</button>
+        </footer>
+    </section>
+</div>
+
+<div id="chapterDialog" class="dialog-backdrop">
+    <section class="dialog" style="width:min(920px,100%)" role="dialog" aria-modal="true">
+        <header class="dialog-header">
+            <h2 id="chapterDialogTitle" class="dialog-title">章节管理</h2>
+            <button class="close-btn" type="button" data-close-chapter aria-label="关闭">&times;</button>
+        </header>
+        <form id="chapterForm">
+            <div class="dialog-body">
+                <div id="chapterList" class="chapter-editor"></div>
+            </div>
+            <footer class="dialog-footer">
+                <button id="addChapterButton" class="btn btn-normal" type="button">新增章节</button>
+                <button class="btn btn-normal" type="button" data-close-chapter>取消</button>
+                <button id="saveChaptersButton" class="btn btn-primary" type="submit">保存章节</button>
+            </footer>
+        </form>
+    </section>
+</div>
+
+<div id="progressDialog" class="dialog-backdrop">
+    <section class="dialog" style="width:min(1120px,100%)" role="dialog" aria-modal="true">
+        <header class="dialog-header">
+            <h2 id="progressDialogTitle" class="dialog-title">模型进度</h2>
+            <button id="closeProgressButton" class="close-btn" type="button" data-close-progress aria-label="关闭">&times;</button>
+        </header>
+        <form id="progressForm">
+            <div class="dialog-body">
+                <div class="progress-editor">
+                    <div class="progress-toolbar">
+                        <button class="btn btn-normal" type="button" data-add-progress="unit">新增联</button>
+                        <button class="btn btn-normal" type="button" data-add-progress="span">新增跨</button>
+                        <button class="btn btn-normal" type="button" data-add-progress="member">新增构件</button>
+                        <button class="btn btn-normal" type="button" id="importProgressButton">导入 CSV</button>
+                        <button class="btn btn-normal" type="button" id="progressAuditButton">操作记录</button>
+                        <div class="progress-summary-line" id="progressSummaryLine"></div>
+                    </div>
+                    <div id="progressAuditList" class="progress-audit hidden"></div>
+                    <div id="progressList" class="progress-editor"></div>
+                </div>
+            </div>
+            <footer class="dialog-footer">
+                <button class="btn btn-normal" type="button" data-close-progress>取消</button>
+                <button id="saveProgressButton" class="btn btn-primary" type="submit">保存进度</button>
+            </footer>
+        </form>
+    </section>
+</div>
+
+<input id="uploadInput" class="file-input" type="file" accept=".png,.jpg,.jpeg,.gif,.webp,.svg,.glb,image/png,image/jpeg,image/gif,image/webp,image/svg+xml,model/gltf-binary">
+<input id="progressCsvInput" class="file-input" type="file" accept=".csv,text/csv">
+
+<script>
+    const state = {
+        token: sessionStorage.getItem('screenAdminToken') || '',
+        user: JSON.parse(sessionStorage.getItem('screenAdminUser') || 'null'),
+        type: 'works',
+        items: [],
+        editingId: null,
+        keyword: ''
+    };
+
+    let chapterComic = null;
+    let removedChapterIds = [];
+    let progressModel = null;
+    let progressRows = [];
+    let progressAuditRows = [];
+
+    const modules = {
+        dashboard: {
+            label: '仪表盘', path: 'dashboard', dashboard: true
+        },
+        home: {
+            label: '首页', path: 'home-config', metaHeader: '当前内容', singleton: true,
+            overviewHeader: '平台', contentHeader: '首页信息', tagHeader: '特性/联系',
+            fields: [
+                {name: 'platformName', label: '平台名称', type: 'text', required: true},
+                {name: 'heroBadge', label: '主视觉标签', type: 'text'},
+                {name: 'heroTitle', label: '主标题', type: 'text', required: true, wide: true},
+                {name: 'heroDescription', label: '主视觉描述', type: 'textarea', wide: true},
+                {name: 'heroVideoUrl', label: '主视觉视频地址', type: 'url', wide: true},
+                {name: 'heroPrimaryButtonText', label: '主按钮文案', type: 'text', required: true},
+                {name: 'heroSecondaryButtonText', label: '次按钮文案', type: 'text', required: true},
+                {name: 'introTitle', label: '平台介绍标题', type: 'text', required: true, wide: true},
+                {name: 'introDescription', label: '平台介绍内容', type: 'textarea', wide: true},
+                {name: 'introBackgroundUrl', label: '介绍背景图', type: 'cover', wide: true},
+                {name: 'featureTitle', label: '产品特性标题', type: 'text', required: true, wide: true},
+                {name: 'features', label: '产品特性', type: 'features', wide: true},
+                {name: 'contactTitle', label: '联系标题', type: 'text', required: true},
+                {name: 'contactPhone', label: '联系方式', type: 'text', required: true},
+                {name: 'contactDescription', label: '联系描述', type: 'textarea', wide: true},
+                {name: 'footerText', label: '页脚文案', type: 'text', wide: true}
+            ]
+        },
+        models: {
+            label: '模型', path: 'models', metaHeader: '分类', adminList: true,
+            fields: [
+                {name: 'title', label: '模型名称', type: 'text', required: true, wide: true},
+                {name: 'category', label: '分类', type: 'text', required: true, placeholder: '如：桥梁、构件、设备'},
+                {
+                    name: 'status',
+                    label: '发布状态',
+                    type: 'select',
+                    options: [
+                        {value: 'published', label: '已发布'},
+                        {value: 'draft', label: '草稿'}
+                    ],
+                    required: true
+                },
+                {name: 'sortNo', label: '排序', type: 'number'},
+                {name: 'cover', label: '封面地址', type: 'cover', wide: true},
+                {name: 'fileUrl', label: '模型文件 / 体验地址', type: 'model', wide: true, placeholder: '上传 GLB 或填写 http/https 地址'},
+                {name: 'desc', label: '模型描述', type: 'textarea', wide: true},
+                {name: 'tags', label: '标签', type: 'tags', placeholder: '多个标签用逗号分隔'}
+            ]
+        },
+        works: {
+            label: '作品', path: 'works', metaHeader: '年份', adminList: true,
+            fields: [
+                {name: 'title', label: '标题', type: 'text', required: true, wide: true},
+                {name: 'year', label: '年份', type: 'number', required: true, min: 1900, max: 2100},
+                {name: 'tags', label: '标签', type: 'tags', placeholder: '多个标签用逗号分隔'},
+                {name: 'cover', label: '封面地址', type: 'cover', wide: true},
+                {name: 'desc', label: '描述', type: 'textarea', wide: true},
+                {name: 'role', label: '项目角色', type: 'text'},
+                {name: 'period', label: '创作周期', type: 'text'},
+                {name: 'projectUrl', label: '在线链接', type: 'url', wide: true},
+                {name: 'techStack', label: '技术栈', type: 'tags', placeholder: '多个技术用逗号分隔'},
+                {name: 'images', label: '截图册', type: 'gallery', wide: true},
+                {name: 'content', label: '项目过程 Markdown', type: 'markdown', wide: true},
+                {name: 'result', label: '成果价值 Markdown', type: 'markdown', wide: true}
+            ]
+        },
+        comics: {
+            label: '漫画', path: 'comics', metaHeader: '状态', adminList: true,
+            fields: [
+                {name: 'title', label: '标题', type: 'text', required: true, wide: true},
+                {name: 'status', label: '状态', type: 'select', options: ['连载中', '完结'], required: true},
+                {name: 'chapters', label: '章节数', type: 'number', required: true, min: 0, max: 100000},
+                {name: 'cover', label: '封面地址', type: 'cover', wide: true},
+                {name: 'desc', label: '描述', type: 'textarea', wide: true}
+            ]
+        },
+        movies: {
+            label: '电影', path: 'movies', metaHeader: '年份', adminList: true,
+            fields: [
+                {name: 'title', label: '标题', type: 'text', required: true, wide: true},
+                {name: 'year', label: '年份', type: 'number', required: true, min: 1900, max: 2100},
+                {name: 'rating', label: '评分', type: 'number', step: '0.1', min: 0, max: 10, required: true},
+                {name: 'genre', label: '类型', type: 'text', required: true},
+                {name: 'cover', label: '封面地址', type: 'cover', wide: true},
+                {name: 'playUrl', label: '播放地址', type: 'url', wide: true},
+                {name: 'note', label: '备注', type: 'textarea', wide: true},
+                {name: 'watchDate', label: '观看日期', type: 'date'},
+                {name: 'director', label: '导演', type: 'text'},
+                {name: 'castNames', label: '主要演员', type: 'tags', placeholder: '多个演员用逗号分隔'},
+                {name: 'storyScore', label: '故事评分', type: 'number', min: 0, max: 10},
+                {name: 'visualScore', label: '视觉评分', type: 'number', min: 0, max: 10},
+                {name: 'soundScore', label: '声音评分', type: 'number', min: 0, max: 10},
+                {name: 'rewatchValue', label: '重看指数', type: 'number', min: 0, max: 10},
+                {name: 'review', label: '观影笔记 Markdown', type: 'markdown', wide: true}
+            ]
+        },
+        anime: {
+            label: '动漫', path: 'anime', metaHeader: '年份', adminList: true,
+            fields: [
+                {name: 'title', label: '标题', type: 'text', required: true, wide: true},
+                {name: 'year', label: '年份', type: 'number', required: true, min: 1900, max: 2100},
+                {name: 'rating', label: '评分', type: 'number', step: '0.1', min: 0, max: 10, required: true},
+                {name: 'genre', label: '类型', type: 'text', required: true},
+                {name: 'status', label: '更新状态', type: 'text', required: true},
+                {name: 'episodes', label: '集数', type: 'number', required: true, min: 0, max: 100000},
+                {name: 'cover', label: '封面地址', type: 'cover', wide: true},
+                {name: 'playUrl', label: '播放地址', type: 'url', wide: true},
+                {name: 'note', label: '备注', type: 'textarea', wide: true},
+                {name: 'review', label: '追番笔记 Markdown', type: 'markdown', wide: true}
+            ]
+        },
+        articles: {
+            label: '技术分享', path: 'articles', metaHeader: '日期', adminList: true,
+            fields: [
+                {name: 'title', label: '标题', type: 'text', required: true, wide: true},
+                {name: 'date', label: '日期', type: 'date', required: true},
+                {name: 'tags', label: '标签', type: 'tags', placeholder: '多个标签用逗号分隔'},
+                {
+                    name: 'status',
+                    label: '发布状态',
+                    type: 'select',
+                    options: [
+                        {value: 'published', label: '已发布'},
+                        {value: 'draft', label: '草稿'}
+                    ],
+                    required: true
+                },
+                {name: 'desc', label: '摘要', type: 'textarea', wide: true},
+                {
+                    name: 'content',
+                    label: 'Markdown 正文',
+                    type: 'markdown',
+                    wide: true,
+                    placeholder: '支持标题、列表、引用、链接、图片和代码块'
+                }
+            ]
+        },
+        messages: {
+            label: '联系留言', path: 'contact-messages', metaHeader: '时间', adminList: true, readOnly: true,
+            overviewHeader: '状态', contentHeader: '留言', tagHeader: '处理',
+            fields: []
+        }
+    };
+
+    const views = {
+        login: document.getElementById('loginView'),
+        app: document.getElementById('appView')
+    };
+    const moduleOrder = ['dashboard', 'home', 'models', 'movies', 'anime', 'comics', 'works', 'articles', 'messages'];
+    const elements = {
+        loginForm: document.getElementById('loginForm'),
+        account: document.getElementById('account'),
+        password: document.getElementById('password'),
+        loginButton: document.getElementById('loginButton'),
+        menu: document.getElementById('menu'),
+        moduleTitle: document.getElementById('moduleTitle'),
+        userName: document.getElementById('userName'),
+        logoutButton: document.getElementById('logoutButton'),
+        searchToolbar: document.getElementById('searchToolbar'),
+        searchInput: document.getElementById('searchInput'),
+        createToolbar: document.getElementById('createToolbar'),
+        createButton: document.getElementById('createButton'),
+        tableBody: document.getElementById('tableBody'),
+        tablePanel: document.getElementById('tablePanel'),
+        singletonForm: document.getElementById('singletonForm'),
+        singletonFields: document.getElementById('singletonFields'),
+        saveSingletonButton: document.getElementById('saveSingletonButton'),
+        dashboardView: document.getElementById('dashboardView'),
+        dashboardStats: document.getElementById('dashboardStats'),
+        popularArticles: document.getElementById('popularArticles'),
+        recentMessages: document.getElementById('recentMessages'),
+        metaHeader: document.getElementById('metaHeader'),
+        overviewHeader: document.getElementById('overviewHeader'),
+        contentHeader: document.getElementById('contentHeader'),
+        tagHeader: document.getElementById('tagHeader'),
+        editDialog: document.getElementById('editDialog'),
+        editDialogTitle: document.getElementById('editDialogTitle'),
+        editForm: document.getElementById('editForm'),
+        formFields: document.getElementById('formFields'),
+        closeEditButton: document.getElementById('closeEditButton'),
+        saveButton: document.getElementById('saveButton'),
+        confirmDialog: document.getElementById('confirmDialog'),
+        confirmText: document.getElementById('confirmText'),
+        confirmDeleteButton: document.getElementById('confirmDeleteButton'),
+        uploadInput: document.getElementById('uploadInput'),
+        chapterDialog: document.getElementById('chapterDialog'),
+        chapterDialogTitle: document.getElementById('chapterDialogTitle'),
+        chapterForm: document.getElementById('chapterForm'),
+        chapterList: document.getElementById('chapterList'),
+        addChapterButton: document.getElementById('addChapterButton'),
+        saveChaptersButton: document.getElementById('saveChaptersButton'),
+        progressDialog: document.getElementById('progressDialog'),
+        progressDialogTitle: document.getElementById('progressDialogTitle'),
+        progressForm: document.getElementById('progressForm'),
+        progressList: document.getElementById('progressList'),
+        progressSummaryLine: document.getElementById('progressSummaryLine'),
+        progressAuditList: document.getElementById('progressAuditList'),
+        importProgressButton: document.getElementById('importProgressButton'),
+        progressAuditButton: document.getElementById('progressAuditButton'),
+        saveProgressButton: document.getElementById('saveProgressButton'),
+        progressCsvInput: document.getElementById('progressCsvInput'),
+        closeProgressButton: document.getElementById('closeProgressButton')
+    };
+
+    let pendingDelete = null;
+    let uploadTarget = null;
+
+    function module() {
+        return modules[state.type];
+    }
+
+    function moduleKeyFromLocation() {
+        const route = window.location.hash.replace(/^#\/?/, '').split('?')[0];
+        return Object.entries(modules).find(([, item]) => item.path === route)?.[0] || 'dashboard';
+    }
+
+    function syncModuleRoute() {
+        const route = `#/${module().path}`;
+        if (window.location.hash !== route) {
+            window.location.hash = route;
+        }
+    }
+
+    function handleRouteChange() {
+        const key = moduleKeyFromLocation();
+        if (key !== state.type) {
+            switchModule(key);
+        }
+    }
+
+    function showView(authenticated) {
+        views.login.classList.toggle('hidden', authenticated);
+        views.app.classList.toggle('hidden', !authenticated);
+    }
+
+    async function api(path, options = {}) {
+        const headers = options.headers || {};
+        if (!(options.body instanceof FormData) && !headers['Content-Type']) {
+            headers['Content-Type'] = 'application/json';
+        }
+        if (state.token) {
+            headers.Authorization = `Bearer ${state.token}`;
+        }
+        const response = await fetch(path, {...options, headers});
+        if (response.status === 401) {
+            clearSession();
+            showView(false);
+            throw new Error('登录已失效，请重新登录');
+        }
+        if (!response.ok) {
+            let message = `请求失败 (${response.status})`;
+            try {
+                const data = await response.json();
+                if (data.message) message = data.message;
+            } catch (error) {
+                // keep default message
+            }
+            throw new Error(message);
+        }
+        if (response.status === 204) return null;
+        return response.json();
+    }
+
+    function toast(message, isError = false) {
+        const node = document.createElement('div');
+        node.className = isError ? 'toast error' : 'toast';
+        node.textContent = message;
+        document.body.appendChild(node);
+        setTimeout(() => node.remove(), 3000);
+    }
+
+    function clearSession() {
+        state.token = '';
+        state.user = null;
+        sessionStorage.removeItem('screenAdminToken');
+        sessionStorage.removeItem('screenAdminUser');
+    }
+
+    function renderMenu() {
+        elements.menu.innerHTML = '';
+        moduleOrder.forEach(key => {
+            const item = modules[key];
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.className = `menu-btn${state.type === key ? ' active' : ''}`;
+            button.textContent = item.label;
+            button.addEventListener('click', () => switchModule(key));
+            elements.menu.appendChild(button);
+        });
+    }
+
+    function switchModule(key) {
+        state.type = key;
+        state.keyword = '';
+        elements.tablePanel.classList.toggle('models-table-panel', key === 'models');
+        elements.searchInput.value = '';
+        renderMenu();
+        const isDashboard = Boolean(module().dashboard);
+        const isSingleton = Boolean(module().singleton);
+        elements.tablePanel.classList.toggle('hidden', isDashboard || isSingleton);
+        elements.singletonForm.classList.toggle('hidden', !isSingleton);
+        views.app.classList.toggle('singleton-view', isSingleton);
+        elements.singletonFields.innerHTML = '';
+        elements.dashboardView.classList.toggle('hidden', !isDashboard);
+        elements.searchInput.disabled = isDashboard;
+        elements.searchToolbar.classList.toggle('hidden', isDashboard);
+        elements.createButton.disabled = isDashboard;
+        if (isDashboard) {
+            elements.moduleTitle.textContent = module().label;
+            loadDashboard().catch(error => toast(error.message, true));
+        } else {
+            renderModuleTitle();
+            loadItems().catch(error => toast(error.message, true));
+        }
+        syncModuleRoute();
+    }
+
+    function renderModuleTitle() {
+        elements.moduleTitle.textContent = module().label;
+        elements.metaHeader.textContent = module().metaHeader;
+        elements.overviewHeader.textContent = module().overviewHeader || '封面';
+        elements.contentHeader.textContent = module().contentHeader || '内容';
+        elements.tagHeader.textContent = module().tagHeader || '标签/状态';
+        const singleton = Boolean(module().singleton);
+        elements.searchInput.disabled = singleton;
+        elements.searchToolbar.classList.toggle('hidden', singleton);
+        elements.createButton.disabled = singleton || Boolean(module().readOnly);
+        elements.createToolbar.classList.toggle('hidden', singleton);
+        elements.searchInput.placeholder = '搜索标题、描述或留言';
+    }
+
+    async function loadItems() {
+        try {
+            if (module().singleton) {
+                renderSingletonEditor(await api(`/api/${module().path}`));
+                return;
+            }
+
+            state.items = module().adminList
+                    ? await api(`/api/admin/${module().path}`)
+                : await api(`/api/${module().path}`);
+            renderTable();
+        } finally {
+        }
+    }
+
+    async function loadDashboard() {
+        try {
+            const data = await api('/api/admin/dashboard');
+            renderDashboard(data);
+        } finally {
+        }
+    }
+
+    function renderDashboard(data) {
+        const stats = [
+            {label: '作品', value: data.workCount},
+            {label: '漫画', value: data.comicCount},
+            {label: '电影', value: data.movieCount},
+            {label: '动漫', value: data.animeCount},
+            {label: '文章', value: data.articleCount},
+            {label: '已发布', value: data.publishedArticleCount},
+            {label: '草稿', value: data.draftArticleCount},
+            {label: '文章阅读', value: data.articleViewCount},
+            {label: '未处理留言', value: data.unreadMessageCount, warning: data.unreadMessageCount > 0}
+        ];
+        elements.dashboardStats.innerHTML = '';
+        stats.forEach(item => {
+            const card = document.createElement('div');
+            card.className = `stat-card${item.warning ? ' warning' : ''}`;
+            card.innerHTML = `<span>${item.label}</span><strong>${item.value}</strong>`;
+            elements.dashboardStats.appendChild(card);
+        });
+
+        elements.popularArticles.innerHTML = '';
+        if (!data.popularArticles?.length) {
+            elements.popularArticles.innerHTML = '<div class="dashboard-empty">暂无已发布文章</div>';
+        } else {
+            data.popularArticles.forEach((article, index) => {
+                const row = document.createElement('div');
+                row.className = 'dashboard-row';
+                row.innerHTML = `
+                    <span class="rank">${index + 1}</span>
+                    <span class="primary">${escapeHtmlText(article.title)}</span>
+                    <span>${article.date}</span>
+                    <span>${article.viewCount} 阅读</span>
+                `;
+                elements.popularArticles.appendChild(row);
+            });
+        }
+
+        elements.recentMessages.innerHTML = '';
+        if (!data.recentMessages?.length) {
+            elements.recentMessages.innerHTML = '<div class="dashboard-empty">暂无留言</div>';
+        } else {
+            data.recentMessages.forEach(message => {
+                const row = document.createElement('div');
+                row.className = 'dashboard-row message';
+                row.innerHTML = `
+                    <span class="primary">${escapeHtmlText(message.name)} · ${escapeHtmlText(message.contact)}</span>
+                    <span class="wide">${escapeHtmlText(message.content)}</span>
+                    <span class="tag ${message.handled ? 'status-active' : 'status-draft'}">
+                        ${message.handled ? '已处理' : '未处理'}
+                    </span>
+                `;
+                elements.recentMessages.appendChild(row);
+            });
+        }
+    }
+
+    function escapeHtmlText(value) {
+        return String(value ?? '')
+            .replaceAll('&', '&amp;')
+            .replaceAll('<', '&lt;')
+            .replaceAll('>', '&gt;')
+            .replaceAll('"', '&quot;');
+    }
+
+    function filteredItems() {
+        if (module().singleton) return state.items;
+        const keyword = state.keyword.trim().toLowerCase();
+        if (!keyword) return state.items;
+        return state.items.filter(item => {
+            const title = item.title || item.name || '';
+            const desc = item.desc || item.note || item.content || '';
+            return `${title} ${desc}`.toLowerCase().includes(keyword);
+        });
+    }
+
+    function renderTable() {
+        const rows = filteredItems();
+        elements.tableBody.innerHTML = '';
+        if (!rows.length) {
+            const tr = document.createElement('tr');
+            const td = document.createElement('td');
+            td.colSpan = 5;
+            td.className = 'empty';
+            td.textContent = '暂无数据';
+            tr.appendChild(td);
+            elements.tableBody.appendChild(tr);
+            return;
+        }
+
+        if (module().singleton) {
+            rows.forEach(item => {
+                const tr = document.createElement('tr');
+                tr.append(
+                    createHomeOverviewCell(item),
+                    createHomeContentCell(item),
+                    createHomeMetaCell(item),
+                    createHomeTagCell(item),
+                    createActionCell(item)
+                );
+                elements.tableBody.appendChild(tr);
+            });
+            return;
+        }
+
+        rows.forEach(item => {
+            const tr = document.createElement('tr');
+            tr.append(createCoverCell(item), createContentCell(item), createMetaCell(item), createTagCell(item), createActionCell(item));
+            elements.tableBody.appendChild(tr);
+        });
+    }
+
+    function renderSingletonEditor(item) {
+        elements.singletonFields.innerHTML = '';
+        renderFormFields(elements.singletonFields, item);
+    }
+
+    function createCoverCell(item) {
+        const td = document.createElement('td');
+        if (state.type === 'messages') {
+            const status = document.createElement('span');
+            status.className = `status ${item.handled ? 'status-active' : 'status-draft'}`;
+            status.textContent = item.handled ? '已处理' : '待处理';
+            td.appendChild(status);
+            return td;
+        }
+        const thumb = document.createElement('div');
+        thumb.className = 'thumb';
+        if (item.cover) {
+            const img = document.createElement('img');
+            img.src = item.cover;
+            img.alt = '';
+            img.loading = 'lazy';
+            thumb.appendChild(img);
+        } else {
+            thumb.textContent = '无图';
+        }
+        td.appendChild(thumb);
+        return td;
+    }
+
+    function createHomeOverviewCell(item) {
+        const td = document.createElement('td');
+        const thumb = document.createElement('div');
+        thumb.className = 'thumb';
+        thumb.textContent = '首页';
+        td.appendChild(thumb);
+        return td;
+    }
+
+    function createHomeContentCell(item) {
+        const td = document.createElement('td');
+        td.className = 'main-cell';
+        const title = document.createElement('p');
+        title.className = 'main-text';
+        title.textContent = item.platformName;
+        const desc = document.createElement('p');
+        desc.className = 'sub-text clamp';
+        desc.textContent = item.heroTitle;
+        td.append(title, desc);
+        return td;
+    }
+
+    function createHomeMetaCell(item) {
+        const td = document.createElement('td');
+        td.textContent = item.featureTitle;
+        return td;
+    }
+
+    function createHomeTagCell(item) {
+        const td = document.createElement('td');
+        const list = document.createElement('div');
+        list.className = 'tag-list';
+        const feature = document.createElement('span');
+        feature.className = 'tag';
+        feature.textContent = `${item.features?.length || 0} 条特性`;
+        const contact = document.createElement('span');
+        contact.className = 'tag';
+        contact.textContent = item.contactPhone;
+        list.append(feature, contact);
+        td.appendChild(list);
+        return td;
+    }
+
+    function createContentCell(item) {
+        const td = document.createElement('td');
+        td.className = 'main-cell';
+        const title = document.createElement('p');
+        title.className = 'main-text';
+        title.textContent = item.title || `${item.name} · ${item.contact}`;
+        const desc = document.createElement('p');
+        desc.className = 'sub-text clamp';
+        desc.textContent = item.desc || item.note || item.content || '';
+        td.append(title, desc);
+        return td;
+    }
+
+    function createMetaCell(item) {
+        const td = document.createElement('td');
+        if (state.type === 'works') td.textContent = item.year;
+        if (state.type === 'models') {
+            const status = document.createElement('span');
+            status.className = `status ${item.status === 'published' ? 'status-active' : 'status-draft'}`;
+            status.textContent = item.status === 'published' ? '已发布' : '草稿';
+            td.append(item.category, document.createElement('br'), status);
+        }
+        if (state.type === 'comics') td.textContent = `${item.chapters} 话`;
+        if (state.type === 'movies') {
+            const rating = document.createElement('span');
+            rating.className = 'rating';
+            rating.textContent = item.rating;
+            td.append(rating, document.createElement('br'), `${item.year} · ${item.genre}`);
+        }
+        if (state.type === 'anime') {
+            const rating = document.createElement('span');
+            rating.className = 'rating';
+            rating.textContent = item.rating;
+            td.append(rating, document.createElement('br'), `${item.year} · ${item.genre}`);
+        }
+        if (state.type === 'articles') td.textContent = item.date;
+        if (state.type === 'messages') td.textContent = (item.createdAt || '').replace('T', ' ').slice(0, 16);
+        return td;
+    }
+
+    function createTagCell(item) {
+        const td = document.createElement('td');
+        if (state.type === 'comics') {
+            const status = document.createElement('span');
+            status.className = `status ${item.status === '连载中' ? 'status-active' : 'status-done'}`;
+            status.textContent = item.status;
+            td.appendChild(status);
+        } else if (state.type === 'anime') {
+            const list = document.createElement('div');
+            list.className = 'tag-list';
+            const status = document.createElement('span');
+            status.className = 'status status-active';
+            status.textContent = item.status;
+            const genre = document.createElement('span');
+            genre.className = 'tag';
+            genre.textContent = item.genre;
+            list.append(status, genre);
+            td.appendChild(list);
+        } else if (state.type === 'messages') {
+            const status = document.createElement('span');
+            status.className = `status ${item.handled ? 'status-active' : 'status-draft'}`;
+            status.textContent = item.handled ? '已处理' : '待处理';
+            td.appendChild(status);
+        } else if (state.type === 'articles' || state.type === 'models') {
+            const list = document.createElement('div');
+            list.className = 'tag-list';
+            const status = document.createElement('span');
+            status.className = `status ${item.status === 'published' ? 'status-active' : 'status-draft'}`;
+            status.textContent = item.status === 'published' ? '已发布' : '草稿';
+            list.appendChild(status);
+            (item.tags || []).forEach(tag => {
+                const node = document.createElement('span');
+                node.className = 'tag';
+                node.textContent = tag;
+                list.appendChild(node);
+            });
+            td.appendChild(list);
+        } else {
+            const list = document.createElement('div');
+            list.className = 'tag-list';
+            (item.tags || []).forEach(tag => {
+                const node = document.createElement('span');
+                node.className = 'tag';
+                node.textContent = tag;
+                list.appendChild(node);
+            });
+            td.appendChild(list);
+        }
+        return td;
+    }
+
+    function createActionCell(item) {
+        const td = document.createElement('td');
+        const remove = document.createElement('button');
+        remove.className = 'btn btn-danger';
+        remove.type = 'button';
+        remove.textContent = '删除';
+        remove.addEventListener('click', () => openConfirmDialog(item));
+
+        const wrap = document.createElement('div');
+        wrap.style.display = 'flex';
+        wrap.style.gap = '6px';
+        if (state.type === 'messages') {
+            if (!item.handled) {
+                const done = document.createElement('button');
+                done.className = 'btn btn-normal';
+                done.type = 'button';
+                done.textContent = '标记处理';
+                done.addEventListener('click', () => markMessageHandled(item));
+                wrap.appendChild(done);
+            }
+        } else {
+            const edit = document.createElement('button');
+            edit.className = 'btn btn-normal';
+            edit.type = 'button';
+            edit.textContent = '编辑';
+            edit.addEventListener('click', () => openEditDialog(item));
+            wrap.appendChild(edit);
+            if (state.type === 'comics') {
+                const chapters = document.createElement('button');
+                chapters.className = 'btn btn-normal';
+                chapters.type = 'button';
+                chapters.textContent = '章节';
+                chapters.addEventListener('click', () => openChapterDialog(item));
+                wrap.appendChild(chapters);
+            }
+            if (state.type === 'models') {
+                const progress = document.createElement('button');
+                progress.className = 'btn btn-normal';
+                progress.type = 'button';
+                progress.textContent = '进度';
+                progress.addEventListener('click', () => openProgressDialog(item));
+                wrap.appendChild(progress);
+            }
+        }
+        if (!module().singleton) wrap.appendChild(remove);
+        td.appendChild(wrap);
+        return td;
+    }
+
+    function fieldValue(item, field) {
+        if (!item) return '';
+        if (field.type === 'tags') return (item[field.name] || []).join(',');
+        return item[field.name] ?? '';
+    }
+
+    function createFeaturesField(field, item) {
+        const wrap = document.createElement('div');
+        wrap.className = 'feature-editor';
+        (item?.features || [{}]).forEach(feature => wrap.appendChild(createFeatureRow(feature)));
+
+        const add = document.createElement('button');
+        add.type = 'button';
+        add.className = 'btn btn-normal';
+        add.textContent = '新增特性';
+        add.addEventListener('click', () => wrap.appendChild(createFeatureRow({})));
+        wrap.appendChild(add);
+        return wrap;
+    }
+
+    function createGalleryField(field, item) {
+        const wrap = document.createElement('div');
+        wrap.className = 'gallery-editor';
+        (item?.images?.length ? item.images : ['']).forEach(image => wrap.appendChild(createGalleryRow(image)));
+
+        const add = document.createElement('button');
+        add.type = 'button';
+        add.className = 'btn btn-normal';
+        add.textContent = '新增截图';
+        add.addEventListener('click', () => wrap.appendChild(createGalleryRow('')));
+        wrap.appendChild(add);
+        return wrap;
+    }
+
+    function createGalleryRow(image = '') {
+        const row = document.createElement('div');
+        row.className = 'gallery-row';
+
+        const input = document.createElement('input');
+        input.type = 'url';
+        input.className = 'control';
+        input.dataset.galleryUrl = 'true';
+        input.value = image || '';
+        input.placeholder = 'https://example.com/screen.png';
+
+        const upload = document.createElement('button');
+        upload.type = 'button';
+        upload.className = 'btn btn-normal';
+        upload.textContent = '上传';
+        upload.addEventListener('click', () => {
+            uploadTarget = input;
+            elements.uploadInput.value = '';
+            elements.uploadInput.click();
+        });
+
+        const remove = document.createElement('button');
+        remove.type = 'button';
+        remove.className = 'btn btn-danger';
+        remove.textContent = '删除';
+        remove.addEventListener('click', () => row.remove());
+
+        row.append(input, upload, remove);
+        return row;
+    }
+
+    function createFeatureRow(feature = {}) {
+        const row = document.createElement('div');
+        row.className = 'feature-row';
+        row.append(
+            createFeatureInput('title', '特性标题', 'text', feature.title),
+            createFeatureInput('image', '图标地址', 'text', feature.image),
+            createFeatureInput('desc', '特性描述', 'textarea', feature.desc)
+        );
+
+        const remove = document.createElement('button');
+        remove.type = 'button';
+        remove.className = 'btn btn-danger';
+        remove.textContent = '删除';
+        remove.addEventListener('click', () => row.remove());
+        row.appendChild(remove);
+        return row;
+    }
+
+    function createFeatureInput(name, label, type, value) {
+        const wrap = document.createElement('label');
+        wrap.className = `feature-field feature-${name}`;
+        const labelNode = document.createElement('span');
+        labelNode.className = 'field-label';
+        labelNode.textContent = label;
+        const input = document.createElement(type === 'textarea' ? 'textarea' : 'input');
+        if (type !== 'textarea') input.type = type;
+        input.className = 'control';
+        input.dataset.featureField = name;
+        input.value = value || '';
+        if (name === 'image') {
+            const row = document.createElement('div');
+            row.className = 'cover-row';
+            const upload = document.createElement('button');
+            upload.type = 'button';
+            upload.className = 'btn btn-normal';
+            upload.textContent = '上传';
+            upload.addEventListener('click', () => {
+                uploadTarget = input;
+                elements.uploadInput.value = '';
+                elements.uploadInput.click();
+            });
+            row.append(input, upload);
+            wrap.append(labelNode, row);
+        } else {
+            wrap.append(labelNode, input);
+        }
+        return wrap;
+    }
+
+    function openEditDialog(item = null) {
+        state.editingId = item?.id || null;
+        elements.editDialogTitle.textContent = `${item ? '编辑' : '新增'}${module().label}`;
+        elements.formFields.innerHTML = '';
+        renderFormFields(elements.formFields, item);
+        elements.editDialog.classList.add('visible');
+        const firstInput = elements.formFields.querySelector('input, select, textarea');
+        if (firstInput) firstInput.focus();
+    }
+
+    function renderFormFields(container, item) {
+        module().fields.forEach(field => {
+            const wrap = document.createElement('label');
+            wrap.className = field.wide ? 'field field-wide' : 'field';
+            const label = document.createElement('span');
+            label.className = 'field-label';
+            label.textContent = field.label;
+            wrap.appendChild(label);
+
+            if (field.type === 'features') {
+                wrap.appendChild(createFeaturesField(field, item));
+            } else if (field.type === 'gallery') {
+                wrap.appendChild(createGalleryField(field, item));
+            } else if (field.type === 'cover' || field.type === 'model') {
+                const row = document.createElement('div');
+                row.className = 'cover-row';
+                const input = createInput(field, item);
+                const upload = document.createElement('button');
+                upload.className = 'btn btn-normal';
+                upload.type = 'button';
+                upload.textContent = '上传';
+                upload.addEventListener('click', () => {
+                    uploadTarget = input;
+                    input.dataset.uploadKind = field.type === 'model' ? 'model' : 'image';
+                    elements.uploadInput.accept = field.type === 'model'
+                        ? '.glb,model/gltf-binary,application/octet-stream'
+                        : '.png,.jpg,.jpeg,.gif,.webp,.svg,image/png,image/jpeg,image/gif,image/webp,image/svg+xml';
+                    elements.uploadInput.value = '';
+                    elements.uploadInput.click();
+                });
+                row.append(input, upload);
+                wrap.appendChild(row);
+            } else {
+                wrap.appendChild(createInput(field, item));
+            }
+            container.appendChild(wrap);
+        });
+    }
+
+    function createInput(field, item) {
+        let input;
+        if (field.type === 'textarea' || field.type === 'markdown') {
+            input = document.createElement('textarea');
+            if (field.type === 'markdown') input.classList.add('control-markdown');
+        } else if (field.type === 'select') {
+            input = document.createElement('select');
+            field.options.forEach(option => {
+                const node = document.createElement('option');
+                const optionValue = typeof option === 'object' ? option.value : option;
+                const optionLabel = typeof option === 'object' ? option.label : option;
+                node.value = optionValue;
+                node.textContent = optionLabel;
+                input.appendChild(node);
+            });
+        } else {
+            input = document.createElement('input');
+            input.type = field.type === 'tags' || field.type === 'model' ? 'text' : field.type;
+            if (field.step) input.step = field.step;
+            if (field.min !== undefined) input.min = field.min;
+            if (field.max !== undefined) input.max = field.max;
+        }
+        input.name = field.name;
+        input.required = Boolean(field.required);
+        input.className = 'control';
+        if (field.type === 'markdown') input.classList.add('control-markdown');
+        input.value = fieldValue(item, field);
+        if (field.placeholder) input.placeholder = field.placeholder;
+        return input;
+    }
+
+    function closeEditDialog() {
+        elements.editDialog.classList.remove('visible');
+        state.editingId = null;
+        uploadTarget = null;
+    }
+
+    function collectFormData(form = elements.editForm, fieldsContainer = elements.formFields) {
+        const formData = new FormData(form);
+        const data = {};
+        module().fields.forEach(field => {
+            if (field.type === 'features') {
+                data.features = collectFeaturesData(fieldsContainer);
+                return;
+            }
+            if (field.type === 'gallery') {
+                data.images = collectGalleryData(fieldsContainer);
+                return;
+            }
+            const value = String(formData.get(field.name) ?? '').trim();
+            if (field.type === 'tags') {
+                data[field.name] = value.split(/[,，]/).map(tag => tag.trim()).filter(Boolean);
+            } else if (field.type === 'number') {
+                data[field.name] = value === '' ? null : Number(value);
+            } else {
+                data[field.name] = value;
+            }
+        });
+        return data;
+    }
+
+    function collectFeaturesData(fieldsContainer) {
+        return Array.from(fieldsContainer.querySelectorAll('.feature-row')).map(row => ({
+            title: row.querySelector('[data-feature-field="title"]')?.value.trim() || '',
+            image: row.querySelector('[data-feature-field="image"]')?.value.trim() || '',
+            desc: row.querySelector('[data-feature-field="desc"]')?.value.trim() || ''
+        })).filter(feature => feature.title || feature.image || feature.desc);
+    }
+
+    function collectGalleryData(fieldsContainer) {
+        return Array.from(fieldsContainer.querySelectorAll('[data-gallery-url]'))
+            .map(input => input.value.trim())
+            .filter(Boolean);
+    }
+
+    async function saveItem(event) {
+        event.preventDefault();
+        elements.saveButton.disabled = true;
+        try {
+            const data = collectFormData();
+            const path = `/api/admin/${module().path}`;
+            if (module().singleton) {
+                await api(path, {method: 'PUT', body: JSON.stringify(data)});
+            } else if (state.editingId) {
+                await api(`${path}/${state.editingId}`, {method: 'PUT', body: JSON.stringify(data)});
+            } else {
+                await api(path, {method: 'POST', body: JSON.stringify(data)});
+            }
+            closeEditDialog();
+            toast('保存成功');
+            await loadItems();
+        } catch (error) {
+            toast(error.message, true);
+        } finally {
+            elements.saveButton.disabled = false;
+        }
+    }
+
+    async function saveSingleton(event) {
+        event.preventDefault();
+        elements.saveSingletonButton.disabled = true;
+        try {
+            const data = collectFormData(elements.singletonForm, elements.singletonFields);
+            await api(`/api/admin/${module().path}`, {method: 'PUT', body: JSON.stringify(data)});
+            toast('保存成功');
+            await loadItems();
+        } catch (error) {
+            toast(error.message, true);
+        } finally {
+            elements.saveSingletonButton.disabled = false;
+        }
+    }
+
+    function openConfirmDialog(item) {
+        pendingDelete = {type: 'item', item};
+        const name = item.title || item.name || '这条记录';
+        elements.confirmText.textContent = `确定删除“${name}”吗？删除后前台工作台也会同步消失。`;
+        elements.confirmDialog.classList.add('visible');
+    }
+
+    function openProgressDeleteConfirm(node) {
+        pendingDelete = {type: 'progress-node', id: node.id};
+        const name = node.name || '这个进度节点';
+        elements.confirmText.textContent = `确定删除“${name}”吗？删除仅会在保存进度后生效。`;
+        elements.confirmDialog.classList.add('visible');
+    }
+
+    function closeConfirmDialog() {
+        pendingDelete = null;
+        elements.confirmDialog.classList.remove('visible');
+    }
+
+    async function deleteItem() {
+        if (!pendingDelete) return;
+        if (pendingDelete.type === 'progress-node') {
+            progressRows = progressRows.filter(item => item.id !== pendingDelete.id);
+            closeConfirmDialog();
+            renderProgressRows();
+            toast('已移除，保存进度后生效');
+            return;
+        }
+        const item = pendingDelete.item;
+        elements.confirmDeleteButton.disabled = true;
+        try {
+            await api(`/api/admin/${module().path}/${item.id}`, {method: 'DELETE'});
+            closeConfirmDialog();
+            toast('删除成功');
+            await loadItems();
+        } catch (error) {
+            toast(error.message, true);
+        } finally {
+            elements.confirmDeleteButton.disabled = false;
+        }
+    }
+
+    async function markMessageHandled(item) {
+        try {
+            await api(`/api/admin/contact-messages/${item.id}/handled`, {method: 'PUT'});
+            toast('留言已标记处理');
+            await loadItems();
+        } catch (error) {
+            toast(error.message, true);
+        }
+    }
+
+    function closeChapterDialog() {
+        elements.chapterDialog.classList.remove('visible');
+        chapterComic = null;
+        removedChapterIds = [];
+    }
+
+    function createChapterPageRow(image = '') {
+        const row = document.createElement('div');
+        row.className = 'chapter-page-row';
+
+        const input = document.createElement('input');
+        input.type = 'url';
+        input.className = 'control';
+        input.dataset.chapterPage = 'true';
+        input.value = image || '';
+        input.placeholder = 'https://example.com/comic-page.png';
+
+        const upload = document.createElement('button');
+        upload.type = 'button';
+        upload.className = 'btn btn-normal';
+        upload.textContent = '上传';
+        upload.addEventListener('click', () => {
+            uploadTarget = input;
+            elements.uploadInput.value = '';
+            elements.uploadInput.click();
+        });
+
+        const remove = document.createElement('button');
+        remove.type = 'button';
+        remove.className = 'btn btn-danger';
+        remove.textContent = '移除';
+        remove.addEventListener('click', () => row.remove());
+
+        row.append(input, upload, remove);
+        return row;
+    }
+
+    function createChapterRow(chapter = {}) {
+        const row = document.createElement('div');
+        row.className = 'chapter-row';
+        if (chapter.id) row.dataset.chapterId = chapter.id;
+
+        const basics = document.createElement('div');
+        basics.className = 'chapter-basics';
+        [
+            {name: 'chapterNo', label: '序号', type: 'number', value: chapter.chapterNo || ''},
+            {name: 'title', label: '标题', type: 'text', value: chapter.title || ''},
+            {name: 'date', label: '日期', type: 'date', value: chapter.date || ''}
+        ].forEach(field => {
+            const label = document.createElement('label');
+            const name = document.createElement('span');
+            name.textContent = field.label;
+            const input = document.createElement('input');
+            input.className = 'control';
+            input.type = field.type;
+            input.name = field.name;
+            input.value = field.value;
+            if (field.name === 'chapterNo') input.min = 1;
+            label.append(name, input);
+            basics.appendChild(label);
+        });
+
+        const summary = document.createElement('label');
+        summary.className = 'chapter-summary';
+        const summaryName = document.createElement('span');
+        summaryName.textContent = '简介';
+        const summaryInput = document.createElement('textarea');
+        summaryInput.className = 'control';
+        summaryInput.name = 'summary';
+        summaryInput.rows = 2;
+        summaryInput.value = chapter.summary || '';
+        summary.append(summaryName, summaryInput);
+
+        const pages = document.createElement('div');
+        pages.className = 'chapter-pages';
+        const pagesName = document.createElement('span');
+        pagesName.textContent = '漫画页面';
+        const pageRows = document.createElement('div');
+        pageRows.className = 'chapter-page-rows';
+        (chapter.pages?.length ? chapter.pages : ['']).forEach(image => {
+            pageRows.appendChild(createChapterPageRow(image));
+        });
+        const addPage = document.createElement('button');
+        addPage.type = 'button';
+        addPage.className = 'btn btn-normal';
+        addPage.textContent = '新增页面';
+        addPage.addEventListener('click', () => pageRows.appendChild(createChapterPageRow()));
+        pages.append(pagesName, pageRows, addPage);
+
+        const actions = document.createElement('div');
+        actions.className = 'chapter-actions';
+        const remove = document.createElement('button');
+        remove.type = 'button';
+        remove.className = 'btn btn-danger';
+        remove.textContent = '删除章节';
+        remove.addEventListener('click', () => {
+            if (row.dataset.chapterId) removedChapterIds.push(row.dataset.chapterId);
+            row.remove();
+        });
+        actions.appendChild(remove);
+
+        row.append(basics, summary, pages, actions);
+        return row;
+    }
+
+    function openChapterDialog(item) {
+        chapterComic = item;
+        removedChapterIds = [];
+        elements.chapterDialogTitle.textContent = `章节管理 · ${item.title}`;
+        elements.chapterList.innerHTML = '';
+        (item.chapterList || []).forEach(chapter => {
+            elements.chapterList.appendChild(createChapterRow(chapter));
+        });
+        if (!item.chapterList?.length) {
+            elements.chapterList.appendChild(createChapterRow());
+        }
+        elements.chapterDialog.classList.add('visible');
+    }
+
+    function collectChapters() {
+        return Array.from(elements.chapterList.querySelectorAll('.chapter-row')).map(row => {
+            const value = name => row.querySelector(`[name="${name}"]`)?.value.trim() || '';
+            return {
+                id: row.dataset.chapterId || null,
+                chapterNo: Number(value('chapterNo') || 0),
+                title: value('title'),
+                summary: value('summary'),
+                date: value('date'),
+                pages: Array.from(row.querySelectorAll('[data-chapter-page]'))
+                    .map(input => input.value.trim())
+                    .filter(Boolean)
+            };
+        }).filter(chapter => chapter.title || chapter.chapterNo > 0);
+    }
+
+    async function saveChapters(event) {
+        event.preventDefault();
+        if (!chapterComic) return;
+        elements.saveChaptersButton.disabled = true;
+        try {
+            const chapters = collectChapters();
+            for (const chapter of chapters) {
+                const body = JSON.stringify({
+                    chapterNo: chapter.chapterNo || null,
+                    title: chapter.title,
+                    summary: chapter.summary,
+                    date: chapter.date,
+                    pages: chapter.pages
+                });
+                const path = chapter.id
+                    ? `/api/admin/comic-chapters/${chapter.id}`
+                    : `/api/admin/comics/${chapterComic.id}/chapters`;
+                await api(path, {method: chapter.id ? 'PUT' : 'POST', body});
+            }
+            for (const id of removedChapterIds) {
+                await api(`/api/admin/comic-chapters/${id}`, {method: 'DELETE'});
+            }
+            closeChapterDialog();
+            toast('章节保存成功');
+            await loadItems();
+        } catch (error) {
+            toast(error.message, true);
+        } finally {
+            elements.saveChaptersButton.disabled = false;
+        }
+    }
+
+    async function uploadFile(file) {
+        if (!uploadTarget) return;
+        const formData = new FormData();
+        formData.append('file', file);
+        const result = await api('/api/admin/uploads', {method: 'POST', body: formData});
+        uploadTarget.value = result.url;
+        toast(uploadTarget.dataset.uploadKind === 'model' ? '模型上传成功' : '封面上传成功');
+    }
+
+    function progressStatusColor(status) {
+        return {
+            completed: '#22c55e',
+            in_progress: '#facc15',
+            delayed: '#ef4444',
+            not_started: '#64748b'
+        }[status] || '#64748b';
+    }
+
+    function flattenAdminProgress(nodes, parentId = null, depth = 0) {
+        return (nodes || []).flatMap(node => [
+            {...node, parentId, depth},
+            ...flattenAdminProgress(node.children || [], node.id, depth + 1)
+        ]);
+    }
+
+    function progressDescendantIds(rows, id) {
+        const children = rows.filter(row => row.parentId === id);
+        return children.flatMap(child => [child.id, ...progressDescendantIds(rows, child.id)]);
+    }
+
+    function progressLabel(row, field) {
+        const label = document.createElement('span');
+        label.textContent = field.label;
+        return label;
+    }
+
+    function progressControl(field, value, options = []) {
+        const control = document.createElement(field.type === 'textarea' ? 'textarea' : field.type === 'select' ? 'select' : 'input');
+        control.className = 'control';
+        control.dataset.progressField = field.name;
+        if (field.type === 'select') {
+            options.forEach(option => {
+                const node = document.createElement('option');
+                node.value = option.value;
+                node.textContent = option.label;
+                control.appendChild(node);
+            });
+        } else if (field.type !== 'textarea') {
+            control.type = field.type;
+        }
+        control.value = value ?? '';
+        if (field.min !== undefined) control.min = field.min;
+        if (field.max !== undefined) control.max = field.max;
+        control.addEventListener('input', syncProgressRowState);
+        control.addEventListener('change', syncProgressRowState);
+        return control;
+    }
+
+    function createProgressLabeledField(row, field) {
+        const wrap = document.createElement('label');
+        let value = row[field.name];
+        if (field.name === 'parentId') {
+            const excluded = new Set([row.id, ...progressDescendantIds(progressRows, row.id)]);
+            const options = [{value: '', label: '无'}].concat(
+                progressRows
+                    .filter(item => !excluded.has(item.id))
+                    .map(item => ({value: item.id, label: `${'-'.repeat(item.depth * 2)}${item.name}`}))
+            );
+            wrap.append(progressLabel(row, field), progressControl(field, value, options));
+            return wrap;
+        }
+        if (field.type === 'select' && field.name === 'nodeType') {
+            const options = [
+                {value: 'bridge', label: '桥梁'},
+                {value: 'unit', label: '联'},
+                {value: 'span', label: '跨'},
+                {value: 'member', label: '构件'}
+            ];
+            wrap.append(progressLabel(row, field), progressControl(field, value, options));
+            return wrap;
+        }
+        if (field.type === 'select' && field.name === 'status') {
+            const options = [
+                {value: 'not_started', label: '未开始'},
+                {value: 'in_progress', label: '施工中'},
+                {value: 'completed', label: '已完成'},
+                {value: 'delayed', label: '延期'}
+            ];
+            const control = progressControl(field, value, options);
+            wrap.append(progressLabel(row, field), control);
+            return wrap;
+        }
+        wrap.append(progressLabel(row, field), progressControl(field, value));
+        return wrap;
+    }
+
+    function createProgressRow(row = {}) {
+        const node = {
+            id: row.id || `local-${Date.now()}-${Math.random().toString(16).slice(2, 8)}`,
+            parentId: row.parentId || '',
+            nodeType: row.nodeType || 'member',
+            name: row.name || '',
+            meshKey: row.meshKey || '',
+            status: row.status || 'not_started',
+            progressPercent: row.progressPercent ?? 0,
+            weight: row.weight ?? 1,
+            plannedStartDate: row.plannedStartDate || '',
+            plannedEndDate: row.plannedEndDate || '',
+            actualStartDate: row.actualStartDate || '',
+            actualEndDate: row.actualEndDate || '',
+            owner: row.owner || '',
+            delayReason: row.delayReason || '',
+            remark: row.remark || '',
+            ...row
+        };
+        const element = document.createElement('div');
+        element.className = 'progress-row';
+        element.dataset.progressId = node.id;
+
+        const basics = document.createElement('div');
+        basics.className = 'progress-basics';
+        [
+            {name: 'nodeType', label: '类型', type: 'select'},
+            {name: 'parentId', label: '父级', type: 'select'},
+            {name: 'name', label: '名称', type: 'text'},
+            {name: 'meshKey', label: '模型构件 Key', type: 'text'},
+            {name: 'status', label: '状态', type: 'select'},
+            {name: 'progressPercent', label: '完成率', type: 'number', min: 0, max: 100},
+            {name: 'weight', label: '权重', type: 'number', min: 0.01, max: 100000, step: 0.01}
+        ].forEach(field => basics.appendChild(createProgressLabeledField(node, field)));
+
+        const times = document.createElement('div');
+        times.className = 'progress-times';
+        [
+            {name: 'plannedStartDate', label: '计划开始', type: 'date'},
+            {name: 'plannedEndDate', label: '计划完成', type: 'date'},
+            {name: 'actualStartDate', label: '实际开始', type: 'date'},
+            {name: 'actualEndDate', label: '实际完成', type: 'date'}
+        ].forEach(field => times.appendChild(createProgressLabeledField(node, field)));
+
+        const extra = document.createElement('div');
+        extra.className = 'progress-extra';
+        [
+            {name: 'owner', label: '负责人', type: 'text'},
+            {name: 'delayReason', label: '延期原因', type: 'text'},
+            {name: 'remark', label: '备注', type: 'textarea'}
+        ].forEach(field => extra.appendChild(createProgressLabeledField(node, field)));
+
+        const remove = document.createElement('button');
+        remove.className = 'btn btn-danger progress-remove';
+        remove.type = 'button';
+        remove.textContent = '删除';
+        remove.addEventListener('click', () => openProgressDeleteConfirm(node));
+
+        element.append(basics, times, extra, remove);
+        return element;
+    }
+
+    function renderProgressRows() {
+        elements.progressList.innerHTML = '';
+        progressRows.forEach(row => elements.progressList.appendChild(createProgressRow(row)));
+        renderProgressSummary();
+    }
+
+    function renderProgressSummary() {
+        const statuses = ['completed', 'in_progress', 'delayed', 'not_started'];
+        const labels = {
+            completed: '已完成',
+            in_progress: '施工中',
+            delayed: '延期',
+            not_started: '未开始'
+        };
+        elements.progressSummaryLine.innerHTML = '';
+        const count = document.createElement('span');
+        count.textContent = `${progressRows.length} 节点`;
+        elements.progressSummaryLine.appendChild(count);
+        statuses.forEach((status, index) => {
+            if (index > 0) {
+                const separator = document.createElement('span');
+                separator.textContent = '/';
+                elements.progressSummaryLine.appendChild(separator);
+            }
+            const item = document.createElement('span');
+            const dot = document.createElement('i');
+            dot.className = 'progress-status-dot';
+            dot.style.background = progressStatusColor(status);
+            item.append(dot, document.createTextNode(` ${progressRows.filter(row => row.status === status).length} ${labels[status]}`));
+            elements.progressSummaryLine.appendChild(item);
+        });
+    }
+
+    function syncProgressRowState() {
+        const rows = collectProgressRows();
+        progressRows = rows;
+        renderProgressSummary();
+    }
+
+    function collectProgressRows() {
+        return Array.from(elements.progressList.querySelectorAll('.progress-row')).map(element => {
+            const value = name => element.querySelector(`[data-progress-field="${name}"]`)?.value ?? '';
+            const numberValue = name => {
+                const raw = value(name);
+                return raw === '' ? null : Number(raw);
+            };
+            const id = element.dataset.progressId;
+            return {
+                id,
+                parentId: value('parentId') || null,
+                nodeType: value('nodeType'),
+                name: value('name').trim(),
+                meshKey: value('meshKey').trim() || null,
+                status: value('status'),
+                progressPercent: numberValue('progressPercent'),
+                weight: numberValue('weight'),
+                plannedStartDate: value('plannedStartDate') || null,
+                plannedEndDate: value('plannedEndDate') || null,
+                actualStartDate: value('actualStartDate') || null,
+                actualEndDate: value('actualEndDate') || null,
+                owner: value('owner').trim() || null,
+                delayReason: value('delayReason').trim() || null,
+                remark: value('remark').trim() || null
+            };
+        });
+    }
+
+    async function openProgressDialog(item) {
+        progressModel = item;
+        elements.progressDialogTitle.textContent = `模型进度 · ${item.title}`;
+        elements.progressAuditList.classList.add('hidden');
+        elements.progressDialog.classList.add('visible');
+        try {
+            const data = await api(`/api/admin/models/${item.id}/progress-tree`);
+            progressRows = flattenAdminProgress(data.nodes);
+            if (!progressRows.length) {
+                const unitId = `local-unit-${Date.now()}`;
+                const spanId = `local-span-${Date.now()}`;
+                progressRows = [
+                    {id: unitId, nodeType: 'unit', name: '第一联', status: 'in_progress'},
+                    {id: spanId, parentId: unitId, nodeType: 'span', name: '第1跨', status: 'in_progress'},
+                    {parentId: spanId, nodeType: 'member', name: '钢桁梁', status: 'not_started'}
+                ];
+            }
+            renderProgressRows();
+        } catch (error) {
+            toast(error.message, true);
+        }
+    }
+
+    function closeProgressDialog() {
+        elements.progressDialog.classList.remove('visible');
+        progressModel = null;
+        progressRows = [];
+        progressAuditRows = [];
+        elements.progressAuditList.classList.add('hidden');
+    }
+
+    function addProgressNode(nodeType) {
+        const preferredParent = nodeType === 'span'
+            ? progressRows.find(row => row.nodeType === 'unit')
+            : nodeType === 'member'
+                ? progressRows.find(row => row.nodeType === 'span')
+                : null;
+        progressRows.push({
+            id: `local-${nodeType}-${Date.now()}`,
+            parentId: preferredParent?.id || null,
+            nodeType,
+            name: nodeType === 'unit' ? '新联' : nodeType === 'span' ? '新跨' : '新构件',
+            status: 'not_started',
+            progressPercent: 0,
+            weight: 1
+        });
+        renderProgressRows();
+    }
+
+    async function saveProgress(event) {
+        event.preventDefault();
+        if (!progressModel) return;
+        elements.saveProgressButton.disabled = true;
+        try {
+            syncProgressRowState();
+            const data = await api(`/api/admin/models/${progressModel.id}/progress`, {
+                method: 'PUT',
+                body: JSON.stringify({nodes: progressRows})
+            });
+            progressRows = flattenAdminProgress(data.nodes);
+            renderProgressRows();
+            toast('模型进度已保存');
+        } catch (error) {
+            toast(error.message, true);
+        } finally {
+            elements.saveProgressButton.disabled = false;
+        }
+    }
+
+    async function importProgressCsv(file) {
+        if (!progressModel || !file) return;
+        try {
+            const csv = await file.text();
+            const data = await api(`/api/admin/models/${progressModel.id}/progress/import`, {
+                method: 'POST',
+                headers: {'Content-Type': 'text/csv'},
+                body: csv
+            });
+            progressRows = flattenAdminProgress(data.nodes);
+            renderProgressRows();
+            toast('进度 CSV 导入成功');
+        } catch (error) {
+            toast(error.message, true);
+        } finally {
+            elements.progressCsvInput.value = '';
+        }
+    }
+
+    async function loadProgressAudits() {
+        if (!progressModel) return;
+        try {
+            progressAuditRows = await api(`/api/admin/models/${progressModel.id}/progress/audits`);
+            elements.progressAuditList.classList.toggle('hidden');
+            elements.progressAuditList.innerHTML = progressAuditRows.length
+                ? progressAuditRows.map(row => `<div>${row.createdAt.replace('T', ' ').slice(0, 16)} · ${row.action}</div>`).join('')
+                : '<div>暂无操作记录</div>';
+        } catch (error) {
+            toast(error.message, true);
+        }
+    }
+
+    async function login(event) {
+        event.preventDefault();
+        elements.loginButton.disabled = true;
+        try {
+            const result = await api('/api/admin/auth/login', {
+                method: 'POST',
+                body: JSON.stringify({
+                    account: elements.account.value.trim(),
+                    password: elements.password.value
+                })
+            });
+            state.token = result.token;
+            state.user = {name: result.name, account: result.account};
+            sessionStorage.setItem('screenAdminToken', result.token);
+            sessionStorage.setItem('screenAdminUser', JSON.stringify(state.user));
+            await enterApp();
+        } catch (error) {
+            toast(error.message, true);
+        } finally {
+            elements.loginButton.disabled = false;
+        }
+    }
+
+    async function enterApp() {
+        elements.userName.textContent = state.user?.name || '管理员';
+        showView(true);
+        switchModule(moduleKeyFromLocation());
+    }
+
+    async function logout() {
+        try {
+            await api('/api/admin/auth/logout', {method: 'POST'});
+        } catch (error) {
+            // logout proceeds even if the token already expired
+        }
+        clearSession();
+        showView(false);
+    }
+
+    elements.loginForm.addEventListener('submit', login);
+    elements.logoutButton.addEventListener('click', logout);
+    window.addEventListener('hashchange', handleRouteChange);
+    elements.createButton.addEventListener('click', () => openEditDialog());
+    elements.searchInput.addEventListener('input', () => {
+        state.keyword = elements.searchInput.value;
+        renderTable();
+    });
+    elements.editForm.addEventListener('submit', saveItem);
+    elements.singletonForm.addEventListener('submit', saveSingleton);
+    elements.closeEditButton.addEventListener('click', closeEditDialog);
+    document.querySelectorAll('[data-close-edit]').forEach(button => button.addEventListener('click', closeEditDialog));
+    document.querySelectorAll('[data-close-confirm]').forEach(button => button.addEventListener('click', closeConfirmDialog));
+    elements.confirmDeleteButton.addEventListener('click', deleteItem);
+    elements.addChapterButton.addEventListener('click', () => elements.chapterList.appendChild(createChapterRow()));
+    elements.chapterForm.addEventListener('submit', saveChapters);
+    document.querySelectorAll('[data-close-chapter]').forEach(button => button.addEventListener('click', closeChapterDialog));
+    document.querySelectorAll('[data-add-progress]').forEach(button => {
+        button.addEventListener('click', () => addProgressNode(button.dataset.addProgress));
+    });
+    document.querySelectorAll('[data-close-progress]').forEach(button => button.addEventListener('click', closeProgressDialog));
+    elements.progressForm.addEventListener('submit', saveProgress);
+    elements.importProgressButton.addEventListener('click', () => {
+        elements.progressCsvInput.value = '';
+        elements.progressCsvInput.click();
+    });
+    elements.progressCsvInput.addEventListener('change', async () => {
+        const file = elements.progressCsvInput.files?.[0];
+        if (!file) return;
+        await importProgressCsv(file);
+    });
+    elements.progressAuditButton.addEventListener('click', loadProgressAudits);
+    elements.uploadInput.addEventListener('change', async () => {
+        const file = elements.uploadInput.files?.[0];
+        if (!file) return;
+        try {
+            await uploadFile(file);
+        } catch (error) {
+            toast(error.message, true);
+        }
+    });
+    elements.editDialog.addEventListener('click', event => {
+        if (event.target === elements.editDialog) closeEditDialog();
+    });
+    elements.confirmDialog.addEventListener('click', event => {
+        if (event.target === elements.confirmDialog) closeConfirmDialog();
+    });
+    elements.chapterDialog.addEventListener('click', event => {
+        if (event.target === elements.chapterDialog) closeChapterDialog();
+    });
+    elements.progressDialog.addEventListener('click', event => {
+        if (event.target === elements.progressDialog) closeProgressDialog();
+    });
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape') {
+            closeConfirmDialog();
+            closeEditDialog();
+            closeChapterDialog();
+            closeProgressDialog();
+        }
+    });
+
+    if (state.token) {
+        enterApp().catch(error => toast(error.message, true));
+    } else {
+        showView(false);
+    }
+</script>
+</body>
+</html>

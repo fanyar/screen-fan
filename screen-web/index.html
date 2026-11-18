@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script>
+        (function () {
+            var DESIGN_HEIGHT = 1080;
+
+            function setRootFontSize() {
+                var viewportHeight = document.documentElement.clientHeight || window.innerHeight;
+                document.documentElement.style.fontSize = viewportHeight / (DESIGN_HEIGHT / 108) + 'px';
+            }
+
+            setRootFontSize();
+            window.addEventListener('resize', setRootFontSize);
+            window.addEventListener('pageshow', function (event) {
+                if (event.persisted) {
+                    setRootFontSize();
+                }
+            });
+        })();
+    </script>
+    <title>ScreenX</title>
+</head>
+<body>
+<div id="app"></div>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

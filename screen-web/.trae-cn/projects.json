@@ -1,0 +1,146 @@
+{
+  "projects": {
+    "music": {
+      "name": "音乐网站",
+      "features": {
+        "首页三栏布局": {
+          "status": "✅",
+          "priority": "高",
+          "completedAt": "2026-06-28",
+          "note": "热门歌曲、新歌上架、排行榜"
+        },
+        "我的收藏": {
+          "status": "✅",
+          "priority": "高",
+          "completedAt": "2026-06-28",
+          "note": "收藏/取消收藏，localStorage 持久化"
+        },
+        "全局播放器": {
+          "status": "✅",
+          "priority": "高",
+          "completedAt": "2026-06-29",
+          "note": "播放/暂停、上一首/下一首、进度条、音量"
+        },
+        "暗黑主题": {
+          "status": "✅",
+          "priority": "高",
+          "completedAt": "2026-06-29",
+          "note": "整体深色配色布局"
+        },
+        "API 代理": {
+          "status": "✅",
+          "priority": "高",
+          "completedAt": "2026-06-29",
+          "note": "网易云音乐 API 跨域代理"
+        },
+        "Mock 数据": {
+          "status": "✅",
+          "priority": "中",
+          "completedAt": "2026-06-29",
+          "note": "API 失败时自动兜底"
+        },
+        "搜索功能": {
+          "status": "❌",
+          "priority": "高",
+          "note": "搜索歌曲、歌手、专辑，搜索结果页面"
+        },
+        "歌词显示": {
+          "status": "❌",
+          "priority": "高",
+          "note": "播放时显示歌词，支持滚动高亮，时间轴匹配"
+        },
+        "播放模式切换": {
+          "status": "❌",
+          "priority": "高",
+          "note": "顺序播放、单曲循环、随机播放"
+        },
+        "历史播放记录": {
+          "status": "❌",
+          "priority": "高",
+          "note": "记录最近播放的歌曲，localStorage 存储"
+        },
+        "推荐歌单": {
+          "status": "❌",
+          "priority": "中",
+          "note": "首页展示推荐歌单列表，点击进入歌单详情"
+        },
+        "歌手页面": {
+          "status": "❌",
+          "priority": "中",
+          "note": "歌手详情、热门歌曲、专辑列表"
+        },
+        "专辑页面": {
+          "status": "❌",
+          "priority": "中",
+          "note": "专辑详情、歌曲列表、封面展示"
+        },
+        "全屏播放器": {
+          "status": "❌",
+          "priority": "中",
+          "note": "点击封面进入全屏播放界面"
+        },
+        "评论功能": {
+          "status": "❌",
+          "priority": "低",
+          "note": "查看歌曲评论，支持点赞"
+        },
+        "歌曲分享": {
+          "status": "❌",
+          "priority": "低",
+          "note": "分享到社交平台"
+        },
+        "音效设置": {
+          "status": "❌",
+          "priority": "低",
+          "note": "均衡器、音效模式"
+        },
+        "播放列表管理": {
+          "status": "❌",
+          "priority": "低",
+          "note": "创建、编辑、删除自定义播放列表"
+        },
+        "8090后热播歌曲": {
+          "status": "✅",
+          "priority": "高",
+          "note": "首页四栏布局，新增8090经典栏目，使用歌单API获取数据",
+          "startedAt": "2026-07-01",
+          "completedAt": "2026-07-01"
+        }
+      },
+      "optimizations": {
+        "music.js 代码保持一致": {
+          "status": "⏳",
+          "priority": "中",
+          "createdAt": "2026-07-01",
+          "description": "保持 music.js 代码风格一致性"
+        }
+      },
+      "bugs": {
+        "页面宽度不是100%": {
+          "status": "🔧",
+          "priority": "高",
+          "fixedAt": "2026-06-30",
+          "description": "welcome 页面右侧有白色区域",
+          "solution": "添加 width: 100vw; min-width: 100%; overflow: hidden"
+        },
+        "修改music页面滚动条": {
+          "status": "🔧",
+          "priority": "中",
+          "fixedAt": "2026-07-01",
+          "description": "music页面卡片内部滚动条样式丑陋，与项目整体风格不一致",
+          "solution": "给四个卡片的ul添加项目已有的scrollBar类，统一滚动条样式"
+        }
+      },
+      "lastUpdated": "2026-07-01 18:30",
+      "currentFocus": "搜索功能",
+      "statistics": {
+        "total": 19,
+        "completed": 7,
+        "inProgress": 0,
+        "notStarted": 12,
+        "bugs": 2,
+        "bugsFixed": 2
+      }
+    }
+  }
+}

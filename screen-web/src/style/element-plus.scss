@@ -1,0 +1,42 @@
+.el-message {
+  font-size: 14px;
+
+  .el-icon,
+  .el-message__icon {
+    width: 16px;
+    height: 16px;
+    flex: none;
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  .el-message__content {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+.el-container {
+  height: 100%;
+
+  .el-main {
+    &::-webkit-scrollbar {
+      width: var(--scrollbar-width);
+      height: var(--scrollbar-height) !important;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: var(--scrollbar-radius);
+      background-color: var(--scrollbar-thumb-bg);
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: var(--scrollbar-thumb-hover);
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius: var(--scrollbar-radius);
+      background: var(--scrollbar-track-bg);
+    }
+  }
+}

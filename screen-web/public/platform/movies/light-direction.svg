@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 168" role="img" aria-label="光的方向封面">
+  <rect width="300" height="168" fill="#450a0a"/>
+  <path d="M210 116L58 32l-14 30 144 74Z" fill="#fecaca"/>
+  <rect x="186" y="94" width="66" height="34" fill="#7f1d1d"/>
+  <rect x="198" y="80" width="42" height="14" fill="#f87171"/>
+  <path d="M30 134h240v10H30zM58 112h12v22H58zM124 112h12v22h-12zM190 112h12v22h-12zM238 112h12v22h-12z" fill="#fca5a5"/>
+</svg>

@@ -1,0 +1,4 @@
+.tools/
+.m2/
+server/target/
+server/data/

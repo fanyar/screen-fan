@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 48" role="img" aria-label="FAN logo">
+  <g fill="#2563eb">
+    <path d="M2 4h34v10H12v7h22v10H12v13H2z"/>
+    <path d="M52 4h10l22 40H72L62 21l-8 23H42z"/>
+    <rect x="62" y="28" width="46" height="8"/>
+    <path d="M120 44V4h10l26 23V4h10v40h-10L130 21v23z"/>
+  </g>
+</svg>
