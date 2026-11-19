@@ -9,7 +9,7 @@
           :tags="work.tags"
           :meta="workMeta"
           aspect="wide"
-          @back="router.push('/platform/works')"
+          @back="returnToList('/platform/works')"
       >
         <template #title-actions>
           <PlatformFavoriteButton
@@ -111,6 +111,7 @@ import PlatformCommentSection from '@/components/platform/PlatformCommentSection
 import PlatformRelatedContent from '@/components/platform/PlatformRelatedContent.vue'
 import {getWork} from '@/api/platform'
 import {setPageSeo} from '@/util/seo'
+import {preservedListRouteQuery} from '@/util/list-query'
 import {useHistoryStore} from '@/store/modules/history'
 
 const route = useRoute()
@@ -123,6 +124,11 @@ const galleryIndex = ref(-1)
 const workMeta = computed(() => {
   if (!work.value) return []
   return [`${work.value.year} 年`, work.value.role, work.value.period].filter(Boolean)
+})
+
+const returnToList = path => router.push({
+  path,
+  query: preservedListRouteQuery(route.query)
 })
 
 const loadWork = async () => {

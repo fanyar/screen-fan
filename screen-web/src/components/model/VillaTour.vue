@@ -3,7 +3,7 @@
     <canvas ref="canvasRef" class="villa-canvas" aria-label="新中式三层别墅三维模型"></canvas>
 
     <header class="villa-top">
-      <button type="button" class="tour-button" @click="router.push('/platform/models')">返回</button>
+      <button type="button" class="tour-button" @click="returnToList">返回</button>
       <div class="title-block">
         <strong>{{ activeView.label }}</strong>
         <span>新中式三层别墅 · {{ activeView.info }}</span>
@@ -45,11 +45,12 @@
 
 <script setup>
 import {computed, nextTick, onBeforeUnmount, onMounted, ref} from 'vue'
-import {useRouter} from 'vue-router'
+import {useRoute, useRouter} from 'vue-router'
 import * as THREE from 'three'
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls.js'
 import {box, createRoomSets, cylinder} from '@/components/model/villa-rooms'
 import {VILLA_SPECS, VILLA_VIEW_GROUPS, VILLA_VIEWS} from '@/const/villa'
+import {preservedListRouteQuery} from '@/util/list-query'
 
 const props = defineProps({
   initialView: {type: String, default: 'overview'}
@@ -59,6 +60,11 @@ const canvasRef = ref(null)
 const activeViewId = ref(props.initialView)
 const activeView = computed(() => VILLA_VIEWS.find(view => view.id === activeViewId.value) || VILLA_VIEWS[0])
 const router = useRouter()
+const route = useRoute()
+const returnToList = () => router.push({
+  path: '/platform/models',
+  query: preservedListRouteQuery(route.query)
+})
 
 const viewsByGroup = group => VILLA_VIEWS.filter(view => view.group === group)
 

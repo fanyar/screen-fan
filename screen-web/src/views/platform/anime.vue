@@ -19,7 +19,7 @@
           v-for="item in anime"
           :key="item.id"
           class="platform-card group cursor-pointer overflow-hidden rounded-[6px]"
-          @click="router.push(`/platform/anime/${item.id}`)"
+          @click="openDetail(`/platform/anime/${item.id}`)"
       >
         <div class="platform-cover aspect-[2/3]">
           <img
@@ -74,26 +74,29 @@
 </template>
 
 <script setup>
-import {computed, onMounted, reactive, ref} from 'vue'
-import {useRouter} from 'vue-router'
+import {computed, onMounted, ref} from 'vue'
 import PlatformListToolbar from '@/components/platform/PlatformListToolbar.vue'
 import PlatformFavoriteButton from '@/components/platform/PlatformFavoriteButton.vue'
 import {getAnime, getContentFacets} from '@/api/platform'
+import {useRouteListQuery} from '@/composables/useRouteListQuery'
 import {PLATFORM_LIST_PAGE_SIZES} from '@/const/platform'
 
-const router = useRouter()
 const anime = ref([])
 const facets = ref({})
 const loading = ref(false)
 const loadFailed = ref(false)
 const total = ref(0)
-const query = reactive({
+const {
+  query,
+  syncRouteQuery,
+  openDetail
+} = useRouteListQuery({
   keyword: '',
   genre: '',
   year: '',
   page: 1,
   pageSize: 12
-})
+}, PLATFORM_LIST_PAGE_SIZES)
 
 const toolbarFilters = computed(() => [
   {name: 'genre', label: '类型', value: query.genre, options: facets.value.animeGenres || []},
@@ -131,11 +134,13 @@ const loadFacets = async () => {
 const updateFilter = ({name, value}) => {
   query[name] = value ?? ''
   query.page = 1
+  syncRouteQuery()
   loadAnimeList()
 }
 
 const search = () => {
   query.page = 1
+  syncRouteQuery()
   loadAnimeList()
 }
 
@@ -144,11 +149,13 @@ const reset = () => {
   query.genre = ''
   query.year = ''
   query.page = 1
+  syncRouteQuery()
   loadAnimeList()
 }
 
 const handleSizeChange = () => {
   query.page = 1
+  syncRouteQuery()
   loadAnimeList()
 }
 

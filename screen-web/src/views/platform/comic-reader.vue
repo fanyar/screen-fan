@@ -3,7 +3,7 @@
     <div v-loading="loading" class="reader-shell">
       <template v-if="comic && chapter">
         <header class="reader-toolbar">
-          <el-button @click="router.push(`/platform/comics/${comic.id}`)">
+          <el-button @click="returnToDetail">
             <el-icon><ArrowLeft/></el-icon>
             <span>详情</span>
           </el-button>
@@ -106,6 +106,7 @@ import {computed, onBeforeUnmount, onMounted, ref, watch} from 'vue'
 import {useRoute, useRouter} from 'vue-router'
 import {getComic, saveReadingProgress} from '@/api/platform'
 import {useHistoryStore} from '@/store/modules/history'
+import {preservedListRouteQuery} from '@/util/list-query'
 
 const route = useRoute()
 const router = useRouter()
@@ -120,6 +121,11 @@ const readingModes = [
   {label: '单页', value: 'single'}
 ]
 const historyStore = useHistoryStore()
+
+const returnToDetail = () => router.push({
+  path: `/platform/comics/${route.params.comicId}`,
+  query: preservedListRouteQuery(route.query)
+})
 
 const chapters = computed(() => {
   return [...(comic.value?.chapterList || [])].sort((left, right) => left.chapterNo - right.chapterNo)
@@ -166,7 +172,10 @@ const loadReader = async () => {
 
 const openChapter = (chapterId) => {
   if (!chapterId) return
-  router.push(`/platform/comics/${route.params.comicId}/chapters/${chapterId}`)
+  router.push({
+    path: `/platform/comics/${route.params.comicId}/chapters/${chapterId}`,
+    query: preservedListRouteQuery(route.query)
+  })
 }
 
 const turnPage = (direction) => {

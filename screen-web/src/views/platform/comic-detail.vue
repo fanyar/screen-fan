@@ -10,7 +10,7 @@
           :tags="comicTags"
           :meta="comicMeta"
           aspect="poster"
-          @back="router.push('/platform/comics')"
+          @back="returnToList('/platform/comics')"
       >
         <template #title-actions>
           <PlatformFavoriteButton
@@ -24,7 +24,10 @@
             v-if="continueReading"
             type="button"
             class="continue-reading"
-            @click="router.push(continueReading.route)"
+            @click="router.push({
+              path: continueReading.route,
+              query: preservedListRouteQuery(route.query)
+            })"
         >
           <el-icon><VideoPlay/></el-icon>
           <span>继续阅读</span>
@@ -42,7 +45,10 @@
                 :key="item.id"
                 type="button"
                 class="chapter-item"
-                @click="router.push(`/platform/comics/${comic.id}/chapters/${item.id}`)"
+                @click="router.push({
+                  path: `/platform/comics/${comic.id}/chapters/${item.id}`,
+                  query: preservedListRouteQuery(route.query)
+                })"
             >
               <span class="chapter-no">{{ item.chapterNo }}</span>
               <span class="chapter-info">
@@ -84,6 +90,7 @@ import {setPageSeo} from '@/util/seo'
 import PlatformFavoriteButton from '@/components/platform/PlatformFavoriteButton.vue'
 import PlatformCommentSection from '@/components/platform/PlatformCommentSection.vue'
 import PlatformRelatedContent from '@/components/platform/PlatformRelatedContent.vue'
+import {preservedListRouteQuery} from '@/util/list-query'
 import {useHistoryStore} from '@/store/modules/history'
 
 const route = useRoute()
@@ -97,6 +104,11 @@ const comicMeta = computed(() => (comic.value ? ['漫画作品'] : []))
 const chapters = computed(() => (
   [...(comic.value?.chapterList || [])].sort((left, right) => left.chapterNo - right.chapterNo)
 ))
+
+const returnToList = path => router.push({
+  path,
+  query: preservedListRouteQuery(route.query)
+})
 const continueReading = computed(() => {
   if (!comic.value || !serverProgress.value) return null
   const chapter = chapters.value.find(item => item.id === serverProgress.value.chapterId)

@@ -4,7 +4,7 @@
 
     <template v-if="showUi">
       <header class="garden-top">
-        <button type="button" class="control-button" @click="router.push('/platform/models')">返回</button>
+        <button type="button" class="control-button" @click="returnToList">返回</button>
         <div class="title-block">
           <strong>苏州拙政园 · 中部园景</strong>
           <span>{{ moving ? '正在切换漫游路径' : activeView.info }}</span>
@@ -66,7 +66,7 @@
 
 <script setup>
 import {computed, nextTick, onBeforeUnmount, onMounted, ref, watch} from 'vue'
-import {useRouter} from 'vue-router'
+import {useRoute, useRouter} from 'vue-router'
 import {ArrowLeft, ArrowRight, VideoPause, VideoPlay} from '@element-plus/icons-vue'
 import * as THREE from 'three'
 import {createGardenScene} from '@/components/model/suzhou-garden-scene'
@@ -76,6 +76,7 @@ import {
   SUZHOU_GARDEN_VIEW_GROUPS,
   SUZHOU_GARDEN_VIEWS
 } from '@/const/suzhou-garden'
+import {preservedListRouteQuery} from '@/util/list-query'
 
 const props = defineProps({
   initialView: {type: String, default: 'overview'},
@@ -88,6 +89,11 @@ const autoTour = ref(false)
 const moving = ref(false)
 const loadFailed = ref(false)
 const router = useRouter()
+const route = useRoute()
+const returnToList = () => router.push({
+  path: '/platform/models',
+  query: preservedListRouteQuery(route.query)
+})
 
 const views = SUZHOU_GARDEN_VIEWS
 const tourOrder = SUZHOU_GARDEN_TOUR_ORDER

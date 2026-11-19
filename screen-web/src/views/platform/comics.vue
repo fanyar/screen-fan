@@ -19,7 +19,7 @@
           v-for="item in comics"
           :key="item.id"
           class="platform-card group cursor-pointer overflow-hidden rounded-[6px]"
-          @click="router.push(`/platform/comics/${item.id}`)"
+          @click="openDetail(`/platform/comics/${item.id}`)"
       >
         <div class="platform-cover aspect-[3/4]">
           <img v-if="item.cover" :src="item.cover" :alt="item.title" class="h-full w-full object-cover">
@@ -68,25 +68,28 @@
 </template>
 
 <script setup>
-import {computed, onMounted, reactive, ref} from 'vue'
-import {useRouter} from 'vue-router'
+import {computed, onMounted, ref} from 'vue'
 import PlatformListToolbar from '@/components/platform/PlatformListToolbar.vue'
 import PlatformFavoriteButton from '@/components/platform/PlatformFavoriteButton.vue'
 import {getComics, getContentFacets} from '@/api/platform'
+import {useRouteListQuery} from '@/composables/useRouteListQuery'
 import {PLATFORM_LIST_PAGE_SIZES} from '@/const/platform'
 
-const router = useRouter()
 const comics = ref([])
 const facets = ref({})
 const loading = ref(false)
 const loadFailed = ref(false)
 const total = ref(0)
-const query = reactive({
+const {
+  query,
+  syncRouteQuery,
+  openDetail
+} = useRouteListQuery({
   keyword: '',
   status: '',
   page: 1,
   pageSize: 12
-})
+}, PLATFORM_LIST_PAGE_SIZES)
 
 const toolbarFilters = computed(() => [
   {name: 'status', label: '连载状态', value: query.status, options: facets.value.comicStatuses || []}
@@ -123,11 +126,13 @@ const loadFacets = async () => {
 const updateFilter = ({name, value}) => {
   query[name] = value ?? ''
   query.page = 1
+  syncRouteQuery()
   loadComicList()
 }
 
 const search = () => {
   query.page = 1
+  syncRouteQuery()
   loadComicList()
 }
 
@@ -135,11 +140,13 @@ const reset = () => {
   query.keyword = ''
   query.status = ''
   query.page = 1
+  syncRouteQuery()
   loadComicList()
 }
 
 const handleSizeChange = () => {
   query.page = 1
+  syncRouteQuery()
   loadComicList()
 }
 

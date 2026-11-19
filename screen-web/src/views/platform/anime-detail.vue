@@ -9,7 +9,7 @@
           :tags="animeTags"
           :meta="animeMeta"
           aspect="poster"
-          @back="router.push('/platform/anime')"
+          @back="returnToList('/platform/anime')"
       >
         <template #title-actions>
           <PlatformFavoriteButton
@@ -82,6 +82,7 @@ import PlatformMarkdownContent from '@/components/platform/PlatformMarkdownConte
 import PlatformFavoriteButton from '@/components/platform/PlatformFavoriteButton.vue'
 import PlatformCommentSection from '@/components/platform/PlatformCommentSection.vue'
 import PlatformRelatedContent from '@/components/platform/PlatformRelatedContent.vue'
+import {preservedListRouteQuery} from '@/util/list-query'
 import {useHistoryStore} from '@/store/modules/history'
 
 const route = useRoute()
@@ -94,6 +95,11 @@ const animeTags = computed(() => (anime.value ? [anime.value.genre] : []))
 const animeMeta = computed(() => (anime.value
     ? [`${anime.value.year} 年`, `评分 ${anime.value.rating}`, anime.value.status]
     : []))
+
+const returnToList = path => router.push({
+  path,
+  query: preservedListRouteQuery(route.query)
+})
 
 const loadAnime = async () => {
   loading.value = true

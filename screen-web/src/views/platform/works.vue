@@ -19,7 +19,7 @@
           v-for="item in works"
           :key="item.id"
           class="platform-card group cursor-pointer overflow-hidden rounded-[6px]"
-          @click="router.push(`/platform/works/${item.id}`)"
+          @click="openDetail(`/platform/works/${item.id}`)"
       >
         <div class="platform-cover aspect-[16/9]">
           <img
@@ -73,26 +73,29 @@
 </template>
 
 <script setup>
-import {computed, onMounted, reactive, ref} from 'vue'
-import {useRouter} from 'vue-router'
+import {computed, onMounted, ref} from 'vue'
 import PlatformListToolbar from '@/components/platform/PlatformListToolbar.vue'
 import PlatformFavoriteButton from '@/components/platform/PlatformFavoriteButton.vue'
 import {getContentFacets, getWorks} from '@/api/platform'
+import {useRouteListQuery} from '@/composables/useRouteListQuery'
 import {PLATFORM_LIST_PAGE_SIZES} from '@/const/platform'
 
-const router = useRouter()
 const works = ref([])
 const facets = ref({})
 const loading = ref(false)
 const loadFailed = ref(false)
 const total = ref(0)
-const query = reactive({
+const {
+  query,
+  syncRouteQuery,
+  openDetail
+} = useRouteListQuery({
   keyword: '',
   tag: '',
   year: '',
   page: 1,
   pageSize: 6
-})
+}, PLATFORM_LIST_PAGE_SIZES)
 
 const toolbarFilters = computed(() => [
   {name: 'tag', label: '标签', value: query.tag, options: facets.value.workTags || []},
@@ -130,11 +133,13 @@ const loadFacets = async () => {
 const updateFilter = ({name, value}) => {
   query[name] = value ?? ''
   query.page = 1
+  syncRouteQuery()
   loadWorkList()
 }
 
 const search = () => {
   query.page = 1
+  syncRouteQuery()
   loadWorkList()
 }
 
@@ -143,11 +148,13 @@ const reset = () => {
   query.tag = ''
   query.year = ''
   query.page = 1
+  syncRouteQuery()
   loadWorkList()
 }
 
 const handleSizeChange = () => {
   query.page = 1
+  syncRouteQuery()
   loadWorkList()
 }
 

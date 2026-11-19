@@ -8,7 +8,7 @@
       <article v-if="article" class="article-panel">
         <header class="article-header">
           <div class="article-actions">
-            <button class="article-back" type="button" @click="router.push('/platform/articles')">
+            <button class="article-back" type="button" @click="returnToList('/platform/articles')">
               <el-icon><ArrowLeft/></el-icon>
               <span>返回列表</span>
             </button>
@@ -124,6 +124,7 @@ import {useRoute, useRouter} from 'vue-router'
 import {getArticle} from '@/api/platform'
 import {renderMarkdown} from '@/util/markdown'
 import {setPageSeo} from '@/util/seo'
+import {preservedListRouteQuery} from '@/util/list-query'
 import PlatformShareButton from '@/components/platform/PlatformShareButton.vue'
 import PlatformFavoriteButton from '@/components/platform/PlatformFavoriteButton.vue'
 import PlatformCommentSection from '@/components/platform/PlatformCommentSection.vue'
@@ -140,6 +141,11 @@ const activeHeadingId = ref('')
 const tableOfContents = ref([])
 let scrollElement = null
 const historyStore = useHistoryStore()
+
+const returnToList = path => router.push({
+  path,
+  query: preservedListRouteQuery(route.query)
+})
 
 const renderedContent = computed(() => renderMarkdown(article.value?.content))
 const readingTime = computed(() => {
@@ -236,7 +242,10 @@ const scrollToHeading = (id) => {
 }
 
 const openArticle = (id) => {
-  router.push(`/platform/articles/${id}`)
+  router.push({
+    path: `/platform/articles/${id}`,
+    query: preservedListRouteQuery(route.query)
+  })
 }
 
 onMounted(loadArticle)

@@ -20,7 +20,7 @@
           :key="item.id"
           type="button"
           class="platform-card model-card"
-          @click="router.push(modelRoute(item))"
+          @click="openDetail(modelRoute(item))"
       >
         <span class="model-cover">
           <img v-if="item.cover" :src="item.cover" :alt="item.title" loading="lazy">
@@ -63,25 +63,28 @@
 </template>
 
 <script setup>
-import {computed, onMounted, reactive, ref} from 'vue'
-import {useRouter} from 'vue-router'
+import {computed, onMounted, ref} from 'vue'
 import PlatformListToolbar from '@/components/platform/PlatformListToolbar.vue'
 import {getModelFacets, getModels} from '@/api/platform'
+import {useRouteListQuery} from '@/composables/useRouteListQuery'
 import {MODEL_DEFAULT_PAGE_SIZE} from '@/const/model'
 import {PLATFORM_LIST_PAGE_SIZES} from '@/const/platform'
 
-const router = useRouter()
 const models = ref([])
 const facets = ref({categories: []})
 const loading = ref(false)
 const loadFailed = ref(false)
 const total = ref(0)
-const query = reactive({
+const {
+  query,
+  syncRouteQuery,
+  openDetail
+} = useRouteListQuery({
   keyword: '',
   category: '',
   page: 1,
   pageSize: MODEL_DEFAULT_PAGE_SIZE
-})
+}, PLATFORM_LIST_PAGE_SIZES)
 
 const toolbarFilters = computed(() => [
   {name: 'category', label: '分类', value: query.category, options: facets.value.categories || []}
@@ -126,11 +129,13 @@ const loadFacets = async () => {
 const updateFilter = ({name, value}) => {
   query[name] = value ?? ''
   query.page = 1
+  syncRouteQuery()
   loadModelList()
 }
 
 const search = () => {
   query.page = 1
+  syncRouteQuery()
   loadModelList()
 }
 
@@ -138,11 +143,13 @@ const reset = () => {
   query.keyword = ''
   query.category = ''
   query.page = 1
+  syncRouteQuery()
   loadModelList()
 }
 
 const handleSizeChange = () => {
   query.page = 1
+  syncRouteQuery()
   loadModelList()
 }
 

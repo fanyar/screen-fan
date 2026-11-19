@@ -21,6 +21,10 @@
 
 <script setup>
 import {useRouter} from 'vue-router'
+import {useRoute} from 'vue-router'
+import {preservedListRouteQuery} from '@/util/list-query'
+
+const route = useRoute()
 
 defineProps({
   items: {type: Array, default: () => []}
@@ -37,7 +41,13 @@ const basePath = {
 
 const navigate = (item) => {
   const base = basePath[item.contentType]
-  if (base) router.push(`${base}/${item.id}`)
+  if (base) {
+    const sameModule = route.path.startsWith(base)
+    router.push({
+      path: `${base}/${item.id}`,
+      query: sameModule ? preservedListRouteQuery(route.query) : {}
+    })
+  }
 }
 </script>
 

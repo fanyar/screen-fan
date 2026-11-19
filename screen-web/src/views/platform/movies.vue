@@ -19,7 +19,7 @@
           v-for="item in movies"
           :key="item.id"
           class="platform-card group cursor-pointer overflow-hidden rounded-[6px]"
-          @click="router.push(`/platform/movies/${item.id}`)"
+          @click="openDetail(`/platform/movies/${item.id}`)"
       >
         <div class="platform-cover aspect-[2/3]">
           <img v-if="item.cover" :src="item.cover" :alt="item.title" class="h-full w-full object-cover">
@@ -66,26 +66,29 @@
 </template>
 
 <script setup>
-import {computed, onMounted, reactive, ref} from 'vue'
-import {useRouter} from 'vue-router'
+import {computed, onMounted, ref} from 'vue'
 import PlatformListToolbar from '@/components/platform/PlatformListToolbar.vue'
 import PlatformFavoriteButton from '@/components/platform/PlatformFavoriteButton.vue'
 import {getContentFacets, getMovies} from '@/api/platform'
+import {useRouteListQuery} from '@/composables/useRouteListQuery'
 import {PLATFORM_LIST_PAGE_SIZES} from '@/const/platform'
 
-const router = useRouter()
 const movies = ref([])
 const facets = ref({})
 const loading = ref(false)
 const loadFailed = ref(false)
 const total = ref(0)
-const query = reactive({
+const {
+  query,
+  syncRouteQuery,
+  openDetail
+} = useRouteListQuery({
   keyword: '',
   genre: '',
   year: '',
   page: 1,
   pageSize: 12
-})
+}, PLATFORM_LIST_PAGE_SIZES)
 
 const toolbarFilters = computed(() => [
   {name: 'genre', label: '类型', value: query.genre, options: facets.value.movieGenres || []},
@@ -123,11 +126,13 @@ const loadFacets = async () => {
 const updateFilter = ({name, value}) => {
   query[name] = value ?? ''
   query.page = 1
+  syncRouteQuery()
   loadMovieList()
 }
 
 const search = () => {
   query.page = 1
+  syncRouteQuery()
   loadMovieList()
 }
 
@@ -136,11 +141,13 @@ const reset = () => {
   query.genre = ''
   query.year = ''
   query.page = 1
+  syncRouteQuery()
   loadMovieList()
 }
 
 const handleSizeChange = () => {
   query.page = 1
+  syncRouteQuery()
   loadMovieList()
 }
 

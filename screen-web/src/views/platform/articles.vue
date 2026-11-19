@@ -19,7 +19,7 @@
           v-for="item in articles"
           :key="item.id"
           class="platform-card cursor-pointer rounded-[6px] p-[20px]"
-          @click="router.push(`/platform/articles/${item.id}`)"
+          @click="openDetail(`/platform/articles/${item.id}`)"
       >
         <div class="article-card-head">
           <div class="platform-card__title">{{ item.title }}</div>
@@ -57,25 +57,28 @@
 </template>
 
 <script setup>
-import {computed, onMounted, reactive, ref} from 'vue'
-import {useRouter} from 'vue-router'
+import {computed, onMounted, ref} from 'vue'
 import PlatformListToolbar from '@/components/platform/PlatformListToolbar.vue'
 import {getArticles, getContentFacets} from '@/api/platform'
+import {useRouteListQuery} from '@/composables/useRouteListQuery'
 import {PLATFORM_LIST_PAGE_SIZES} from '@/const/platform'
 
-const router = useRouter()
 const articles = ref([])
 const facets = ref({})
 const loading = ref(false)
 const loadFailed = ref(false)
 const total = ref(0)
-const query = reactive({
+const {
+  query,
+  syncRouteQuery,
+  openDetail
+} = useRouteListQuery({
   keyword: '',
   tag: '',
   year: '',
   page: 1,
   pageSize: 6
-})
+}, PLATFORM_LIST_PAGE_SIZES)
 
 const toolbarFilters = computed(() => [
   {name: 'tag', label: '标签', value: query.tag, options: facets.value.articleTags || []},
@@ -113,11 +116,13 @@ const loadFacets = async () => {
 const updateFilter = ({name, value}) => {
   query[name] = value ?? ''
   query.page = 1
+  syncRouteQuery()
   loadArticleList()
 }
 
 const search = () => {
   query.page = 1
+  syncRouteQuery()
   loadArticleList()
 }
 
@@ -126,11 +131,13 @@ const reset = () => {
   query.tag = ''
   query.year = ''
   query.page = 1
+  syncRouteQuery()
   loadArticleList()
 }
 
 const handleSizeChange = () => {
   query.page = 1
+  syncRouteQuery()
   loadArticleList()
 }
 

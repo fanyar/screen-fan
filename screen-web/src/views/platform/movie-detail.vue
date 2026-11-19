@@ -9,7 +9,7 @@
           :tags="movieTags"
           :meta="movieMeta"
           aspect="poster"
-          @back="router.push('/platform/movies')"
+          @back="returnToList('/platform/movies')"
       >
         <template #title-actions>
           <PlatformFavoriteButton
@@ -98,6 +98,7 @@ import PlatformMarkdownContent from '@/components/platform/PlatformMarkdownConte
 import PlatformFavoriteButton from '@/components/platform/PlatformFavoriteButton.vue'
 import PlatformCommentSection from '@/components/platform/PlatformCommentSection.vue'
 import PlatformRelatedContent from '@/components/platform/PlatformRelatedContent.vue'
+import {preservedListRouteQuery} from '@/util/list-query'
 import {useHistoryStore} from '@/store/modules/history'
 
 const route = useRoute()
@@ -115,6 +116,11 @@ const scoreItems = computed(() => [
   {label: '重看', value: movie.value?.rewatchValue || 0}
 ])
 const hasScores = computed(() => scoreItems.value.some(item => item.value > 0))
+
+const returnToList = path => router.push({
+  path,
+  query: preservedListRouteQuery(route.query)
+})
 
 const loadMovie = async () => {
   loading.value = true

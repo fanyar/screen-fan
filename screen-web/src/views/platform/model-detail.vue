@@ -2,7 +2,7 @@
   <div v-loading="loading" class="platform-page platform-page--detail model-detail">
     <header class="platform-page-header">
       <div>
-        <button class="back-button" type="button" @click="router.push('/platform/models')">
+        <button class="back-button" type="button" @click="returnToList('/platform/models')">
           <el-icon><ArrowLeft/></el-icon>
           <span>返回列表</span>
         </button>
@@ -263,9 +263,15 @@ import {
   plannedStatusAtDate,
   statusAtDate
 } from '@/const/progress'
+import {preservedListRouteQuery} from '@/util/list-query'
 
 const route = useRoute()
 const router = useRouter()
+
+const returnToList = path => router.push({
+  path,
+  query: preservedListRouteQuery(route.query)
+})
 const model = ref({})
 const progressNodes = ref([])
 const backendSummary = ref({})

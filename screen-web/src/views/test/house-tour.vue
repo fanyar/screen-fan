@@ -6,7 +6,7 @@
       <button
         type="button"
         class="back-button"
-        @click="router.push('/platform/models')"
+        @click="returnToList"
       >
         返回
       </button>
@@ -41,12 +41,18 @@
 
 <script setup>
 import { computed, nextTick, onBeforeUnmount, onMounted, reactive, ref } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+import { preservedListRouteQuery } from '@/util/list-query'
 
 const canvasRef = ref(null)
 const router = useRouter()
+const route = useRoute()
+const returnToList = () => router.push({
+  path: '/platform/models',
+  query: preservedListRouteQuery(route.query)
+})
 const activeMode = ref('overview')
 const activeRoomId = ref('')
 
