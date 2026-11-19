@@ -257,7 +257,7 @@ async function verifyPages() {
       if (response.ok) {
         const remoteManifest = await response.json()
         if (remoteManifest.generatedAt === localManifest.generatedAt) {
-          console.log(`线上数据已更新：${remoteManifest.articles} 篇文章`)
+          console.log(`线上数据已更新：${remoteManifest.counts?.articles ?? 0} 篇文章`)
           break
         }
         console.log(`线上数据尚未更新：remote=${remoteManifest.generatedAt}, local=${localManifest.generatedAt}`)
