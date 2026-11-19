@@ -38,7 +38,6 @@ export const PLATFORM_LIST_PAGE_SIZES = [6, 12, 24, 48]
 export const PLATFORM_MENU = [
   {name: '电影', path: '/platform/movies'},
   {name: '动漫', path: '/platform/anime'},
-  {name: '漫画', path: '/platform/comics'},
   {name: '模型', path: '/platform/models'},
   {name: '游戏', path: '/platform/games'},
   {name: '作品', path: '/platform/works'},

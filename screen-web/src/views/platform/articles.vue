@@ -21,7 +21,7 @@
           class="platform-card cursor-pointer rounded-[6px] p-[20px]"
           @click="router.push(`/platform/articles/${item.id}`)"
       >
-        <div class="flex flex-wrap items-baseline justify-between gap-[8px]">
+        <div class="article-card-head">
           <div class="platform-card__title">{{ item.title }}</div>
           <div class="platform-card__meta !mt-0">{{ item.date }} · {{ item.viewCount }} 次阅读</div>
         </div>
@@ -141,6 +141,18 @@ onMounted(() => {
 </script>
 
 <style scoped lang="scss">
+.article-card-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.article-card-head .platform-card__title {
+  min-width: 0;
+}
+
 .list-footer {
   display: flex;
   flex-wrap: wrap;
@@ -153,5 +165,15 @@ onMounted(() => {
 .list-total {
   color: var(--sx-muted);
   font-size: 15px;
+}
+
+@media (max-width: 720px) {
+  .article-card-head {
+    display: block;
+  }
+
+  .article-card-head .platform-card__meta {
+    margin-top: 4px;
+  }
 }
 </style>

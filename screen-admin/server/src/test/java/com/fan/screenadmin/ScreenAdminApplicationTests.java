@@ -43,7 +43,7 @@ class ScreenAdminApplicationTests {
         assertEquals(3, listSize("/api/comics"));
         assertEquals(10, listSize("/api/movies"));
         assertEquals(10, listSize("/api/anime"));
-        assertEquals(4, listSize("/api/articles"));
+        assertEquals(24, listTotal("/api/articles"));
         String movieList = getContent("/api/movies");
         assertEquals(true, objectMapper.readTree(movieList).get("items").get(0).get("playUrl").asText().startsWith("http://vedio.yxdsrq.com/"));
         String animeList = getContent("/api/anime");
@@ -216,14 +216,14 @@ class ScreenAdminApplicationTests {
                 .getContentAsString(StandardCharsets.UTF_8);
         String id = objectMapper.readTree(createResponse).get("id").asText();
 
-        assertEquals(4, listSize("/api/articles"));
+        assertEquals(24, listTotal("/api/articles"));
         String adminArticles = mockMvc.perform(get("/api/admin/articles")
                         .header("Authorization", "Bearer " + token))
                 .andExpect(status().isOk())
                 .andReturn()
                 .getResponse()
                 .getContentAsString(StandardCharsets.UTF_8);
-        assertEquals(5, objectMapper.readTree(adminArticles).size());
+        assertEquals(25, objectMapper.readTree(adminArticles).size());
         mockMvc.perform(get("/api/articles/{id}", id))
                 .andExpect(status().isNotFound());
 
@@ -388,6 +388,11 @@ class ScreenAdminApplicationTests {
     private int listSize(String path) throws Exception {
         String content = getContent(path);
         return objectMapper.readTree(content).get("items").size();
+    }
+
+    private int listTotal(String path) throws Exception {
+        String content = getContent(path);
+        return objectMapper.readTree(content).get("total").asInt();
     }
 
     private String getContent(String path) throws Exception {

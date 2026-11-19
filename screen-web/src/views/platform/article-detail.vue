@@ -278,6 +278,7 @@ watch(tableOfContents, updateActiveHeading)
   align-self: flex-start;
   min-height: 0;
   width: 100%;
+  min-width: 0;
   overflow: hidden;
   padding: 40px 44px 32px;
   border: 1px solid var(--sx-line);
@@ -331,7 +332,9 @@ watch(tableOfContents, updateActiveHeading)
 .article-scroll {
   flex: 1 1 auto;
   min-height: 0;
+  min-width: 0;
   overflow-y: auto;
+  overflow-x: hidden;
   padding-right: 6px;
 }
 
@@ -418,6 +421,8 @@ watch(tableOfContents, updateActiveHeading)
 }
 
 .article-body {
+  min-width: 0;
+  overflow-wrap: anywhere;
   min-height: 420px;
   margin-top: 32px;
   color: var(--sx-body);
@@ -473,6 +478,8 @@ watch(tableOfContents, updateActiveHeading)
 
   :deep(pre) {
     position: relative;
+    box-sizing: border-box;
+    max-width: 100%;
     overflow-x: auto;
     margin: 20px 0;
     padding: 18px;
@@ -624,6 +631,15 @@ watch(tableOfContents, updateActiveHeading)
 @media (max-width: 768px) {
   .article-panel {
     padding: 26px 20px;
+  }
+
+  .article-body :deep(pre) {
+    overflow-x: hidden;
+  }
+
+  .article-body :deep(pre code) {
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
   }
 
   .article-actions {

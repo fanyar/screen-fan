@@ -1,14 +1,31 @@
 package com.fan.screenadmin.content;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
+import java.io.IOException;
+import java.io.UncheckedIOException;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Component
 public class DataSeeder implements ApplicationRunner {
+
+    private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
+    private static final List<String> LEGACY_ARTICLE_TITLES = List.of(
+            "Vue 3 组合式 API 在大屏项目中的实践",
+            "Tailwind + pxtorem：大屏自适应的双轨方案",
+            "ECharts 性能优化：十万级数据点的大屏渲染",
+            "从零搭建一个数据可视化平台的前端架构"
+    );
 
     private final ContentRepository repository;
     private final ContentService contentService;
@@ -250,41 +267,85 @@ public class DataSeeder implements ApplicationRunner {
     }
 
     private void seedArticles() {
-        if (repository.countArticles() > 0) {
+        removeLegacyArticles();
+        readJuejinArticles().forEach(this::seedJuejinArticle);
+    }
+
+    private void removeLegacyArticles() {
+        Map<String, String> articlesByTitle = contentService.listAllArticles().stream()
+                .collect(Collectors.toMap(
+                        ContentDtos.ArticleSummaryResponse::title,
+                        ContentDtos.ArticleSummaryResponse::id,
+                        (left, right) -> left
+                ));
+        LEGACY_ARTICLE_TITLES.stream()
+                .map(articlesByTitle::get)
+                .filter(id -> id != null)
+                .forEach(repository::deleteArticle);
+    }
+
+    private JsonNode readJuejinArticles() {
+        try {
+            return OBJECT_MAPPER.readTree(
+                    new ClassPathResource("data/juejin-articles.json").getInputStream()
+            );
+        } catch (IOException exception) {
+            throw new UncheckedIOException("无法读取掘金文章种子数据", exception);
+        }
+    }
+
+    private void seedJuejinArticle(JsonNode item) {
+        String id = "juejin-" + item.path("id").asText();
+        String title = item.path("title").asText();
+        String category = item.path("category").asText();
+        Set<String> tags = new LinkedHashSet<>();
+        item.path("tags").forEach(tag -> tags.add(tag.asText()));
+        String tagNames = String.join(" / ", tags);
+        tags.add(category);
+        String desc = "掘金%s文章，主题：%s。".formatted(category, tagNames);
+        String content = item.path("content").asText("");
+        if (content.isBlank()) {
+            content = """
+                    ## 原文
+
+                    本文发布于掘金，站内暂未导入完整正文。
+
+                    [阅读原文](https://juejin.cn/post/%s)
+                    """.formatted(item.path("id").asText());
+        }
+
+        var existing = repository.findArticle(id);
+        if (existing.isPresent()) {
+            String existingContent = existing.get().content();
+            boolean needsUpgrade = existingContent == null || existingContent.isBlank()
+                    || existingContent.contains("站内暂未导入完整正文")
+                    || existingContent.startsWith(".markdown-body{");
+            if (!content.isBlank() && needsUpgrade) {
+                repository.updateArticle(
+                        id,
+                        title,
+                        desc,
+                        String.join(",", tags),
+                        item.path("date").asText(),
+                        content,
+                        "published",
+                        null
+                );
+            }
             return;
         }
-        contentService.createArticle(new ContentDtos.ArticleRequest(
-                "Vue 3 组合式 API 在大屏项目中的实践",
-                "从 setup 语法糖到 composables 拆分，聊聊大屏组件如何做到逻辑复用且不失控。",
-                List.of("Vue3", "大屏"),
-                "2025-06-12",
-                "## 为什么选择组合式 API\n\n大屏页面通常有多个数据源、定时器和图表实例。选项式 API 会把这些逻辑分散到 data、methods 和 lifecycle 中，而组合式 API 可以按业务块组织代码。\n\n## 拆分原则\n\n- 数据请求放在 composables 中。\n- 图表实例销毁必须与组件生命周期绑定。\n- 跨模块状态交给 Pinia，而不是互相引用组件。\n\n```js\nconst chart = ref(null)\n\nonUnmounted(() => chart.value?.dispose())\n```",
-                "published", null
-        ));
-        contentService.createArticle(new ContentDtos.ArticleRequest(
-                "Tailwind + pxtorem：大屏自适应的双轨方案",
-                "大屏走 rem 等比缩放，营销页走响应式断点，一套构建体系里两种适配模式并存的经验。",
-                List.of("Tailwind", "自适应"),
-                "2025-04-08",
-                "## 两条适配路线\n\n大屏更关心比例稳定，内容平台更关心可读性。因此大屏使用 rem 等比缩放，平台页面使用响应式断点与最大宽度限制。\n\n## 实践建议\n\n- 平台页面优先使用明确 px 工具类。\n- 卡片和列表使用 grid 控制，长文本保持默认换行。\n- 不把大屏缩放逻辑混入平台布局。\n\n> 适配方案不是越统一越好，而是要匹配页面场景。",
-                "published", null
-        ));
-        contentService.createArticle(new ContentDtos.ArticleRequest(
-                "ECharts 性能优化：十万级数据点的大屏渲染",
-                "数据抽样、增量渲染与 canvas 分层，让实时刷新的大屏在低配设备上也能流畅运行。",
-                List.of("ECharts", "性能"),
-                "2024-11-20",
-                "## 先测量，再优化\n\n渲染卡顿通常来自三类问题：数据量过大、频繁 setOption、以及组件销毁不彻底。\n\n## 常用手段\n\n1. 对高频数据做窗口抽样。\n2. 关闭不必要的动画和 tooltip 动画。\n3. 图表实例复用，避免重复初始化。\n4. 页面隐藏时暂停轮询。\n\n```text\n数据窗口: 最近 300 个点\n刷新间隔: 3000ms\n```",
-                "published", null
-        ));
-        contentService.createArticle(new ContentDtos.ArticleRequest(
-                "从零搭建一个数据可视化平台的前端架构",
-                "路由、状态、组件分层与构建优化的整体思路，以及踩过的那些坑。",
-                List.of("架构", "可视化"),
-                "2024-09-05",
-                "## 分层思路\n\n- **路由层**：只负责入口和懒加载。\n- **状态层**：存放跨页数据与登录态。\n- **组件层**：沉淀可复用图表、卡片和交互。\n- **页面层**：组合业务，不承载通用能力。\n\n## 优先级\n\n先保证业务闭环，再做抽象。过早抽象会让页面之间的约束互相污染，后期反而更难改。",
-                "published", null
-        ));
+
+        repository.insertArticle(
+                id,
+                title,
+                desc,
+                String.join(",", tags),
+                item.path("date").asText(),
+                content,
+                "published",
+                null,
+                repository.nextArticleSortNo()
+        );
     }
 
     private void seedHomeConfig() {
