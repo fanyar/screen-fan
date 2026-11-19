@@ -354,6 +354,13 @@ public class ContentService {
                 .toList();
     }
 
+    public List<ContentDtos.ArticleDetailResponse> listAllArticleDetails() {
+        PageSelection selection = normalizePage(1, 10000);
+        return repository.pageArticles(articleQuery(null, null, null, selection), false).rows().stream()
+                .map(this::mapArticleAdminDetail)
+                .toList();
+    }
+
     public ContentDtos.ContentFacetResponse listFacets() {
         return new ContentDtos.ContentFacetResponse(
                 distinctTags(repository.listWorkTags()),
@@ -965,6 +972,23 @@ public class ContentService {
 
     private ContentDtos.ArticleDetailResponse mapArticleDetail(ContentRepository.ArticleRow row) {
         return mapArticleDetail(row, new ContentRepository.ContentViewStats(row.viewCount(), 0));
+    }
+
+    private ContentDtos.ArticleDetailResponse mapArticleAdminDetail(ContentRepository.ArticleRow row) {
+        return new ContentDtos.ArticleDetailResponse(
+                row.id(),
+                row.title(),
+                row.desc(),
+                splitTags(row.tags()),
+                row.date(),
+                row.status(),
+                cleanText(row.content(), 100000),
+                row.viewCount(),
+                0,
+                null,
+                null,
+                List.of()
+        );
     }
 
     private ContentDtos.ArticleDetailResponse mapArticleDetail(

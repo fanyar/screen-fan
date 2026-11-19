@@ -1,6 +1,7 @@
 package com.fan.screenadmin;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.JsonNode;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -23,6 +24,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ActiveProfiles("test")
 @SpringBootTest
@@ -197,6 +199,17 @@ class ScreenAdminApplicationTests {
     @Order(5)
     void managesArticleDraftAndPublication() throws Exception {
         String token = loginToken();
+        String adminArticles = mockMvc.perform(get("/api/admin/articles")
+                        .header("Authorization", "Bearer " + token))
+                .andExpect(status().isOk())
+                .andReturn()
+                .getResponse()
+                .getContentAsString(StandardCharsets.UTF_8);
+        JsonNode seededArticles = objectMapper.readTree(adminArticles);
+        assertTrue(seededArticles.size() > 0);
+        assertTrue(seededArticles.get(0).has("content"));
+        assertTrue(seededArticles.get(0).get("content").asText().length() > 0);
+
         String createResponse = mockMvc.perform(post("/api/admin/articles")
                         .header("Authorization", "Bearer " + token)
                         .contentType(MediaType.APPLICATION_JSON)
@@ -217,13 +230,13 @@ class ScreenAdminApplicationTests {
         String id = objectMapper.readTree(createResponse).get("id").asText();
 
         assertEquals(24, listTotal("/api/articles"));
-        String adminArticles = mockMvc.perform(get("/api/admin/articles")
+        String draftAdminArticles = mockMvc.perform(get("/api/admin/articles")
                         .header("Authorization", "Bearer " + token))
                 .andExpect(status().isOk())
                 .andReturn()
                 .getResponse()
                 .getContentAsString(StandardCharsets.UTF_8);
-        assertEquals(25, objectMapper.readTree(adminArticles).size());
+        assertEquals(25, objectMapper.readTree(draftAdminArticles).size());
         mockMvc.perform(get("/api/articles/{id}", id))
                 .andExpect(status().isNotFound());
 
@@ -245,6 +258,23 @@ class ScreenAdminApplicationTests {
         String detail = getContent("/api/articles/" + id);
         assertEquals("published", objectMapper.readTree(detail).get("status").asText());
         assertEquals("## 已发布正文\n\n- 支持列表\n- 支持 Markdown", objectMapper.readTree(detail).get("content").asText());
+
+        adminArticles = mockMvc.perform(get("/api/admin/articles")
+                        .header("Authorization", "Bearer " + token))
+                .andExpect(status().isOk())
+                .andReturn()
+                .getResponse()
+                .getContentAsString(StandardCharsets.UTF_8);
+        JsonNode savedArticles = objectMapper.readTree(adminArticles);
+        JsonNode savedArticle = null;
+        for (JsonNode item : savedArticles) {
+            if (id.equals(item.get("id").asText())) {
+                savedArticle = item;
+                break;
+            }
+        }
+        assertTrue(savedArticle != null);
+        assertEquals("## 已发布正文\n\n- 支持列表\n- 支持 Markdown", savedArticle.get("content").asText());
 
         mockMvc.perform(delete("/api/admin/articles/{id}", id)
                         .header("Authorization", "Bearer " + token))

@@ -30,8 +30,8 @@ public class AdminContentController {
     }
 
     @GetMapping("/articles")
-    public List<ContentDtos.ArticleSummaryResponse> articles() {
-        return contentService.listAllArticles();
+    public List<ContentDtos.ArticleDetailResponse> articles() {
+        return contentService.listAllArticleDetails();
     }
 
     @GetMapping("/contact-messages")
