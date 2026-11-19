@@ -1,14 +1,14 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-19T02:04:36.208Z",
+  "generatedAt": "2026-11-19T02:19:36.420Z",
   "counts": {
     "works": 6,
     "comics": 3,
     "movies": 11,
     "anime": 10,
     "articles": 24,
-    "models": 7
+    "models": 6
   },
-  "assets": 85,
+  "assets": 83,
   "source": "http://localhost:8666"
 }
